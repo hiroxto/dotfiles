@@ -1,1 +1,12 @@
-/home/hiroto/.gitconfig
+[user]
+	name = Hiroto-K
+	email = hiro.yo.yo1610@gmail.com
+[color]
+	ui = auto
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+[core]
+	excludesfile = ~/.gitignore_global
