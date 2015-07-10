@@ -82,18 +82,18 @@ source $ZSH/oh-my-zsh.sh
 ###  base  ###
 ## 文字コード&言語
 export LANG=ja_JP.UTF-8
-export EDITOR=vim
+export EDITOR="vim"
+export BROWSER="firefox"
 export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin"
 bindkey -e
-## ディレクトリ名だけでcd
-setopt auto_cd
-## rm *で確認しない
-setopt rm_star_silent
 
 ###  history  ###
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+## 時間を読みやすく
+export HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
+export HIST_STAMPS="[%Y/%M/%D %H:%M:%S] "
 ## !を使った展開
 setopt bang_hist
 ## 実行時間も保存
@@ -102,8 +102,12 @@ setopt extended_history
 setopt hist_ignore_dups
 ## ヒストリを共有
 setopt share_history
-## 余分なスペースを削除してヒストリに保存する
+## 余分なスペースを削除してヒストリに保存
 setopt hist_reduce_blanks
+## 入力途中の履歴補完を有効化
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
 
 ###  complement  ###
 #$ 補完機能を有効
@@ -112,10 +116,14 @@ autoload -U compinit; compinit
 setopt auto_list
 ## キー連打で補完候補を順に表示
 setopt auto_menu
-## 詰めて表示する
+## 詰めて表示
 setopt list_packed
-## ファイルの種類も表示する
+## ファイルの種類も表示
 setopt list_types
+## 変数名を補完
+setopt AUTO_PARAM_KEYS
+## beepを無効化
+setopt no_beep
 ## shift-tabで補完候補を逆に
 bindkey "^[[Z" reverse-menu-complete
 ## 大文字小文字を区別しない
@@ -147,5 +155,12 @@ alias gcc="grc gcc"
 alias nano="nano -w"
 alias vi="vim"
 alias rmdir="rm -rf"
+alias mkdir="mkdir -p"
+alias cp="cp -i"
+alias mv="mv -i"
+## ディレクトリ名だけでcd
+setopt auto_cd
+## rm *で確認しない
+setopt rm_star_silent
 ## Ruby
 export GEM_HOME="$HOME/.gem/ruby/2.2.0/"
