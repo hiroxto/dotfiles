@@ -10,3 +10,4 @@
 	grep = auto
 [core]
 	excludesfile = ~/.gitignore_global
+	quotepath = false
