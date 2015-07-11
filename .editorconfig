@@ -6,10 +6,10 @@ end_of_line = lf
 insert_final_newline = false
 trim_trailing_whitespace = true
 
-[*.{php,rb,go,js,sh,java,c,cs,swi1ft,txt,html,htm,xml,css,less}]
+[*.{php,rb,go,js,sh,java,c,cs,swi1ft,txt,html,htm,xml,css,less,md}]
 indent_style = tab
 tab_width = 4
 
-[*.{yml,md,py}]
+[*.{yml,py}]
 indent_style = space
 indent_size = 2
