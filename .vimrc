@@ -17,13 +17,6 @@ set hidden
 " バックアップを作成しない
 set nobackup
 
-" PHP
-let php_sql_query = 1
-let php_baselib = 1
-let php_htmlInStrings = 1
-let php_noShortTags = 1
-let php_parent_error_close = 1
-
 " bundle
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 " Required
@@ -42,8 +35,14 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'scrooloose/syntastic'
 " Ruby
 NeoBundle 'vim-ruby/vim-ruby'
-" html補完
+" html
 NeoBundle 'mattn/emmet-vim'
+" Javascript
+NeoBundle 'pangloss/vim-javascript'
+" Python
+NeoBundle 'hdima/python-syntax'
+" Golang
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 " Required
