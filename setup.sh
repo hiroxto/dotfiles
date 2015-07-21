@@ -1,32 +1,87 @@
 #!/bin/sh
-echo "Move files."
-mv .editorconfig ~/.editorconfig
-mv .zshrc ~/.zshrc
-mv .nanorc ~/.nanorc
-mv .vimrc ~/.vimrc
-mv .gitignore_global ~/.gitignore_global
-mv .gitconfig ~/.gitconfig
 
-# oh-my-zsh
-echo "Setup oh-my-zsh"
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+echo -n "ファイルを移動しますか?[y/n]  ->  "
+read res
+case $res in
+  [yY])
+    mv .editorconfig ~/.editorconfig
+    mv .zshrc ~/.zshrc
+    mv .nanorc ~/.nanorc
+    mv .vimrc ~/.vimrc
+    mv .gitignore_global ~/.gitignore_global
+    mv .gitconfig ~/.gitconfig
+  ;;
+  [nN])
+  ;;
+esac
 
-# nanorc
-echo "Setup nanorc"
-mkdir ~/nanorc
-curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/apache2.nanorc > ~/nanorc/apache2.nanorc
-curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/apacheconf.nanorc > ~/nanorc/apacheconf.nanorc
-curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/js.nanorc > ~/nanorc/js.nanorc
-curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/vhost.nanorc > ~/nanorc/vhost.nanorc
+echo -n "oh-my-zshをインストールしますか?[y/n]  ->  "
+read res
+case $res in
+  [yY])
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  ;;
+  [nN])
+  ;;
+esac
 
-# vim
-# neobundle
-echo "Setup vim"
-mkdir -p ~/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+echo -n "rbenvをインストールしますか?[y/n]  ->  "
+read res
+case $res in
+  [yY])
+    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  ;;
+  [nN])
+  ;;
+esac
 
-# molokai
-mkdir -p ~/.vim/colors
-curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim > ~/.vim/colors/molokai.vim
+echo -n "phpenvをインストールしますか?[y/n]  ->  "
+read res
+case $res in
+  [yY])
+    git clone https://github.com/CHH/phpenv.git /tmp/phpenv
+    /tmp/phpenv/bin/phpenv-install.sh
+    git clone https://github.com/CHH/php-build.git ~/.phpenv/plugins/php-build
+    rm -rf /tmp/phpenv
+  ;;
+  [nN])
+  ;;
+esac
 
-echo "Finish!"
+echo -n "pyenvをインストールしますか?[y/n]  ->  "
+read res
+case $res in
+  [yY])
+    git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+  ;;
+  [nN])
+  ;;
+esac
+
+echo -n "nanorcをセットアップしますか?[y/n]  ->  "
+read res
+case $res in
+  [yY])
+    mkdir ~/nanorc
+    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/apache2.nanorc > ~/nanorc/apache2.nanorc
+    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/apacheconf.nanorc > ~/nanorc/apacheconf.nanorc
+    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/js.nanorc > ~/nanorc/js.nanorc
+    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/vhost.nanorc > ~/nanorc/vhost.nanorc
+  ;;
+  [nN])
+  ;;
+esac
+
+echo -n "vimをセットアップしますか?[y/n]  ->  "
+read res
+case $res in
+  [yY])
+    mkdir -p ~/.vim/bundle
+    git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    mkdir -p ~/.vim/colors
+    curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
+  ;;
+  [nN])
+  ;;
+esac
