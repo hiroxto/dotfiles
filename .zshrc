@@ -45,11 +45,11 @@ ZSH_THEME="imajes"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux bundler git golang gem node npm pip systemd vagrant)
+plugins=(archlinux bundler git golang gem node npm pip systemd ubuntu vagrant)
 
 # User configuration
 
-export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -167,3 +167,4 @@ export GEM_HOME="$HOME/.gem/ruby/2.2.0/"
 ## *env
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
+eval "$(pyenv init -)"
