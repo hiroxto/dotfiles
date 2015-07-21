@@ -1,0 +1,11 @@
+[ui]
+	username = Hiroto-K <hiro.yo.yo1610@gmail.com>
+	ignore = ~/.hgignore_global
+
+[color]
+	mode = auto
+
+[extensions]
+	pager =
+	progress =
+	color =
