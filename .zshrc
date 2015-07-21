@@ -49,7 +49,7 @@ plugins=(archlinux bundler git golang gem node npm pip systemd vagrant)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,7 +84,6 @@ source $ZSH/oh-my-zsh.sh
 export LANG=ja_JP.UTF-8
 export EDITOR="vim"
 export BROWSER="firefox"
-export PATH="$PATH:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin"
 bindkey -e
 
 ###  history  ###
@@ -164,3 +163,7 @@ setopt auto_cd
 setopt rm_star_silent
 ## Ruby
 export GEM_HOME="$HOME/.gem/ruby/2.2.0/"
+
+## *env
+eval "$(rbenv init -)"
+eval "$(phpenv init -)"
