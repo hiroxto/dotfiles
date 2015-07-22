@@ -6,6 +6,6 @@ end_of_line = lf
 insert_final_newline = false
 trim_trailing_whitespace = true
 
-[*.{php,rb,py,go,js,sh,java,c,cs,swi1ft,txt,html,htm,xml,css,less,md,yml}]
+[*.{php,rb,py,go,js,coffee,ts,sh,java,c,cs,swift,txt,html,htm,xml,css,less,md,yml}]
 indent_style = space
 indent_size = 2
