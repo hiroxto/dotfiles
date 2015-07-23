@@ -1,14 +1,19 @@
 # Hiroto-K/dotfiles
-MacとLinuxで使う設定ファイルをまとめてセットアップする。
-- zshの設定ファイル(.zshrc)
-- nanoの設定ファイル(.nanorc)
-- vimの設定ファイル(.vimrc)
-- editorconfig(.editorconfig)
-- gitの設定ファイル(.gitconfig)
-- gitignoreの設定ファイル(.gitignore\_global)
-- zshの便利な設定(oh-my-zsh)
-- vimのプラグイン管理(NeoBundle.vim)
-- vimの色(molokai.vim)
+MacとLinuxで使う設定ファイル等をまとめてセットアップする。
+- .zshrc
+- .nanorc
+- .vimrc
+- .editorconfig
+- .gitconfig
+- .gitignore\_global
+- .hgrc
+- .hgignore_global
+- oh-my-zsh
+- NeoBundle.vim
+- molokai.vim
+- rbenv
+- phpenv
+- pyenv
 
 # install
 このリポジトリをクローンして``setup.sh``を実行。
@@ -16,4 +21,10 @@ MacとLinuxで使う設定ファイルをまとめてセットアップする。
 git clone git://github.com/Hiroto-K/dotfiles
 cd dotfiles
 ./setup.sh
+```
+
+# *env系の更新をする方法
+このリポジトリにある``update.sh``を実行。
+```sh
+curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | sh
 ```
