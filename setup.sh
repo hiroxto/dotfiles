@@ -63,11 +63,8 @@ echo -n "nanorcをセットアップしますか?[y/n]  ->  "
 read res
 case $res in
   [yY])
-    mkdir ~/nanorc
-    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/apache2.nanorc > ~/nanorc/apache2.nanorc
-    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/apacheconf.nanorc > ~/nanorc/apacheconf.nanorc
-    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/js.nanorc > ~/nanorc/js.nanorc
-    curl -sS https://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/vhost.nanorc > ~/nanorc/vhost.nanorc
+    git clone git://github.com/scopatz/nanorc ~/.nano
+    cat nanorc.nanorc >> ~/.nanorc
   ;;
   [nN])
   ;;
