@@ -10,6 +10,8 @@ case $res in
     mv .vimrc ~/.vimrc
     mv .gitignore_global ~/.gitignore_global
     mv .gitconfig ~/.gitconfig
+    mv .hgignore_global ~/.hgignore_global
+    mv .hgrc ~/.hgrc
   ;;
   [nN])
   ;;
