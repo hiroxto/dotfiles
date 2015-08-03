@@ -1,11 +1,12 @@
 [ui]
-	username = Hiroto-K <hiro.yo.yo1610@gmail.com>
-	ignore = ~/.hgignore_global
+username = Hiroto-K <hiro.yo.yo1610@gmail.com>
+ignore = ~/.hgignore_global
+editor = vim
 
 [color]
-	mode = auto
+mode = auto
 
 [extensions]
-	pager =
-	progress =
-	color =
+pager =
+progress =
+color =
