@@ -1,4 +1,65 @@
+## Global hgignore
+!.gitkeep
+
+## OS X
 .DS_Store
-*~
+.DS_Store?
+._*
+tignore
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+## Vim
 *.swp
-.idea
+
+## Emacs
+*~
+
+## Compiled
+*.obj
+*.com
+*.class
+*.dll
+*.exe
+*.bak
+*.o
+*.so
+*.lib
+*.a
+
+## Logs & Databases
+*.log
+.cache
+*.sqlite
+*.sqlite3
+
+## Packages
+*.zip
+*.jar
+*.rar
+*.tar
+*.7z
+*.dmg
+*.gz
+*.iso
+
+## Node.js
+/node_modules/
+
+## Bower
+/bower_components/
+
+## Ruby
+*.gem
+*.rbc
+/.bundle/
+/vendor/
+.ruby-version
+
+## PHP
+/vendor/
+composer.phar
+.php-version
