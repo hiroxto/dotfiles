@@ -1,5 +1,5 @@
 ## Global hgignore
-!.gitkeep
+!.hgkeep
 
 ## OS X
 .DS_Store
@@ -35,6 +35,7 @@ Thumbs.db
 .cache
 *.sqlite
 *.sqlite3
+*.db
 
 ## Packages
 *.zip
@@ -45,12 +46,6 @@ Thumbs.db
 *.dmg
 *.gz
 *.iso
-
-## Node.js
-/node_modules/
-
-## Bower
-/bower_components/
 
 ## Ruby
 *.gem
@@ -63,3 +58,14 @@ Thumbs.db
 /vendor/
 composer.phar
 .php-version
+
+## Python
+pip-log.txt
+pip-delete-this-directory.txt
+.python-version
+
+## Node.js
+debug.log
+npm-debug.log
+/node_modules/
+/bower_components/
