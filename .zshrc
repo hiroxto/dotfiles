@@ -45,7 +45,7 @@ ZSH_THEME="imajes"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux composer git golang gem node npm pip rails rake systemd tmux ubuntu vagrant)
+plugins=(archlinux composer git golang gem heroku node npm pip rails rake systemd ubuntu vagrant)
 
 # User configuration
 
