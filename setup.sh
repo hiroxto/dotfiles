@@ -8,6 +8,7 @@ case $res in
     mv .zshrc ~/.zshrc
     mv .nanorc ~/.nanorc
     mv .vimrc ~/.vimrc
+    mv .tmux.conf ~/.tmux.conf
     mv .gitignore_global ~/.gitignore_global
     mv .gitconfig ~/.gitconfig
     mv .hgignore_global ~/.hgignore_global
