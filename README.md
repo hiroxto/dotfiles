@@ -1,19 +1,5 @@
 # Hiroto-K/dotfiles
 MacとLinuxで使う設定ファイル等をまとめてセットアップする。
-- .zshrc
-- .nanorc
-- .vimrc
-- .editorconfig
-- .gitconfig
-- .gitignore\_global
-- .hgrc
-- .hgignore_global
-- oh-my-zsh
-- NeoBundle.vim
-- molokai.vim
-- rbenv
-- phpenv
-- pyenv
 
 # install
 このリポジトリをクローンして``setup.sh``を実行。
