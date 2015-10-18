@@ -18,7 +18,7 @@ export EDITOR="vim"
 export BROWSER="firefox"
 bindkey -e
 
-if [ `which grc` ]; then
+if type grc > /dev/null 2>&1 ; then
   alias mount="grc mount"
   alias ifconfig="grc ifconfig"
   alias dig="grc dig"
