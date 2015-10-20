@@ -24,7 +24,7 @@ if [ $input = "y" -o $input = "Y" ]; then
   )
   for file in ${files[@]}; do
     working_msg "Move $file to ~/$file"
-    mv $file ~/$file
+    \cp -f $file ~/$file
   done
   finish
 fi
