@@ -1,0 +1,8 @@
+{
+    "require": {
+        "laravel/installer": "~1.1",
+        "laravel/lumen-installer": "~1.0",
+        "psy/psysh": "@stable",
+        "mpyw/twhelp": "@dev"
+    }
+}
