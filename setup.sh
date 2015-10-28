@@ -90,17 +90,17 @@ fi
 
 echo -n "composerをセットアップしますか?[y/n]  ->  "
 read input
-if [ $input = "y" -o $input = "Y" ]; then
+if [ $input != "y" -o $input != "Y" ]; then
   if type composer > /dev/null 2>&1 ; then
     working_msg "Create /usr/bin/composer"
     curl -sS https://getcomposer.org/installer | php
     sudo mv composer.phar /usr/bin/composer
   fi
   mkdir ~/.composer
-  working_msg "Move ./.composer/composer.json to ~/composer.json"
-  \cp -f .composer/composer.json ~/composer.json
-  working_msg "Move ./composer/composer.lock to ~/composer.lock"
-  \cp -f .composer/composer.lock ~/composer.lock
+  working_msg "Move ./.composer/composer.json to ~/.composer/composer.json"
+  \cp -f ./.composer/composer.json ~/.composer/composer.json
+  working_msg "Move ./composer/composer.lock to ~/.composer/composer.lock"
+  \cp -f ./.composer/composer.lock ~/.composer/composer.lock
   working_msg "Install composer global package"
   composer g install
   finish
