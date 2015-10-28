@@ -92,7 +92,7 @@ if [ $input = "y" -o $input = "Y" ]; then
   \cp -f .composer/composer.json ~/composer.json
   working_msg "Move ./composer/composer.lock to ~/composer.lock"
   \cp -f .composer/composer.lock ~/composer.lock
-  working_msg "Installing composer global package"
+  working_msg "Install composer global package"
   composer g install
   finish
 fi
