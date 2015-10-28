@@ -7,9 +7,9 @@ set number
 
 " カラースキーマ
 set t_Co=256
-colorscheme molokai
-let g:molokai_original=1
-set background=dark
+colorscheme onedark
+"let g:molokai_original=1
+"set background=dark
 
 " 複数ファイルの編集を可能にする
 set hidden
