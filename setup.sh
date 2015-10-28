@@ -32,6 +32,7 @@ fi
 echo -n "oh-my-zshをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
+  working_msg "Install oh-my-zsh"
   git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   finish
 fi
@@ -39,6 +40,7 @@ fi
 echo -n "rbenvをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
+  working_msg "Install rbenv"
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
   finish
@@ -47,6 +49,7 @@ fi
 echo -n "phpenvをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
+  working_msg "Install phpenv"
   git clone https://github.com/CHH/phpenv.git /tmp/phpenv
   /tmp/phpenv/bin/phpenv-install.sh
   git clone https://github.com/CHH/php-build.git ~/.phpenv/plugins/php-build
@@ -57,6 +60,7 @@ fi
 echo -n "pyenvをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
+  working_msg "Install pyenv"
   git clone git://github.com/yyuu/pyenv.git ~/.pyenv
   finish
 fi
@@ -64,6 +68,7 @@ fi
 echo -n "nanorcをセットアップしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
+  working_msg "Install nanorc"
   git clone git://github.com/scopatz/nanorc ~/.nano
   cat nanorc.nanorc >> ~/.nanorc
   finish
@@ -72,8 +77,10 @@ fi
 echo -n "vimをセットアップしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
+  working_msg "Install neobundle"
   mkdir -p ~/.vim/bundle
   git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+  working_msg "Install vim color"
   mkdir -p ~/.vim/colors
   curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
   finish
