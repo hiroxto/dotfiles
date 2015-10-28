@@ -21,6 +21,7 @@ if [ $input = "y" -o $input = "Y" ]; then
     .gitignore_global
     .hgrc
     .hgignore_global
+    .gemrc
   )
   for file in ${files[@]}; do
     working_msg "Move $file to ~/$file"
