@@ -84,7 +84,7 @@ if [ $input = "y" -o $input = "Y" ]; then
   working_msg "Install vim color"
   mkdir -p ~/.vim/colors
   curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
-  curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> .vim/colors/onedark.vim
+  curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
   finish
 fi
 
