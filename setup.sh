@@ -78,20 +78,31 @@ fi
 echo -n "vimをセットアップしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
-  working_msg "Install neobundle"
-  mkdir -p ~/.vim/bundle
-  git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-  working_msg "Install vim color"
-  mkdir -p ~/.vim/colors
-  curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
-  curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
+  if [ -e ~/.vim/bundle ]; then
+    working_msg "Install neobundle"
+    mkdir -p ~/.vim/bundle
+    git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+  fi
+  if [ -e ~/.vim/colors]
+    working_msg "Install vim color"
+    mkdir -p ~/.vim/colors
+    if [ -e ~/.vim/colors/molokai.vim ]; then
+      working_msg "Install vim color (molokai)"
+      curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
+    fi
+    if [ -e ~/.vim/colors/onedark.vim ]; then
+      working_msg "Install vim color (onedark)"
+      curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
+    fi
+  fi
   finish
 fi
 
 echo -n "composerをセットアップしますか?[y/n]  ->  "
 read input
-if [ $input != "y" -o $input != "Y" ]; then
+if [ $input = "y" -o $input = "Y" ]; then
   if type composer > /dev/null 2>&1 ; then
+  else
     working_msg "Create /usr/bin/composer"
     curl -sS https://getcomposer.org/installer | php
     sudo mv composer.phar /usr/bin/composer
