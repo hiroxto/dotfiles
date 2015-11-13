@@ -35,7 +35,7 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.oh-my-zsh ]; then
     working_msg "Install oh-my-zsh"
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     finish
   fi
 fi
@@ -45,8 +45,8 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.rbenv ]; then
     working_msg "Install rbenv"
-    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
+    git clone git@github.com:sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     finish
   fi
 fi
@@ -56,9 +56,9 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.phpenv ]; then
     working_msg "Install phpenv"
-    git clone https://github.com/CHH/phpenv.git /tmp/phpenv
+    git clone git@github.com:CHH/phpenv.git /tmp/phpenv
     /tmp/phpenv/bin/phpenv-install.sh
-    git clone https://github.com/CHH/php-build.git ~/.phpenv/plugins/php-build
+    git clone git@github.com:CHH/php-build.git ~/.phpenv/plugins/php-build
     rm -rf /tmp/phpenv
     finish
   fi
@@ -69,7 +69,7 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.pyenv ]; then
     working_msg "Install pyenv"
-    git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+    git clone git@github.com:yyuu/pyenv.git ~/.pyenv
     finish
   fi
 fi
@@ -79,7 +79,7 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.nano ]; then
     working_msg "Install nanorc"
-    git clone git://github.com/scopatz/nanorc ~/.nano
+    git clone git@github.com:scopatz/nanorc ~/.nano
     cat nanorc.nanorc >> ~/.nanorc
     finish
   fi
@@ -91,7 +91,7 @@ if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.vim/bundle ]; then
     working_msg "Install neobundle"
     mkdir -p ~/.vim/bundle
-    git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    git clone git@github.com:Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     finish
   fi
   if [ ! -e ~/.vim/colors ]; then
