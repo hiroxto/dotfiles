@@ -1,5 +1,4 @@
 ## Global gitignore
-!.gitkeep
 
 ## OS X
 .DS_Store
@@ -32,9 +31,10 @@ Thumbs.db
 
 ## Logs & Databases
 *.log
-.cache
 *.sqlite
 *.sqlite3
+*.sqlite-journal
+*.sqlite3-journal
 *.db
 
 ## Packages
@@ -69,3 +69,7 @@ debug.log
 npm-debug.log
 /node_modules/
 /bower_components/
+
+## Keep
+!.gitkeep
+!.keep
