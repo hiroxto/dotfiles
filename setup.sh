@@ -25,7 +25,6 @@ if [ $input = "y" -o $input = "Y" ]; then
   )
   for file in ${files[@]}; do
     working_msg "Link $file -> ~/$file"
-    #\cp -f $file ~/$file
     ln -sf ~/dotfiles/$file ~/$file
   done
   finish
@@ -122,10 +121,10 @@ if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.composer ]; then
     mkdir ~/.composer
   fi
-  working_msg "Move ./.composer/composer.json to ~/.composer/composer.json"
-  \cp -f ./.composer/composer.json ~/.composer/composer.json
-  working_msg "Move ./composer/composer.lock to ~/.composer/composer.lock"
-  \cp -f ./.composer/composer.lock ~/.composer/composer.lock
+  working_msg "Link ~/dotfiles/.composer/composer.json to ~/.composer/composer.json"
+  ln -sf ~/dotfiles/.composer/composer.json ~/.composer/composer.json
+  working_msg "Link ~/dotfiles/.composer/composer.lock to ~/.composer/composer.lock"
+  ln -sf ~/ditfiles/.composer/composer.lock ~/.composer/composer.lock
   working_msg "Install composer global package"
   composer g install
   finish
