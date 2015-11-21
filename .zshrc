@@ -7,7 +7,7 @@ ZSH_THEME="robbyrussell"
 # oh-my-zsh plugins
 plugins=(archlinux composer git golang gem heroku laravel5 node npm pip rails rake systemd ubuntu vagrant)
 
-export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:/usr/local/heroku/bin"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:$HOME/.crenv/bin:/usr/local/heroku/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,4 +50,5 @@ export GEM_HOME="$HOME/.gem/ruby/2.2.0/"
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
 eval "$(pyenv init -)"
+eval "$(crenv init -)"
 source ~/.nvm/nvm.sh

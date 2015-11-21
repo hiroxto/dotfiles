@@ -74,6 +74,17 @@ if [ $input = "y" -o $input = "Y" ]; then
   fi
 fi
 
+echo -n "crenvをインストールしますか?[y/n]  ->  "
+read input
+if [ $input = "y" -o $input = "Y" ]; then
+  if [ ! -e ~/.crenv ]; then
+    working_msg "Install crenv"
+    git clone git@github.com:pine613/crenv.git ~/.crenv
+    git clone git@github.com:pine613/crystal-build.git ~/.crenv/plugins/crystal-build
+    finish
+  fi
+fi
+
 echo -n "nvmをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
