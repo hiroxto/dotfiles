@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ $USER = root ];then
+  GIT_URL=git://github.com/
+else
+  GIT_URL=git@github.com:
+fi
+
 finish() {
   echo -e "\033[0;36mFinish!\033[0;39m"
 }
@@ -35,7 +41,7 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.oh-my-zsh ]; then
     working_msg "Install oh-my-zsh"
-    git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone ${GIT_URL}robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     finish
   fi
 fi
@@ -45,8 +51,8 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.rbenv ]; then
     working_msg "Install rbenv"
-    git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
-    git clone git@github.com:sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    git clone ${GIT_URL}sstephenson/rbenv.git ~/.rbenv
+    git clone ${GIT_URL}sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     finish
   fi
 fi
@@ -56,9 +62,9 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.phpenv ]; then
     working_msg "Install phpenv"
-    git clone git@github.com:CHH/phpenv.git /tmp/phpenv
+    git clone ${GIT_URL}CHH/phpenv.git /tmp/phpenv
     /tmp/phpenv/bin/phpenv-install.sh
-    git clone git@github.com:CHH/php-build.git ~/.phpenv/plugins/php-build
+    git clone ${GIT_URL}CHH/php-build.git ~/.phpenv/plugins/php-build
     rm -rf /tmp/phpenv
     finish
   fi
@@ -69,7 +75,7 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.pyenv ]; then
     working_msg "Install pyenv"
-    git clone git@github.com:yyuu/pyenv.git ~/.pyenv
+    git clone ${GIT_URL}yyuu/pyenv.git ~/.pyenv
     finish
   fi
 fi
@@ -79,8 +85,8 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.crenv ]; then
     working_msg "Install crenv"
-    git clone git@github.com:pine613/crenv.git ~/.crenv
-    git clone git@github.com:pine613/crystal-build.git ~/.crenv/plugins/crystal-build
+    git clone ${GIT_URL}pine613/crenv.git ~/.crenv
+    git clone ${GIT_URL}pine613/crystal-build.git ~/.crenv/plugins/crystal-build
     finish
   fi
 fi
@@ -90,7 +96,7 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.nvm ]; then
     working_msg "Install nvm"
-    git clone git@github.com:creationix/nvm.git ~/.nvm
+    git clone ${GIT_URL}creationix/nvm.git ~/.nvm
     finish
   fi
 fi
@@ -100,7 +106,7 @@ read input
 if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.nano ]; then
     working_msg "Install nanorc"
-    git clone git@github.com:scopatz/nanorc ~/.nano
+    git clone ${GIT_URL}scopatz/nanorc ~/.nano
     cat nanorc.nanorc >> ~/.nanorc
     finish
   fi
@@ -112,7 +118,7 @@ if [ $input = "y" -o $input = "Y" ]; then
   if [ ! -e ~/.vim/bundle ]; then
     working_msg "Install neobundle"
     mkdir -p ~/.vim/bundle
-    git clone git@github.com:Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    git clone ${GIT_URL}Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     finish
   fi
   if [ ! -e ~/.vim/colors ]; then
