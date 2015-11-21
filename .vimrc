@@ -16,58 +16,70 @@ set hidden
 " バックアップを作成しない
 set nobackup
 
-" bundle
+" Start NeoBundle
 set runtimepath+=~/.vim/bundle/neobundle.vim/
-" ここからNeobundle
 call neobundle#begin(expand('~/.vim/bundle/'))
-
-" 管理するプラグインを書く
-" neobundle自体をneobundleで管理
+" NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 " neocomplcache
 NeoBundle 'Shougo/neocomplcache.vim'
-
 " Editorconfig-Vim
 NeoBundle 'editorconfig/editorconfig-vim'
-
 " multiple-cursors
 NeoBundle 'terryma/vim-multiple-cursors'
-
 " syntastic
 NeoBundle 'scrooloose/syntastic'
-
 " Laravel Blade
 NeoBundle 'xsbeats/vim-blade'
-
 " Ruby
 NeoBundle 'vim-ruby/vim-ruby'
-
 " Ruby on Rails
 NeoBundle 'tpope/vim-rails'
-
 " CoffeeScript
 NeoBundle 'kchmck/vim-coffee-script'
-
 " JavaScript
 NeoBundle 'pangloss/vim-javascript'
-
 " Python
 NeoBundle 'hdima/python-syntax'
-
 " Golang
 NeoBundle 'fatih/vim-go'
-
 " html
 NeoBundle 'mattn/emmet-vim'
-
-" ここまでNeobundle
+" End NeoBundle
 call neobundle#end()
-
 filetype plugin indent on
-
 " 未インストールのプラグインがある時にインストールするかを尋ねる
 NeoBundleCheck
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : ''
+    \ }
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " CoffeeScript
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
