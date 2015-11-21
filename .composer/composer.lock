@@ -342,20 +342,20 @@
         },
         {
             "name": "laravel/installer",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/installer.git",
-                "reference": "c11ecb3e5c3275160dc5a916816f4f74d65d4fe8"
+                "reference": "705d1d3f1bc7fdd66d5b82267fbc46c86e0293b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/installer/zipball/c11ecb3e5c3275160dc5a916816f4f74d65d4fe8",
-                "reference": "c11ecb3e5c3275160dc5a916816f4f74d65d4fe8",
+                "url": "https://api.github.com/repos/laravel/installer/zipball/705d1d3f1bc7fdd66d5b82267fbc46c86e0293b5",
+                "reference": "705d1d3f1bc7fdd66d5b82267fbc46c86e0293b5",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "~4.0|~5.0",
+                "guzzlehttp/guzzle": "~4.0|~5.0|~6.0",
                 "symfony/console": "~2.3",
                 "symfony/process": "~2.3"
             },
@@ -382,7 +382,7 @@
             "keywords": [
                 "laravel"
             ],
-            "time": "2015-06-10 15:24:50"
+            "time": "2015-11-13 17:41:49"
         },
         {
             "name": "laravel/lumen-installer",
@@ -435,12 +435,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpyw/twhelp.git",
-                "reference": "6053f62137619a8978582feea7a5f8e2fc36346f"
+                "reference": "279adae99129688e2ac1680d4881cbdbf9907833"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpyw/twhelp/zipball/6053f62137619a8978582feea7a5f8e2fc36346f",
-                "reference": "6053f62137619a8978582feea7a5f8e2fc36346f",
+                "url": "https://api.github.com/repos/mpyw/twhelp/zipball/279adae99129688e2ac1680d4881cbdbf9907833",
+                "reference": "279adae99129688e2ac1680d4881cbdbf9907833",
                 "shasum": ""
             },
             "require": {
@@ -463,7 +463,7 @@
                 }
             ],
             "description": "Twitter OAuth CLI Helper supported by TwistOAuth.",
-            "time": "2015-08-27 09:53:53"
+            "time": "2015-11-14 18:46:14"
         },
         {
             "name": "myclabs/deep-copy",
@@ -977,16 +977,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "382c729a52b7ef682e94c73fd6868f5ee8116ba7"
+                "reference": "b28b029356e65091dfbf8c2bc4ef106ffece509e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/382c729a52b7ef682e94c73fd6868f5ee8116ba7",
-                "reference": "382c729a52b7ef682e94c73fd6868f5ee8116ba7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/b28b029356e65091dfbf8c2bc4ef106ffece509e",
+                "reference": "b28b029356e65091dfbf8c2bc4ef106ffece509e",
                 "shasum": ""
             },
             "require": {
@@ -1029,7 +1029,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-10-18 07:55:54"
+            "time": "2015-11-09 15:37:17"
         },
         {
             "name": "psy/psysh",
