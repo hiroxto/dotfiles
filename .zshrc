@@ -50,3 +50,4 @@ export GEM_HOME="$HOME/.gem/ruby/2.2.0/"
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
 eval "$(pyenv init -)"
+source ~/.nvm/nvm.sh

@@ -74,6 +74,16 @@ if [ $input = "y" -o $input = "Y" ]; then
   fi
 fi
 
+echo -n "nvmをインストールしますか?[y/n]  ->  "
+read input
+if [ $input = "y" -o $input = "Y" ]; then
+  if [ ! -e ~/.nvm ]; then
+    working_msg "Install nvm"
+    git clone git@github.com:creationix/nvm.git ~/.nvm
+    finish
+  fi
+fi
+
 echo -n "nanorcをセットアップしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
