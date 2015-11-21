@@ -24,8 +24,9 @@ if [ $input = "y" -o $input = "Y" ]; then
     .gemrc
   )
   for file in ${files[@]}; do
-    working_msg "Move $file to ~/$file"
-    \cp -f $file ~/$file
+    working_msg "Link $file -> ~/$file"
+    #\cp -f $file ~/$file
+    ln -sf ~/dotfiles/$file ~/$file
   done
   finish
 fi
