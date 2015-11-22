@@ -11,6 +11,6 @@ cd dotfiles
 
 # *env系の更新をする方法
 このリポジトリにある``update.sh``を実行。
-```sh
-curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | sh
+```bash
+curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
 ```
