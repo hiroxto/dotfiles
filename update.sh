@@ -6,6 +6,9 @@ dir=(
   "$HOME/.phpenv"
   "$HOME/.phpenv/plugins/php-build"
   "$HOME/.pyenv"
+  "$HOME/.crenv"
+  "$HOME/.crenv/plugins/crystal-build"
+  "$HOME/.nvm"
   "$HOME/.oh-my-zsh"
 )
 
