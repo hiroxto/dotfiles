@@ -10,6 +10,8 @@ dir=(
 )
 
 for i in ${dir[@]}; do
-  echo $i
-  git -C $i pull
+  if [ -e $i ]; then
+    echo $i
+    git -C $i pull
+  fi
 done
