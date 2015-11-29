@@ -36,6 +36,15 @@ if [ $input = "y" -o $input = "Y" ]; then
   finish
 fi
 
+echo -n "~/binのシンボリックリンクを作成しますか?[y/n]  ->  "
+read input
+if [ $input = "y" -o $input = "Y" ]; then
+  if [ ! -e ~/bin ]; then
+    ln -sf ~/dotfiles/bin ~/bin
+    finish
+  fi
+fi
+
 echo -n "oh-my-zshをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
