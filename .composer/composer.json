@@ -4,6 +4,7 @@
         "laravel/lumen-installer": "~1.0",
         "psy/psysh": "@stable",
         "mpyw/twhelp": "@dev",
-        "phpunit/phpunit": "5.0.*"
+        "phpunit/phpunit": "5.0.*",
+        "squizlabs/php_codesniffer": "*"
     }
 }
