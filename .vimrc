@@ -37,6 +37,10 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 " CoffeeScript
 NeoBundle 'kchmck/vim-coffee-script'
+" elixir
+NeoBundle 'elixir-lang/vim-elixir'
+" Crystal
+NeoBundle 'rhysd/vim-crystal'
 " JavaScript
 NeoBundle 'pangloss/vim-javascript'
 " Python
