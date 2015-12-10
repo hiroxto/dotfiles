@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # oh-my-zsh plugins
-plugins=(archlinux composer git golang gem heroku laravel5 node npm pip rails rake systemd ubuntu vagrant)
+plugins=(archlinux bundler composer git golang gem heroku laravel5 node npm pip rails rake systemd ubuntu vagrant)
 
 export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:$HOME/.crenv/bin:/usr/local/heroku/bin"
 
