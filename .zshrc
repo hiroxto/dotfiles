@@ -7,7 +7,7 @@ ZSH_THEME="robbyrussell"
 # oh-my-zsh plugins
 plugins=(archlinux bower bundler coffee composer gem git golang heroku laravel5 node npm nvm pip rails rake rbenv systemd ubuntu vagrant)
 
-export PATH="$PATH:$HOME/bin:/usr/local/bin:$(ruby -e 'print Gem.user_dir')/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:$HOME/.crenv/bin:/usr/local/heroku/bin"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:$HOME/.crenv/bin:/usr/local/heroku/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,8 +43,9 @@ setopt auto_cd
 ## rm *で確認しない
 setopt rm_star_silent
 
-## Ruby Gem
+## Ruby
 export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 ## *env
 eval "$(rbenv init -)"
