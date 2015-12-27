@@ -14,10 +14,15 @@ cd dotfiles
 ./setup.sh
 ```
 
-# *env系の更新をする方法
+# Update
 このリポジトリにある``update.sh``を実行。
 ```bash
+# Use bash
+bash ~/dotfiles/update.sh
+# Use curl & bash
 curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
+# Use wget & bash
+wget -O - https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
 ```
 
 ## License
