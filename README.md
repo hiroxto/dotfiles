@@ -4,24 +4,25 @@
 ![](https://img.shields.io/github/license/Hiroto-K/dotfiles.svg?style=flat-square)
 ![](https://img.shields.io/badge/platform-OS%20X%20|%20Linux-808080.svg?style=flat-square)
 
-MacとLinuxで使う設定ファイル等をまとめてセットアップする。
+This is a repository of my configuration files for Linux/Mac OS X.
 
-# install
-このリポジトリをクローンして``setup.sh``を実行。
+# Install
+Run ``bash setup.sh``, after clone this repository.
 ```sh
-git clone git://github.com/Hiroto-K/dotfiles
+git clone git@github.com:Hiroto-K/dotfiles.git
 cd dotfiles
-./setup.sh
+# Required : Bash
+bash setup.sh
 ```
 
 # Update
-このリポジトリにある``update.sh``を実行。
+Run ``bash update.sh``
 ```bash
-# Use bash
+# Use Bash
 bash ~/dotfiles/update.sh
-# Use curl & bash
+# Use cURL & Bash
 curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
-# Use wget & bash
+# Use Wget & Bash
 wget -O - https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
 ```
 
