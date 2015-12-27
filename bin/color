@@ -82,4 +82,3 @@ end
 while line = STDIN.gets
   STDOUT.print color_line(line)
 end
-
