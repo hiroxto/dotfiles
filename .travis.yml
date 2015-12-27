@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - "2.3.0"
+
+branches:
+  only:
+    - master
+
+before_script: bash .travis/before_script.sh
+
+script: bash .travis/script.sh
+
+notifications:
+  emails:
+    - hiro.yo.yo1610+travis-ci@gmail.com
+  on_success: never
+  on_failure: always
