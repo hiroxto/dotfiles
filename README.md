@@ -1,8 +1,6 @@
 # Hiroto-K/dotfiles
 
-[![](https://img.shields.io/travis/Hiroto-K/dotfiles/master.svg?style=flat-square)][travis]]
-[![](https://img.shields.io/github/license/Hiroto-K/dotfiles.svg?style=flat-square)][license]]
-[![](https://img.shields.io/badge/platform-OS%20X%20|%20Linux-808080.svg?style=flat-square)][platform]]
+![](https://img.shields.io/travis/Hiroto-K/dotfiles/master.svg?style=flat-square) ![](https://img.shields.io/github/license/Hiroto-K/dotfiles.svg?style=flat-square) ![](https://img.shields.io/badge/platform-OS%20X%20|%20Linux-808080.svg?style=flat-square)
 
 MacとLinuxで使う設定ファイル等をまとめてセットアップする。
 
