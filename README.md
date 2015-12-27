@@ -19,3 +19,6 @@ cd dotfiles
 ```bash
 curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
 ```
+
+## License
+[MIT License](https://github.com/Hiroto-K/dotfiles/blob/master/LICENSE "MIT License")
