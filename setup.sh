@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ $USER = root ];then
   GIT_URL=git://github.com/
