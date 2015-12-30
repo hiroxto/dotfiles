@@ -161,6 +161,8 @@ if [ $input = "y" -o $input = "Y" ]; then
   ln -sf ~/dotfiles/.composer/composer.json ~/.composer/composer.json
   working_msg "Link ~/dotfiles/.composer/composer.lock to ~/.composer/composer.lock"
   ln -sf ~/dotfiles/.composer/composer.lock ~/.composer/composer.lock
+  working_msg "Link ~/dotfiles/.composer/config.json to ~/.composer/config.json"
+  ln -sf ~/dotfiles/.composer/config.json ~/.composer/config.json
   working_msg "Install composer global package"
   composer g install
   finish
