@@ -4,25 +4,24 @@
 [![License](https://img.shields.io/github/license/Hiroto-K/dotfiles.svg?style=flat-square)](https://github.com/Hiroto-K/dotfiles/blob/master/LICENSE)
 ![](https://img.shields.io/badge/platform-OS%20X%20|%20Linux-808080.svg?style=flat-square)
 
-This repository is the repository of the configuration file of Unix/Linux OS.
+Unix/Linux OS用の設定ファイル。
 
-# Install
-Run ``bash setup.sh``, after clone this repository.
-```sh
+# インストール
+このリポジトリを``git clone``して``bash setup.sh``を実行。
+```bash
 git clone git@github.com:Hiroto-K/dotfiles.git
 cd dotfiles
-# Required : Bash
 bash setup.sh
 ```
 
-# Update
-Run ``bash update.sh``
+# 更新
+.env系(rbenv,phpenv..)をまとめて更新する方法
 ```bash
-# Use Bash
+# Bashのみを使用
 bash ~/dotfiles/update.sh
-# Use cURL & Bash
+# cURLとBashを使用
 curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
-# Use Wget & Bash
+# WgetとBashを使用
 wget -O - https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
 ```
 
