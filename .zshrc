@@ -47,6 +47,9 @@ setopt rm_star_silent
 export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
+## Crystal
+CRYSTAL_CACHE_DIR=$HOME/.crystal
+
 ## *env
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
