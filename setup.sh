@@ -28,6 +28,7 @@ if [ $input = "y" -o $input = "Y" ]; then
     .hgrc
     .hgignore_global
     .gemrc
+    .railsrc
   )
   for file in ${files[@]}; do
     working_msg "Link $file -> ~/$file"
