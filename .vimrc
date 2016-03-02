@@ -19,8 +19,8 @@ set hidden
 " バックアップを作成しない
 set nobackup
 
-" スワップファイルの場所
-set directory=~/.vim/tmp
+" スワップファイルを作らない
+set noswapfile
 
 " Start NeoBundle
 set runtimepath+=~/.vim/bundle/neobundle.vim/
