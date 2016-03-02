@@ -19,6 +19,9 @@ set hidden
 " バックアップを作成しない
 set nobackup
 
+" スワップファイルの場所
+set directory=~/.vim/tmp
+
 " Start NeoBundle
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
