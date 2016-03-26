@@ -56,5 +56,13 @@ eval "$(phpenv init -)"
 eval "$(pyenv init -)"
 eval "$(crenv init -)"
 source ~/.nvm/nvm.sh
-# added by travis gem
-[ -f /home/hiroto/.travis/travis.sh ] && source /home/hiroto/.travis/travis.sh
+
+## Travi CI gem
+if [ -f ~/.travis/travis.sh ];then
+  source ~/.travis/travis.sh
+fi
+
+## Local setting
+if [ -f ~/.zshrc.local ];then
+  source ~/.zshrc.local
+fi
