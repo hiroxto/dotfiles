@@ -18,7 +18,7 @@ export EDITOR="vim"
 export BROWSER="firefox"
 bindkey -e
 
-if type grc > /dev/null 2>&1 ; then
+if [ type grc > /dev/null 2>&1 ];then
   alias mount="grc mount"
   alias ifconfig="grc ifconfig"
   alias dig="grc dig"
@@ -44,8 +44,10 @@ setopt auto_cd
 setopt rm_star_silent
 
 ## Ruby
-export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+dir=`ruby -e 'print Gem.user_dir'`
+export GEM_HOME="$dir"
+export PATH="${dir}/bin:$PATH"
+unset dir
 
 ## Crystal
 CRYSTAL_CACHE_DIR=$HOME/.crystal
