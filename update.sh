@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=(
+dirs=(
   "$HOME/.rbenv"
   "$HOME/.rbenv/plugins/ruby-build"
   "$HOME/.phpenv"
@@ -12,9 +12,9 @@ dir=(
   "$HOME/.oh-my-zsh"
 )
 
-for i in ${dir[@]}; do
-  if [ -e $i ]; then
-    echo $i
-    git -C $i pull
+for dir in ${dirs[@]}; do
+  if [ -e $dir ]; then
+    echo $dir
+    git -C $dir pull
   fi
 done

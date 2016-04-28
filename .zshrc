@@ -11,13 +11,12 @@ export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.rb
 
 source $ZSH/oh-my-zsh.sh
 
-###  base  ###
-## 文字コード&言語
 export LANG=ja_JP.UTF-8
 export EDITOR="vim"
 export BROWSER="firefox"
 bindkey -e
 
+# grc使える環境でのみgrcで色をつける
 if [ type grc > /dev/null 2>&1 ];then
   alias mount="grc mount"
   alias ifconfig="grc ifconfig"
@@ -29,7 +28,7 @@ if [ type grc > /dev/null 2>&1 ];then
   alias gcc="grc gcc"
 fi
 
-###  utils  ###
+## エイリアス
 alias nano="nano -w"
 alias vi="vim"
 alias rmdir="rm -rf"
@@ -43,28 +42,28 @@ setopt auto_cd
 ## rm *で確認しない
 setopt rm_star_silent
 
-## Ruby
+## Ruby関連
 dir=`ruby -e 'print Gem.user_dir'`
 export GEM_HOME="$dir"
 export PATH="${dir}/bin:$PATH"
 unset dir
 
-## Crystal
+## Crystalのキャッシュディレクトリの設定
 CRYSTAL_CACHE_DIR=$HOME/.crystal
 
-## *env
+## *env系の実行
 eval "$(rbenv init -)"
 eval "$(phpenv init -)"
 eval "$(pyenv init -)"
 eval "$(crenv init -)"
 source ~/.nvm/nvm.sh
 
-## Travi CI gem
+## Travi CIのgemで入る補完ファイルがあったら読み込む
 if [ -f ~/.travis/travis.sh ];then
   source ~/.travis/travis.sh
 fi
 
-## Local setting
+## Localのみの設定があったら読み込む
 if [ -f ~/.zshrc.local ];then
   source ~/.zshrc.local
 fi
