@@ -168,3 +168,11 @@ if [ $input = "y" -o $input = "Y" ]; then
   composer g install
   finish
 fi
+
+echo -n "psyshをセットアップしますか?[y/n]  ->  "
+read input
+if [ $input = "y" -o $input = "Y" ]; then
+  working_msg "Link ~/dotfiles/.local/share/psysh/php_manual.sqlite to ~/.local/share/psysh/php_manual.sqlite"
+  ln -sf ~/dotfiles/.local/share/psysh/php_manual.sqlite ~/.local/share/psysh/php_manual.sqlite
+  finish
+fi
