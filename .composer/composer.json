@@ -5,7 +5,6 @@
         "psy/psysh": "@stable",
         "mpyw/twhelp": "@dev",
         "phpunit/phpunit": "5.0.*",
-        "squizlabs/php_codesniffer": "*",
-        "hirak/prestissimo": "^0.1.8"
+        "squizlabs/php_codesniffer": "*"
     }
 }
