@@ -16,4 +16,9 @@
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
-	required = true
+  required = true
+[alias]
+  amend = commit --amend
+  branches = branch -a
+  remotes = remote -v
+  tags = tag
