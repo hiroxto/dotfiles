@@ -15,7 +15,7 @@ end
 
 def git(repo)
   use_ssh = File.exist?(path("~/.ssh/GitHub/id_rsa"))
-  use_ssh ? "git@github.com:#{repo}" * "git://github.com/#{repo}"
+  use_ssh ? "git@github.com:#{repo}" : "git://github.com/#{repo}"
 end
 
 task("シンボリックリンクを作成") do
