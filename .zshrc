@@ -7,7 +7,7 @@ ZSH_THEME="robbyrussell"
 # oh-my-zsh plugins
 plugins=(archlinux bower bundler coffee composer gem git golang heroku laravel5 node npm nvm pip rails rake rbenv systemd ubuntu vagrant)
 
-export PATH="$PATH:$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:$HOME/.crenv/bin:/usr/local/heroku/bin"
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:$HOME/.crenv/bin:/usr/local/heroku/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,3 +67,6 @@ fi
 if [ -f ~/.zshrc.local ];then
   source ~/.zshrc.local
 fi
+
+## $PATHから重複したpathを削除する
+typeset -U path PATH
