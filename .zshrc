@@ -7,7 +7,7 @@ ZSH_THEME="robbyrussell"
 # oh-my-zsh plugins
 plugins=(archlinux bower bundler coffee composer gem git golang heroku laravel5 node npm nvm pip rails rake rbenv systemd ubuntu vagrant)
 
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.rbenv/bin:$HOME/.phpenv/bin:$HOME/.pyenv/bin:$HOME/.crenv/bin:/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.anyenv/bin:/usr/local/heroku/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,11 +52,7 @@ unset dir
 CRYSTAL_CACHE_DIR=$HOME/.crystal
 
 ## *env系の実行
-eval "$(rbenv init -)"
-eval "$(phpenv init -)"
-eval "$(pyenv init -)"
-eval "$(crenv init -)"
-source ~/.nvm/nvm.sh
+eval "$(anyenv init -)"
 
 ## Travi CIのgemで入る補完ファイルがあったら読み込む
 if [ -f ~/.travis/travis.sh ];then

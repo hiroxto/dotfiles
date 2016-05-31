@@ -56,59 +56,25 @@ if [ $input = "y" -o $input = "Y" ]; then
   fi
 fi
 
-echo -n "rbenvをインストールしますか?[y/n]  ->  "
+echo -n "anyenvをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
-  if [ ! -e ~/.rbenv ]; then
-    working_msg "Install rbenv"
-    git clone ${GIT_URL}sstephenson/rbenv.git ~/.rbenv
-    git clone ${GIT_URL}sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  if [ ! -e ~/.anyenv ]; then
+    working_msg "Install anyenv"
+    git clone ${GIT_URL}riywo/anyenv ~/.anyenv
+    exec $SHELL -l
     finish
   fi
 fi
 
-echo -n "phpenvをインストールしますか?[y/n]  ->  "
+echo -n "*envをインストールしますか?[y/n]  ->  "
 read input
 if [ $input = "y" -o $input = "Y" ]; then
-  if [ ! -e ~/.phpenv ]; then
-    working_msg "Install phpenv"
-    git clone ${GIT_URL}CHH/phpenv.git /tmp/phpenv
-    /tmp/phpenv/bin/phpenv-install.sh
-    git clone ${GIT_URL}CHH/php-build.git ~/.phpenv/plugins/php-build
-    rm -rf /tmp/phpenv
+  for name in rbenv phpenv pyenv crenv ndenv; do
+    working_msg "Install ${name}"
+    anyenv install -f $name
     finish
-  fi
-fi
-
-echo -n "pyenvをインストールしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
-  if [ ! -e ~/.pyenv ]; then
-    working_msg "Install pyenv"
-    git clone ${GIT_URL}yyuu/pyenv.git ~/.pyenv
-    finish
-  fi
-fi
-
-echo -n "crenvをインストールしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
-  if [ ! -e ~/.crenv ]; then
-    working_msg "Install crenv"
-    git clone ${GIT_URL}pine613/crenv.git ~/.crenv
-    git clone ${GIT_URL}pine613/crystal-build.git ~/.crenv/plugins/crystal-build
-    finish
-  fi
-fi
-
-echo -n "nvmをインストールしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
-  if [ ! -e ~/.nvm ]; then
-    working_msg "Install nvm"
-    git clone ${GIT_URL}creationix/nvm.git ~/.nvm
-    finish
-  fi
+  done
 fi
 
 echo -n "nanorcをセットアップしますか?[y/n]  ->  "
