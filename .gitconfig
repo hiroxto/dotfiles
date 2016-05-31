@@ -22,3 +22,5 @@
   branches = branch -a
   remotes = remote -v
   tags = tag
+[http]
+	sslVerify = false
