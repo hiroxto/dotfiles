@@ -42,17 +42,17 @@ setopt auto_cd
 ## rm *で確認しない
 setopt rm_star_silent
 
-## Ruby関連
-dir=`ruby -e 'print Gem.user_dir'`
-export GEM_HOME="$dir"
-export PATH="${dir}/bin:$PATH"
-unset dir
-
 ## Crystalのキャッシュディレクトリの設定
 CRYSTAL_CACHE_DIR=$HOME/.crystal
 
 ## *env系の実行
 eval "$(anyenv init -)"
+
+## Ruby gem
+dir=`ruby -e 'print Gem.user_dir'`
+export GEM_HOME="$dir"
+export PATH="${dir}/bin:$PATH"
+unset dir
 
 ## Travi CIのgemで入る補完ファイルがあったら読み込む
 if [ -f ~/.travis/travis.sh ];then
