@@ -6,23 +6,13 @@
 
 Unix/Linux OS用の設定ファイル。
 
-# インストール
+# Install
 このリポジトリを``git clone``して``bash setup.sh``を実行。
+
 ```bash
 git clone git@github.com:Hiroto-K/dotfiles.git
 cd dotfiles
 bash setup.sh
-```
-
-# 更新
-.env系(rbenv,phpenv..)をまとめて更新する方法
-```bash
-# Bashのみを使用
-bash ~/dotfiles/update.sh
-# cURLとBashを使用
-curl -Sslf https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
-# WgetとBashを使用
-wget -O - https://raw.githubusercontent.com/Hiroto-K/dotfiles/master/update.sh | bash
 ```
 
 ## License
