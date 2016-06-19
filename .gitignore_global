@@ -17,6 +17,12 @@ Thumbs.db
 ## Emacs
 *~
 
+## Visual Studio Code
+/.vscode/
+
+## JetBrains IDE
+/.idea/
+
 ## Compiled
 *.obj
 *.com
@@ -47,6 +53,9 @@ Thumbs.db
 *.gz
 *.iso
 
+## Sass
+/.sass-cache/
+
 ## Ruby
 *.gem
 *.rbc
@@ -69,6 +78,9 @@ debug.log
 npm-debug.log
 /node_modules/
 /bower_components/
+
+## Crystal
+/.crystal/
 
 ## Keep
 !.gitkeep
