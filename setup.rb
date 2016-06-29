@@ -53,6 +53,7 @@ task("anyenvをインストール") do
   next if File.exist?(path("~/.anyenv"))
   remote = git("riywo/anyenv")
   shell("git clone #{remote} ~/.anyenv")
+  shell("source ~/.zshrc")
 end
 
 task("*envをインストール") do
