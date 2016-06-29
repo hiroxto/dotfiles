@@ -7,11 +7,14 @@
 Unix/Linux OS用の設定ファイル。
 
 # Install
-このリポジトリを``git clone``して``bash setup.sh``を実行。
+このリポジトリを``git clone``してセットアップ用スクリプトを実行。
 
 ```bash
-git clone git@github.com:Hiroto-K/dotfiles.git
-cd dotfiles
+git clone git@github.com:Hiroto-K/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+# もしRuby 2.0以降が入っているならRubyで実行する
+ruby setup.rb
+# Rubyが古い、インストールされていない場合はbashを実行する
 bash setup.sh
 ```
 
