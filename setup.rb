@@ -76,7 +76,7 @@ task("vimをセットアップ") do
     shell("mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim")
     remote = git("Shougo/dein")
     shell("git clone #{remote} ~/.vim/dein/repos/github.com/Shougo/dein.vim")
-  end unless File.exist?(path("~/.vim/dein/"))
+  end unless File.exist?(path("~/.vim/dein/repos/github.com/Shougo/dein.vim"))
 
   colors = {
     molokai: {
