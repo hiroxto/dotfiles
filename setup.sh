@@ -95,6 +95,7 @@ begin "vimをセットアップ"
         base=`basename ${file}`
         link_to="~/.vim/userautoload/${name}/${base}"
         working_msg "Link ${file} to ${link_to}"
+        # Bug fix
         ln -sf ${file} ${link_to}
       done
     done
