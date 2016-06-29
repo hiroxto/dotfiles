@@ -22,61 +22,69 @@ set nobackup
 " スワップファイルを作らない
 set noswapfile
 
-" Start NeoBundle
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Start dein.vim
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(expand('~/.vim/dein'))
+
+" ここにプラグインを書く
+" dein.vim
+call dein#add('Shougo/dein.vim')
 
 " neocomplcache
-NeoBundle 'Shougo/neocomplcache.vim'
+call dein#add('Shougo/neocomplcache.vim')
 
 " Editorconfig-Vim
-NeoBundle 'editorconfig/editorconfig-vim'
+call dein#add('editorconfig/editorconfig-vim')
 
 " multiple-cursors
-NeoBundle 'terryma/vim-multiple-cursors'
+call dein#add('terryma/vim-multiple-cursors')
 
 " syntastic
-NeoBundle 'scrooloose/syntastic'
+call dein#add('scrooloose/syntastic')
 
 " Laravel Blade
-NeoBundle 'xsbeats/vim-blade'
+call dein#add('xsbeats/vim-blade')
 
 " Ruby
-NeoBundle 'vim-ruby/vim-ruby'
+call dein#add('vim-ruby/vim-ruby')
 
 " Ruby on Rails
-NeoBundle 'tpope/vim-rails'
+call dein#add('tpope/vim-rails')
 
 " CoffeeScript
-NeoBundle 'kchmck/vim-coffee-script'
+call dein#add('kchmck/vim-coffee-script')
 
 " elixir
-NeoBundle 'elixir-lang/vim-elixir'
+call dein#add('elixir-lang/vim-elixir')
 
 " Crystal
-NeoBundle 'rhysd/vim-crystal'
+call dein#add('rhysd/vim-crystal')
 
 " JavaScript
-NeoBundle 'pangloss/vim-javascript'
+call dein#add('pangloss/vim-javascript')
 
 " Python
-NeoBundle 'hdima/python-syntax'
+call dein#add('hdima/python-syntax')
 
 " Golang
-NeoBundle 'fatih/vim-go'
+call dein#add('fatih/vim-go')
 
 " html
-NeoBundle 'mattn/emmet-vim'
+call dein#add('mattn/emmet-vim')
 
-" End NeoBundle
-call neobundle#end()
+" End dein.vim
+call dein#end()
+
 filetype plugin indent on
 
-" 未インストールのプラグインがある時にインストールするかを尋ねる
-NeoBundleCheck
+" Check install
+if dein#check_install()
+  call dein#install()
+endif
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
