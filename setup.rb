@@ -79,13 +79,17 @@ task("vimをセットアップ") do
   end unless File.exist?(path("~/.vim/dein/repos/github.com/Shougo/dein.vim"))
 
   task(".vimrcをリンク") do
-    Dir.glob("./.vim/userautoload/*.vim")
-    .map {|f| path(f) }
-    .each do |f|
-      base = File.basename(f)
-      link_to = "~/.vim/userautoload/#{base}"
-      task("Link #{f} to #{link_to}") do
-        shell("ln -sf #{f} #{link_to}")
+    %w(
+      init
+      plugins
+    ).each do |name|
+      shell("mkdir -p ~/.vim/userautoload/#{name}")
+      Dir["./.vim/userautoload/#{name}/*.vim"].map {|f| path(f) }.each do |f|
+        base = File.basename(f)
+        link_to = "~/.vim/userautoload/#{name}/#{base}"
+        task("Link #{f} to #{link_to}") do
+          shell("ln -sf #{f} #{link_to}")
+        end
       end
     end
   end
