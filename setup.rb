@@ -72,11 +72,11 @@ task(".nanorcをセットアップ") do
 end
 
 task("vimをセットアップ") do
-  task("neobundleをインストール") do
-    remote = git("Shougo/neobundle.vim")
-    shell("mkdir -p ~/.vim/bundle")
-    shell("git clone #{remote} ~/.vim/bundle/neobundle.vim")
-  end unless File.exist?(path("~/.vim/bundle"))
+  task("dein.vimをインストール") do
+    shell("mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim")
+    remote = git("Shougo/dein")
+    shell("git clone #{remote} ~/.vim/dein/repos/github.com/Shougo/dein.vim")
+  end unless File.exist?(path("~/.vim/dein/"))
 
   colors = {
     molokai: {
