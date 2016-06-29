@@ -78,6 +78,18 @@ task("vimをセットアップ") do
     shell("git clone #{remote} ~/.vim/dein/repos/github.com/Shougo/dein.vim")
   end unless File.exist?(path("~/.vim/dein/repos/github.com/Shougo/dein.vim"))
 
+  task(".vimrcをリンク") do
+    Dir.glob("./.vim/userautoload/*.vim")
+    .map {|f| path(f) }
+    .each do |f|
+      base = File.basename(f)
+      link_to = "~/.vim/userautoload/#{base}"
+      task("Link #{f} to #{link_to}") do
+        shell("ln -sf #{f} #{link_to}")
+      end
+    end
+  end
+
   colors = {
     molokai: {
       url: "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim",
