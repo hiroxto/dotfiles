@@ -95,13 +95,13 @@ task("vimをセットアップ") do
   end
 
   colors = {
-    molokai: {
-      url: "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim",
-      path: path("~/.vim/colors/molokai.vim"),
+    :molokai => {
+      :url => "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim",
+      :path => path("~/.vim/colors/molokai.vim"),
     },
-    onedark: {
-      url: "https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim",
-      path: path("~/.vim/colors/onedark.vim"),
+    :onedark => {
+      :url => "https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim",
+      :path => path("~/.vim/colors/onedark.vim"),
     },
   }
 
