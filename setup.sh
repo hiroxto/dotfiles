@@ -6,6 +6,10 @@ else
   GIT_URL=git@github.com:
 fi
 
+begin() {
+  echo -e "\033[0;36m$1\033[0;39m"
+}
+
 finish() {
   echo -e "\033[0;36mFinish!\033[0;39m"
 }
@@ -14,131 +18,130 @@ working_msg() {
   echo -e "\033[0;37m$1\033[0;39m"
 }
 
-echo -n "ファイルを移動しますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
+begin "シンボリックリンクを作成"
   files=(
-    .zshrc
-    .vimrc
-    .tmux.conf
     .editorconfig
-    .nanorc
+    .gemrc
     .gitconfig
     .gitignore_global
-    .hgrc
     .hgignore_global
-    .gemrc
+    .hgrc
+    .nanorc
     .railsrc
+    .tmux.conf
+    .vimrc
+    .zshrc
   )
   for file in ${files[@]}; do
-    working_msg "Link $file -> ~/$file"
-    ln -sf ~/dotfiles/$file ~/$file
+    working_msg "Link ~/dotfiles/${file} to  ~/${file}"
+    ln -sf ~/dotfiles/${file} ~/${file}
   done
-  finish
-fi
+finish
 
-echo -n "~/binのシンボリックリンクを作成しますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
+begin "/binのシンボリックリンクを作成"
   if [ ! -e ~/bin ]; then
+    working_msg "Link ~/dotfiles/bin to ~/bin"
     ln -sf ~/dotfiles/bin ~/bin
-    finish
   fi
-fi
+finish
 
-echo -n "oh-my-zshをインストールしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
+begin "oh-my-zshをインストール"
   if [ ! -e ~/.oh-my-zsh ]; then
     working_msg "Install oh-my-zsh"
     git clone ${GIT_URL}robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    finish
   fi
-fi
+finish
 
-echo -n "anyenvをインストールしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
+begin "anyenvをインストール"
   if [ ! -e ~/.anyenv ]; then
     working_msg "Install anyenv"
     git clone ${GIT_URL}riywo/anyenv ~/.anyenv
     exec $SHELL -l
-    finish
   fi
-fi
+finish
 
-echo -n "*envをインストールしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
+begin "*envをインストール"
   for name in rbenv phpenv pyenv crenv ndenv; do
-    working_msg "Install ${name}"
-    anyenv install -f $name
+    begin "${name}をインストール"
+      if [ -f ~/.anyenv/envs/${name} ];then
+        working_msg "Install ${name}"
+        anyenv install -f ${name}
+      fi
     finish
   done
-fi
+finish
 
-echo -n "nanorcをセットアップしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
+begin ".nanorcをセットアップ"
   if [ ! -e ~/.nano ]; then
     working_msg "Install nanorc"
     git clone ${GIT_URL}scopatz/nanorc ~/.nano
     cat nanorc.nanorc >> ~/.nanorc
-    finish
   fi
-fi
+finish
 
-echo -n "vimをセットアップしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
-  if [ ! -e ~/.vim/bundle ]; then
-    working_msg "Install neobundle"
-    mkdir -p ~/.vim/bundle
-    git clone ${GIT_URL}Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-    finish
-  fi
-  if [ ! -e ~/.vim/colors ]; then
-    working_msg "Install vim color"
+begin "vimをセットアップ"
+  begin "dein.vimをインストール"
+    if [ ! -e ~/.vim/dein/repos/github.com/Shougo/dein.vim ];then
+    mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
+    git clone ${GIT_URL}Shougo/dein ~/.vim/dein/repos/github.com/Shougo/dein.vim
+    fi
+  finish
+
+  begin ".vimrcをリンク"
+    for name in init plugins;do
+      working_msg "Create ~/.vim/userautoload/${name} directory"
+      mkdir -p ~/.vim/userautoload/${name}
+      for file in `ls -1 ~/dotfiles/.vim/userautoload/${name}/*.vim`;do
+        base=`basename ${file}`
+        link_to="~/.vim/userautoload/${name}/${base}"
+        working_msg "Link ${file} to ${link_to}"
+        ln -sf ${file} ${link_to}
+      done
+    done
+  finish
+
+  begin "Vim cloorをセットアップ"
+    working_msg "Create ~/.vim/colors directory"
     mkdir -p ~/.vim/colors
-    if [ ! -e ~/.vim/colors/molokai.vim ]; then
-      working_msg "Install vim color (molokai)"
-      curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
-      finish
-    fi
-    if [ ! -e ~/.vim/colors/onedark.vim ]; then
-      working_msg "Install vim color (onedark)"
-      curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
-      finish
-    fi
-  fi
-fi
 
-echo -n "composerをセットアップしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
-  if [ ! type composer > /dev/null 2>&1 ]; then
-    working_msg "Create /usr/bin/composer"
-    curl -sS https://getcomposer.org/installer | php
-    sudo mv composer.phar /usr/bin/composer
-  fi
+    begin "Molokaiをインストール"
+      if [ ! -e ~/.vim/colors/molokai.vim ]; then
+        working_msg "Install molokai"
+        curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
+      fi
+    finish
+
+    begin "onedarkをインストール"
+      if [ ! -e ~/.vim/colors/onedark.vim ]; then
+        working_msg "Install onedark"
+        curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
+      fi
+    finish
+  finish
+finish
+
+begin "composerをセットアップ"
   if [ ! -e ~/.composer ]; then
+    working_msg "Create ~/.composer directory"
     mkdir ~/.composer
   fi
-  working_msg "Link ~/dotfiles/.composer/composer.json to ~/.composer/composer.json"
-  ln -sf ~/dotfiles/.composer/composer.json ~/.composer/composer.json
-  working_msg "Link ~/dotfiles/.composer/composer.lock to ~/.composer/composer.lock"
-  ln -sf ~/dotfiles/.composer/composer.lock ~/.composer/composer.lock
-  working_msg "Link ~/dotfiles/.composer/config.json to ~/.composer/config.json"
-  ln -sf ~/dotfiles/.composer/config.json ~/.composer/config.json
-  working_msg "Install composer global package"
-  composer g install
-  finish
-fi
 
-echo -n "psyshをセットアップしますか?[y/n]  ->  "
-read input
-if [ $input = "y" -o $input = "Y" ]; then
+  begin "composerの設定をリンク"
+    for file in composer.json composer.lock config.json;do
+      working_msg "Link ~/dotfiles/.composer/${file} to ~/.composer/${file}"
+      ln -sf ~/dotfiles/.composer/${file} ~/.composer/{$file}
+    done
+  finish
+
+  begin "composerのグローバルパッケージをインストール"
+    working_msg "Install composer global package"
+    composer g install
+  finish
+finish
+
+begin "psyshをセットアップ"
+  working_msg "Create ~/.local/share/psysh directory"
+  mkdir -p ~/.local/share/psysh/php_manual
   working_msg "Link ~/dotfiles/.local/share/psysh/php_manual.sqlite to ~/.local/share/psysh/php_manual.sqlite"
   ln -sf ~/dotfiles/.local/share/psysh/php_manual.sqlite ~/.local/share/psysh/php_manual.sqlite
-  finish
-fi
+finish
