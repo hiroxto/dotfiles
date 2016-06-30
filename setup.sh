@@ -92,7 +92,7 @@ begin "vimをセットアップ"
   begin "dein.vimをインストール"
     if [ ! -e ~/.vim/dein/repos/github.com/Shougo/dein.vim ];then
       mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
-      git clone ${GIT_URL}Shougo/dein ~/.vim/dein/repos/github.com/Shougo/dein.vim
+      git clone ${GIT_URL}Shougo/dein.vim ~/.vim/dein/repos/github.com/Shougo/dein.vim
     fi
   finish
 
