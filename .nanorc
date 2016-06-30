@@ -8,16 +8,7 @@ set smooth
 set tabsize 4
 
 ## nanorcの読み込み
-include "/usr/share/nano/php.nanorc"
-include "/usr/share/nano/ruby.nanorc"
-include "/usr/share/nano/python.nanorc"
-include "/usr/share/nano/java.nanorc"
-include "/usr/share/nano/c.nanorc"
-include "/usr/share/nano/objc.nanorc"
-include "/usr/share/nano/sh.nanorc"
-include "/usr/share/nano/perl.nanorc"
-include "/usr/share/nano/nanorc.nanorc"
-include "/usr/share/nano/html.nanorc"
-include "/usr/share/nano/css.nanorc"
-include "/usr/share/nano/xml.nanorc"
-include "/usr/share/nano/tex.nanorc"
+include "/usr/share/nano/*.nanorc"
+
+## Load scopatz/nanorc
+include "~/.nano/*.nanorc"
