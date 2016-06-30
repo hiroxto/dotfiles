@@ -144,7 +144,7 @@ finish
 
 begin "psyshをセットアップ"
   working_msg "Create ~/.local/share/psysh directory"
-  mkdir -p ~/.local/share/psysh/php_manual
+  mkdir -p ~/.local/share/psysh/
   working_msg "Link ~/dotfiles/.local/share/psysh/php_manual.sqlite to ~/.local/share/psysh/php_manual.sqlite"
   ln -sf ~/dotfiles/.local/share/psysh/php_manual.sqlite ~/.local/share/psysh/php_manual.sqlite
 finish
