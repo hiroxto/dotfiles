@@ -75,7 +75,6 @@ begin ".nanorcをセットアップ"
   if [ ! -e ~/.nano ]; then
     working_msg "Install nanorc"
     git clone ${GIT_URL}scopatz/nanorc ~/.nano
-    cat nanorc.nanorc >> ~/.nanorc
   fi
 finish
 
