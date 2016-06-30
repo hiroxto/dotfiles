@@ -38,6 +38,13 @@ begin "シンボリックリンクを作成"
   done
 finish
 
+begin "zshrcをセットアップ"
+  if [ ! -e ~/.zsh ]; then
+    working_msg "Link ~/dotfiles/.zsh to ~/.zsh"
+    ln -sf ~/dotfiles/.zsh ~/.zsh
+  fi
+finish
+
 begin "/binのシンボリックリンクを作成"
   if [ ! -e ~/bin ]; then
     working_msg "Link ~/dotfiles/bin to ~/bin"
