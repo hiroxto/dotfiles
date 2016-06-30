@@ -80,6 +80,9 @@ begin ".nanorcをセットアップ"
 finish
 
 begin "vimをセットアップ"
+  working_msg "Create ~/.vim directory"
+  mkdir -p ~/.vim
+
   begin "dein.vimをインストール"
     if [ ! -e ~/.vim/dein/repos/github.com/Shougo/dein.vim ];then
       mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
