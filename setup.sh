@@ -132,7 +132,7 @@ begin "composerをセットアップ"
   begin "composerの設定をリンク"
     for file in composer.json composer.lock config.json;do
       working_msg "Link ~/dotfiles/.composer/${file} to ~/.composer/${file}"
-      ln -sf ~/dotfiles/.composer/${file} ~/.composer/{$file}
+      ln -sf ~/dotfiles/.composer/${file} ~/.composer/${file}
     done
   finish
 
