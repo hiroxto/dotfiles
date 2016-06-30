@@ -88,17 +88,10 @@ begin "vimをセットアップ"
   finish
 
   begin ".vimrcをリンク"
-    for name in init plugins;do
-      working_msg "Create ~/.vim/userautoload/${name} directory"
-      mkdir -p ~/.vim/userautoload/${name}
-      for file in `ls -1 ~/dotfiles/.vim/userautoload/${name}/*.vim`;do
-        base=`basename ${file}`
-        link_to="~/.vim/userautoload/${name}/${base}"
-        working_msg "Link ${file} to ${link_to}"
-        # Bug fix
-        ln -sf ${file} ${link_to}
-      done
-    done
+    if [ ! -e ~/.vim/userautoload ]; then
+      working_msg "Link ~/dotfiles/.vim/userautoload to ~/.vim/userautoload"
+      ln -sf ~/dotfiles/.vim/userautoload ~/.vim/userautoload
+    fi
   finish
 
   begin "Vim cloorをセットアップ"
