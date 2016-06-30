@@ -45,7 +45,7 @@ begin "zshrcをセットアップ"
   fi
 finish
 
-begin "/binのシンボリックリンクを作成"
+begin "~/binのシンボリックリンクを作成"
   if [ ! -e ~/bin ]; then
     working_msg "Link ~/dotfiles/bin to ~/bin"
     ln -sf ~/dotfiles/bin ~/bin
