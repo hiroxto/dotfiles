@@ -78,6 +78,15 @@ begin "*envをインストール"
   done
 finish
 
+begin "anyenv-updateをインストール"
+  working_msg "Create ~/.anyenv/plugins directory"
+  mkdir -p ~/.anyenv/plugins
+  if [ ! -e ~/.anyenv/plugins/anyenv-update ];then
+    working_msg "Install anyenv-update"
+    git clone ${GIT_URL}znz/anyenv-update ~/.anyenv/plugins/anyenv-update
+  fi
+finish
+
 begin ".nanorcをセットアップ"
   if [ ! -e ~/.nano ]; then
     working_msg "Install nanorc"
