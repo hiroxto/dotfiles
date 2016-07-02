@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DOTFILES_PATH=`realpath ~/dotfiles`
+SETUP_FILE=`realpath ${DOTFILES_PATH}/setup.sh`
+
+message() {
+  echo -e "\033[0;32m${1}\033[0m"
+}
+
+if [ ! type git > /dev/null 2>&1 ];then
+  message "[Error] 'git' command not found"
+  message "Please install git in \$PATH"
+  exit 1
+fi
+
+message "Changed current directory to ${DOTFILES_PATH}"
+cd ${DOTFILES_PATH}
+
+message "Pull from github repository (Hiroto-K/dotfiles)"
+git pull
+
+message "Run setup script"
+bash ${SETUP_FILE}
+
+message "Successfully updated the dotfiles"
