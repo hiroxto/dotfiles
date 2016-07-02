@@ -20,9 +20,9 @@
 [alias]
   amend = commit --amend
   branches = branch -a
-  remotes = remote -v
-  tags = tag
   difff = diff --name-only
   diffs = diff --cached
+  remotes = remote -v
+  tags = tag
 [http]
 	sslVerify = false
