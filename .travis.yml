@@ -6,9 +6,12 @@ branches:
   only:
     - master
 
-before_script: bash .ci/before_script.sh
+before_script:
+  - ruby -v
 
-script: bash .ci/script.sh
+script:
+  - echo setup.sh
+  - bash -n setup.sh
 
 notifications:
   on_success: never
