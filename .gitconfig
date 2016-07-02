@@ -22,5 +22,7 @@
   branches = branch -a
   remotes = remote -v
   tags = tag
+  difff = diff --name-only
+  diffs = diff --cached
 [http]
 	sslVerify = false
