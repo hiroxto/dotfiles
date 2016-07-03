@@ -15,5 +15,12 @@ cd ~/dotfiles
 bash setup.sh
 ```
 
+# Update
+このリポジトリに入っている``pull-dotfiles``コマンドを使う。dotfiles本体とgit経由でインストールされるツール一式が更新されます。
+
+```bash
+pull-dotfiles
+```
+
 ## License
 [MIT License](https://github.com/Hiroto-K/dotfiles/blob/master/LICENSE "MIT License")
