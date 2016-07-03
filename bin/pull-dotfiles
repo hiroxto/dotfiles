@@ -3,8 +3,16 @@
 DOTFILES_PATH=`realpath ~/dotfiles`
 SETUP_FILE=`realpath ${DOTFILES_PATH}/setup.sh`
 
-message() {
+message () {
   echo -e "\033[0;32m${1}\033[0m"
+}
+
+update () {
+  message "Update ${1}"
+}
+
+success () {
+  message "Successfully updated the ${1}"
 }
 
 if [ ! type git > /dev/null 2>&1 ];then
@@ -13,13 +21,26 @@ if [ ! type git > /dev/null 2>&1 ];then
   exit 1
 fi
 
-message "Changed current directory to ${DOTFILES_PATH}"
-cd ${DOTFILES_PATH}
+update "dotfiles"
+  message "Changed current directory to ${DOTFILES_PATH}"
+  cd ${DOTFILES_PATH}
+  message "Pull from GitHub repository (Hiroto-K/dotfiles)"
+  git pull
+  message "Run setup script"
+  bash ${SETUP_FILE}
+success "dotfiles"
 
-message "Pull from github repository (Hiroto-K/dotfiles)"
-git pull
+update "oh-my-zsh"
+  message "Pull from GitHub repository (robbyrussell/oh-my-zsh)"
+  git -C ~/.oh-my-zsh/ pull
+success "oh-my-zsh"
 
-message "Run setup script"
-bash ${SETUP_FILE}
+update "anyenv"
+  message "Run 'anyenv update' command"
+  anyenv update
+success "anyenv"
 
-message "Successfully updated the dotfiles"
+update "nanorc"
+  message "Pull from GitHub repository (scopatz/nanorc)"
+  git -C ~/.nano/ pull
+success "nanorc"
