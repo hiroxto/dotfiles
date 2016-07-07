@@ -117,17 +117,22 @@ begin "vimをセットアップ"
     mkdir -p ~/.vim/colors
 
     begin "Molokaiをインストール"
-      if [ ! -e ~/.vim/colors/molokai.vim ]; then
-        working_msg "Install molokai"
-        curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
+      if [ -e ~/.vim/colors/molokai.vim ]; then
+        working_msg "Remove molokai file"
+        rm ~/.vim/colors/molokai.vim
       fi
+      working_msg "Install molokai"
+      curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
     finish
 
     begin "onedarkをインストール"
-      if [ ! -e ~/.vim/colors/onedark.vim ]; then
-        working_msg "Install onedark"
-        curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
+      if [ -e ~/.vim/colors/onedark.vim ]; then
+        working_msg "Remove onedark file"
+        rm ~/.vim/colors/onedark.vim
       fi
+      working_msg "Install onedark"
+      curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
+
     finish
   finish
 finish
