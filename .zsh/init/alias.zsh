@@ -8,6 +8,10 @@ alias mkdir="mkdir -p"
 alias cp="cp -i"
 alias mv="mv -i"
 
+# gitのalias
+alias gdf="git difff"
+alias gds="git diff"
+
 # grcが使える環境でのみgrcで色をつける設定
 if [ type grc > /dev/null 2>&1 ];then
   alias mount="grc mount"
