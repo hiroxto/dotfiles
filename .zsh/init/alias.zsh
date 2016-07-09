@@ -10,7 +10,7 @@ alias mv="mv -i"
 
 # gitのalias
 alias gdf="git difff"
-alias gds="git diff"
+alias gds="git diffs"
 
 # grcが使える環境でのみgrcで色をつける設定
 if [ type grc > /dev/null 2>&1 ];then
