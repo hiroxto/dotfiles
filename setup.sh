@@ -27,6 +27,7 @@ begin "シンボリックリンクを作成"
     .hgignore_global
     .hgrc
     .nanorc
+    .npmrc
     .railsrc
     .tmux.conf
     .vimrc
