@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6a69666574c527fd0806df3d301410c8",
-    "content-hash": "f5e3fbfea5056138953003e61c04c2e5",
+    "hash": "d90d2c133ef507d06660634b53d48084",
+    "content-hash": "85c12b7fc25cd5b82f0dd383e22f4179",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -95,7 +95,7 @@
             "time": "2015-06-14 21:17:01"
         },
         {
-            "name": "fabpot/php-cs-fixer",
+            "name": "friendsofphp/php-cs-fixer",
             "version": "v1.11.6",
             "source": {
                 "type": "git",
@@ -150,7 +150,6 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "abandoned": "friendsofphp/php-cs-fixer",
             "time": "2016-07-22 06:46:28"
         },
         {
@@ -326,25 +325,25 @@
         },
         {
             "name": "hirak/prestissimo",
-            "version": "0.1.18",
+            "version": "0.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hirak/prestissimo.git",
-                "reference": "84e9fb79ec18a4428c5a0c032eacac640d89be5d"
+                "reference": "3a9facbf4e1130f81eacf5a16a256186a3047dff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hirak/prestissimo/zipball/84e9fb79ec18a4428c5a0c032eacac640d89be5d",
-                "reference": "84e9fb79ec18a4428c5a0c032eacac640d89be5d",
+                "url": "https://api.github.com/repos/hirak/prestissimo/zipball/3a9facbf4e1130f81eacf5a16a256186a3047dff",
+                "reference": "3a9facbf4e1130f81eacf5a16a256186a3047dff",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "~1.0.0-alpha10",
+                "composer-plugin-api": "^1.0.0",
                 "ext-curl": "*",
-                "php": ">=5.3.2"
+                "php": "^5.3.2 || ^7.0"
             },
             "require-dev": {
-                "composer/composer": "1.0.0-alpha10",
+                "composer/composer": "1.0.0",
                 "phpunit/phpunit": "^4.8",
                 "squizlabs/php_codesniffer": "^2.5"
             },
@@ -373,7 +372,7 @@
                 "parallel",
                 "speedup"
             ],
-            "time": "2016-03-17 13:53:53"
+            "time": "2016-07-21 23:47:17"
         },
         {
             "name": "jakub-onderka/php-console-color",
