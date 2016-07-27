@@ -1,5 +1,9 @@
 {
-    "config": {},
+    "config": {
+        "prestissimo": {
+            "maxConnections": 10
+        }
+    },
     "repositories": {
         "packagist": {
             "type": "composer",
