@@ -7,11 +7,12 @@ branches:
     - master
 
 before_script:
+  - set -eu
   - ruby -v
 
 script:
-  - echo setup.sh
   - bash -n setup.sh
+  - bash -n bin/pull-dotfiles
 
 notifications:
   on_success: never
