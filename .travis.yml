@@ -7,7 +7,6 @@ branches:
     - master
 
 before_script:
-  - set -eu
   - ruby -v
 
 script:
