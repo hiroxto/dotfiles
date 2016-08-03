@@ -2,7 +2,7 @@
 syntax on
 
 " タイトル表示
-set title
+set notitle
 
 " 行表示
 set number
