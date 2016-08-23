@@ -8,3 +8,7 @@ export EDITOR="vim"
 export BROWSER="firefox"
 # Crystalのキャッシュディレクトリ
 export CRYSTAL_CACHE_DIR=$HOME/.crystal
+
+# Golang
+export GOPATH=~/go
+export PATH=$PATH:~/go/bin

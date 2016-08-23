@@ -12,7 +12,10 @@ call dein#begin(expand('~/.vim/dein'))
 " dein.vim
 call dein#add('Shougo/dein.vim')
 
-" neocomplcache
+" neocomplete.vim
+call dein#add('Shougo/neocomplete.vim')
+
+" neocomplcache.vim
 call dein#add('Shougo/neocomplcache.vim')
 
 " Editorconfig-Vim
