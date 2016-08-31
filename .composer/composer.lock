@@ -463,16 +463,16 @@
         },
         {
             "name": "laravel/installer",
-            "version": "v1.3.3",
+            "version": "v1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/installer.git",
-                "reference": "b0e87ee601bdd1132da42054d9462b9546ba5882"
+                "reference": "504bde5b25b29dbff9957ce073d40fc8d27a3a96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/installer/zipball/b0e87ee601bdd1132da42054d9462b9546ba5882",
-                "reference": "b0e87ee601bdd1132da42054d9462b9546ba5882",
+                "url": "https://api.github.com/repos/laravel/installer/zipball/504bde5b25b29dbff9957ce073d40fc8d27a3a96",
+                "reference": "504bde5b25b29dbff9957ce073d40fc8d27a3a96",
                 "shasum": ""
             },
             "require": {
@@ -503,7 +503,7 @@
             "keywords": [
                 "laravel"
             ],
-            "time": "2016-04-15 16:23:11"
+            "time": "2016-08-26 20:19:49"
         },
         {
             "name": "laravel/lumen-installer",
