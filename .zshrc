@@ -11,5 +11,7 @@ for file in `ls -1 ~/.zsh/custom/*.zsh`;do
   source $file
 done
 
+unset file
+
 # $PATHから重複したpathを削除する
 typeset -U path PATH
