@@ -5,6 +5,10 @@ if &compatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
+" git cloneのdepthオプションの設定
+" 1に設定
+let dein#types#git#clone_depth = 1
+
 " 開始
 call dein#begin(expand('~/.vim/dein'))
 
