@@ -6,7 +6,7 @@
 
 Unix/Linux OS用の設定ファイル。
 
-# Install
+## Install
 このリポジトリを``git clone``してセットアップ用スクリプトを実行。
 
 ```bash
@@ -15,7 +15,7 @@ cd ~/dotfiles
 bash setup.sh
 ```
 
-# Update
+## Update
 このリポジトリに入っている``pull-dotfiles``コマンドを使う。dotfiles本体とgit経由でインストールされるツール一式が更新されます。
 
 ```bash
