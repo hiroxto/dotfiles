@@ -3,7 +3,6 @@
         "laravel/installer": "~1.1",
         "laravel/lumen-installer": "~1.0",
         "psy/psysh": "@stable",
-        "mpyw/twhelp": "@dev",
         "phpunit/phpunit": "5.0.*",
         "phpspec/phpspec": "^2.5",
         "hirak/prestissimo": "^0.3.4",
