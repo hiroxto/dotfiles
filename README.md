@@ -10,13 +10,13 @@ Unix/Linux OS用の設定ファイル。
 このリポジトリを``git clone``してセットアップ用スクリプトを実行。
 
 ```bash
-git clone git@github.com:Hiroto-K/dotfiles.git ~/dotfiles
+git clone --depth 1 git@github.com:Hiroto-K/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 bash setup.sh
 ```
 
 ## Update
-このリポジトリに入っている``pull-dotfiles``コマンドを使う。dotfiles本体とgit経由でインストールされるツール一式が更新されます。
+このリポジトリに入っている``pull-dotfiles``コマンドを使う。dotfiles本体とgit経由でインストールされるツール一式が更新される。
 
 ```bash
 pull-dotfiles
