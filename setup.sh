@@ -56,14 +56,14 @@ finish
 begin "oh-my-zshをインストール"
   if [ ! -e ~/.oh-my-zsh ]; then
     working_msg "Install oh-my-zsh"
-    git clone ${GIT_URL}robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone --depth 1 ${GIT_URL}robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   fi
 finish
 
 begin "anyenvをインストール"
   if [ ! -e ~/.anyenv ]; then
     working_msg "Install anyenv"
-    git clone ${GIT_URL}riywo/anyenv ~/.anyenv
+    git clone --depth 1 ${GIT_URL}riywo/anyenv ~/.anyenv
     exec $SHELL -l
   fi
 finish
@@ -84,14 +84,14 @@ begin "anyenv-updateをインストール"
   mkdir -p ~/.anyenv/plugins
   if [ ! -e ~/.anyenv/plugins/anyenv-update ];then
     working_msg "Install anyenv-update"
-    git clone ${GIT_URL}znz/anyenv-update ~/.anyenv/plugins/anyenv-update
+    git clone --depth 1 ${GIT_URL}znz/anyenv-update ~/.anyenv/plugins/anyenv-update
   fi
 finish
 
 begin ".nanorcをセットアップ"
   if [ ! -e ~/.nano ]; then
     working_msg "Install nanorc"
-    git clone ${GIT_URL}scopatz/nanorc ~/.nano
+    git clone --depth 1 ${GIT_URL}scopatz/nanorc ~/.nano
   fi
 finish
 
@@ -102,7 +102,7 @@ begin "vimをセットアップ"
   begin "dein.vimをインストール"
     if [ ! -e ~/.vim/dein/repos/github.com/Shougo/dein.vim ];then
       mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
-      git clone ${GIT_URL}Shougo/dein.vim ~/.vim/dein/repos/github.com/Shougo/dein.vim
+      git clone --depth 1 ${GIT_URL}Shougo/dein.vim ~/.vim/dein/repos/github.com/Shougo/dein.vim
     fi
   finish
 
