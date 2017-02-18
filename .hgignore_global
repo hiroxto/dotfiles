@@ -1,10 +1,11 @@
 ## Global hgignore
 
+## Keep
+!.hgkeep
+!.keep
+
 ## OS X
 .DS_Store
-.DS_Store?
-._*
-tignore
 .Spotlight-V100
 .Trashes
 Icon?
@@ -81,7 +82,3 @@ npm-debug.log
 
 ## Crystal
 /.crystal/
-
-## Keep
-!.hgkeep
-!.keep
