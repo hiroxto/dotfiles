@@ -72,7 +72,7 @@ begin "anyenvをインストール"
   if [ ! -d ~/.anyenv ]; then
     working_msg "Install anyenv"
     git clone --depth 1 ${GIT_URL}riywo/anyenv ~/.anyenv
-    exec $SHELL -l
+    # exec $SHELL -l
   else
     working_msg "Skip"
   fi
