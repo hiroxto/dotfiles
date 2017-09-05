@@ -6,6 +6,8 @@ else
   GIT_URL=git://github.com/
 fi
 
+echo "GIT_URL=${GIT_URL}"
+
 begin() {
   echo -e "\033[0;36m$1\033[0;39m"
 }
@@ -40,40 +42,50 @@ begin "シンボリックリンクを作成"
 finish
 
 begin "zshrcをセットアップ"
-  if [ ! -e ~/.zsh ]; then
+  if [ ! -d ~/.zsh ]; then
     working_msg "Link ~/dotfiles/.zsh to ~/.zsh"
     ln -sf ~/dotfiles/.zsh ~/.zsh
+  else
+    working_msg "Skip"
   fi
 finish
 
 begin "~/binのシンボリックリンクを作成"
-  if [ ! -e ~/bin ]; then
+  if [ ! -d ~/bin ]; then
     working_msg "Link ~/dotfiles/bin to ~/bin"
     ln -sf ~/dotfiles/bin ~/bin
+  else
+    working_msg "Skip"
   fi
 finish
 
 begin "oh-my-zshをインストール"
-  if [ ! -e ~/.oh-my-zsh ]; then
+  if [ ! -d ~/.oh-my-zsh ]; then
     working_msg "Install oh-my-zsh"
     git clone --depth 1 ${GIT_URL}robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  else
+    working_msg "Skip"
   fi
 finish
 
 begin "anyenvをインストール"
-  if [ ! -e ~/.anyenv ]; then
+  if [ ! -d ~/.anyenv ]; then
     working_msg "Install anyenv"
     git clone --depth 1 ${GIT_URL}riywo/anyenv ~/.anyenv
     exec $SHELL -l
+  else
+    working_msg "Skip"
   fi
 finish
 
 begin "*envをインストール"
   for name in rbenv phpenv pyenv crenv ndenv; do
     begin "${name}をインストール"
-      if [ -f ~/.anyenv/envs/${name} ];then
+      if [ ! -d ~/.anyenv/envs/${name} ];then
         working_msg "Install ${name}"
         anyenv install -f ${name}
+      else
+        working_msg "Skip"
       fi
     finish
   done
@@ -85,6 +97,8 @@ begin "anyenv-updateをインストール"
   if [ ! -e ~/.anyenv/plugins/anyenv-update ];then
     working_msg "Install anyenv-update"
     git clone --depth 1 ${GIT_URL}znz/anyenv-update ~/.anyenv/plugins/anyenv-update
+  else
+    working_msg "Skip"
   fi
 finish
 
@@ -92,6 +106,8 @@ begin ".nanorcをセットアップ"
   if [ ! -e ~/.nano ]; then
     working_msg "Install nanorc"
     git clone --depth 1 ${GIT_URL}scopatz/nanorc ~/.nano
+  else
+    working_msg "Skip"
   fi
 finish
 
@@ -100,16 +116,20 @@ begin "vimをセットアップ"
   mkdir -p ~/.vim
 
   begin "dein.vimをインストール"
-    if [ ! -e ~/.vim/dein/repos/github.com/Shougo/dein.vim ];then
+    if [ ! -d ~/.vim/dein/repos/github.com/Shougo/dein.vim ];then
       mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
       git clone --depth 1 ${GIT_URL}Shougo/dein.vim ~/.vim/dein/repos/github.com/Shougo/dein.vim
+    else
+      working_msg "Skip"
     fi
   finish
 
   begin ".vimrcをリンク"
-    if [ ! -e ~/.vim/userautoload ]; then
+    if [ ! -d ~/.vim/userautoload ]; then
       working_msg "Link ~/dotfiles/.vim/userautoload to ~/.vim/userautoload"
       ln -sf ~/dotfiles/.vim/userautoload ~/.vim/userautoload
+    else
+      working_msg "Skip"
     fi
   finish
 
@@ -118,7 +138,7 @@ begin "vimをセットアップ"
     mkdir -p ~/.vim/colors
 
     begin "Molokaiをインストール"
-      if [ -e ~/.vim/colors/molokai.vim ]; then
+      if [ -f ~/.vim/colors/molokai.vim ]; then
         working_msg "Remove molokai file"
         rm ~/.vim/colors/molokai.vim
       fi
@@ -127,7 +147,7 @@ begin "vimをセットアップ"
     finish
 
     begin "onedarkをインストール"
-      if [ -e ~/.vim/colors/onedark.vim ]; then
+      if [ -f ~/.vim/colors/onedark.vim ]; then
         working_msg "Remove onedark file"
         rm ~/.vim/colors/onedark.vim
       fi
@@ -139,7 +159,7 @@ begin "vimをセットアップ"
 finish
 
 begin "composerをセットアップ"
-  if [ ! -e ~/.composer ]; then
+  if [ ! -d ~/.composer ]; then
     working_msg "Create ~/.composer directory"
     mkdir ~/.composer
   fi
