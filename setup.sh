@@ -43,16 +43,16 @@ finish
 
 begin "zshrcをセットアップ"
   if [ ! -d ${HOME}/.zsh ]; then
-    working_msg "Link ${HOME}/dotfiles/.zsh to ~/.zsh"
+    working_msg "Link ${HOME}/dotfiles/.zsh to ${HOME}/.zsh"
     ln -sf ${HOME}/dotfiles/.zsh ${HOME}/.zsh
   else
     working_msg "Skip"
   fi
 finish
 
-begin "~/binのシンボリックリンクを作成"
-  if [ ! -d ~/bin ]; then
-    working_msg "Link ~/dotfiles/bin to ~/bin"
+begin "${HOME}/binのシンボリックリンクを作成"
+  if [ ! -d ${HOME}/bin ]; then
+    working_msg "Link ${HOME}/dotfiles/bin to ${HOME}/bin"
     ln -sf ${HOME}/dotfiles/bin ${HOME}/bin
   else
     working_msg "Skip"
@@ -60,7 +60,7 @@ begin "~/binのシンボリックリンクを作成"
 finish
 
 begin "oh-my-zshをインストール"
-  if [ ! -d ~/.oh-my-zsh ]; then
+  if [ ! -d ${HOME}/.oh-my-zsh ]; then
     working_msg "Install oh-my-zsh"
     git clone --depth 1 ${GIT_URL}robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
   else
@@ -69,7 +69,7 @@ begin "oh-my-zshをインストール"
 finish
 
 begin "anyenvをインストール"
-  if [ ! -d ~/.anyenv ]; then
+  if [ ! -d ${HOME}/.anyenv ]; then
     working_msg "Install anyenv"
     git clone --depth 1 ${GIT_URL}riywo/anyenv ${HOME}/.anyenv
     # exec $SHELL -l
