@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f ~/.ssh/GitHub/id_rsa ];then
+if [ -f ${HOME}/.ssh/GitHub/id_rsa ];then
   GIT_URL=git@github.com:
 else
   GIT_URL=git://github.com/
@@ -36,15 +36,15 @@ begin "シンボリックリンクを作成"
     .zshrc
   )
   for file in ${files[@]}; do
-    working_msg "Link ~/dotfiles/${file} to  ~/${file}"
-    ln -sf ~/dotfiles/${file} ~/${file}
+    working_msg "Link ${HOME}/dotfiles/${file} to  ${HOME}/${file}"
+    ln -sf ${HOME}/dotfiles/${file} ${HOME}/${file}
   done
 finish
 
 begin "zshrcをセットアップ"
-  if [ ! -d ~/.zsh ]; then
-    working_msg "Link ~/dotfiles/.zsh to ~/.zsh"
-    ln -sf ~/dotfiles/.zsh ~/.zsh
+  if [ ! -d ${HOME}/.zsh ]; then
+    working_msg "Link ${HOME}/dotfiles/.zsh to ~/.zsh"
+    ln -sf ${HOME}/dotfiles/.zsh ${HOME}/.zsh
   else
     working_msg "Skip"
   fi
@@ -53,7 +53,7 @@ finish
 begin "~/binのシンボリックリンクを作成"
   if [ ! -d ~/bin ]; then
     working_msg "Link ~/dotfiles/bin to ~/bin"
-    ln -sf ~/dotfiles/bin ~/bin
+    ln -sf ${HOME}/dotfiles/bin ${HOME}/bin
   else
     working_msg "Skip"
   fi
@@ -62,7 +62,7 @@ finish
 begin "oh-my-zshをインストール"
   if [ ! -d ~/.oh-my-zsh ]; then
     working_msg "Install oh-my-zsh"
-    git clone --depth 1 ${GIT_URL}robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone --depth 1 ${GIT_URL}robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
   else
     working_msg "Skip"
   fi
@@ -71,7 +71,7 @@ finish
 begin "anyenvをインストール"
   if [ ! -d ~/.anyenv ]; then
     working_msg "Install anyenv"
-    git clone --depth 1 ${GIT_URL}riywo/anyenv ~/.anyenv
+    git clone --depth 1 ${GIT_URL}riywo/anyenv ${HOME}/.anyenv
     # exec $SHELL -l
   else
     working_msg "Skip"
@@ -81,7 +81,7 @@ finish
 begin "*envをインストール"
   for name in rbenv phpenv pyenv crenv ndenv; do
     begin "${name}をインストール"
-      if [ ! -d ~/.anyenv/envs/${name} ];then
+      if [ ! -d ${HOME}/.anyenv/envs/${name} ];then
         working_msg "Install ${name}"
         anyenv install -f ${name}
       else
@@ -92,82 +92,82 @@ begin "*envをインストール"
 finish
 
 begin "anyenv-updateをインストール"
-  working_msg "Create ~/.anyenv/plugins directory"
-  mkdir -p ~/.anyenv/plugins
-  if [ ! -e ~/.anyenv/plugins/anyenv-update ];then
+  working_msg "Create ${HOME}/.anyenv/plugins directory"
+  mkdir -p ${HOME}/.anyenv/plugins
+  if [ ! -e ${HOME}/.anyenv/plugins/anyenv-update ];then
     working_msg "Install anyenv-update"
-    git clone --depth 1 ${GIT_URL}znz/anyenv-update ~/.anyenv/plugins/anyenv-update
+    git clone --depth 1 ${GIT_URL}znz/anyenv-update ${HOME}/.anyenv/plugins/anyenv-update
   else
     working_msg "Skip"
   fi
 finish
 
 begin ".nanorcをセットアップ"
-  if [ ! -e ~/.nano ]; then
+  if [ ! -e ${HOME}/.nano ]; then
     working_msg "Install nanorc"
-    git clone --depth 1 ${GIT_URL}scopatz/nanorc ~/.nano
+    git clone --depth 1 ${GIT_URL}scopatz/nanorc ${HOME}/.nano
   else
     working_msg "Skip"
   fi
 finish
 
 begin "vimをセットアップ"
-  working_msg "Create ~/.vim directory"
-  mkdir -p ~/.vim
+  working_msg "Create ${HOME}/.vim directory"
+  mkdir -p ${HOME}/.vim
 
   begin "dein.vimをインストール"
-    if [ ! -d ~/.vim/dein/repos/github.com/Shougo/dein.vim ];then
-      mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
-      git clone --depth 1 ${GIT_URL}Shougo/dein.vim ~/.vim/dein/repos/github.com/Shougo/dein.vim
+    if [ ! -d ${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim ];then
+      mkdir -p ${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim
+      git clone --depth 1 ${GIT_URL}Shougo/dein.vim ${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim
     else
       working_msg "Skip"
     fi
   finish
 
   begin ".vimrcをリンク"
-    if [ ! -d ~/.vim/userautoload ]; then
-      working_msg "Link ~/dotfiles/.vim/userautoload to ~/.vim/userautoload"
-      ln -sf ~/dotfiles/.vim/userautoload ~/.vim/userautoload
+    if [ ! -d ${HOME}/.vim/userautoload ]; then
+      working_msg "Link ${HOME}/dotfiles/.vim/userautoload to ${HOME}/.vim/userautoload"
+      ln -sf ${HOME}/dotfiles/.vim/userautoload ${HOME}/.vim/userautoload
     else
       working_msg "Skip"
     fi
   finish
 
   begin "Vim cloorをセットアップ"
-    working_msg "Create ~/.vim/colors directory"
-    mkdir -p ~/.vim/colors
+    working_msg "Create ${HOME}/.vim/colors directory"
+    mkdir -p ${HOME}/.vim/colors
 
     begin "Molokaiをインストール"
-      if [ -f ~/.vim/colors/molokai.vim ]; then
+      if [ -f ${HOME}/.vim/colors/molokai.vim ]; then
         working_msg "Remove molokai file"
-        rm ~/.vim/colors/molokai.vim
+        rm ${HOME}/.vim/colors/molokai.vim
       fi
       working_msg "Install molokai"
-      curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ~/.vim/colors/molokai.vim
+      curl -sS https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim >> ${HOME}/.vim/colors/molokai.vim
     finish
 
     begin "onedarkをインストール"
-      if [ -f ~/.vim/colors/onedark.vim ]; then
+      if [ -f ${HOME}/.vim/colors/onedark.vim ]; then
         working_msg "Remove onedark file"
-        rm ~/.vim/colors/onedark.vim
+        rm ${HOME}/.vim/colors/onedark.vim
       fi
       working_msg "Install onedark"
-      curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ~/.vim/colors/onedark.vim
+      curl -sS https://raw.githubusercontent.com/geoffharcourt/one-dark.vim/master/colors/onedark.vim >> ${HOME}/.vim/colors/onedark.vim
 
     finish
   finish
 finish
 
 begin "composerをセットアップ"
-  if [ ! -d ~/.composer ]; then
-    working_msg "Create ~/.composer directory"
-    mkdir ~/.composer
+  if [ ! -d ${HOME}/.composer ]; then
+    working_msg "Create ${HOME}/.composer directory"
+    mkdir ${HOME}/.composer
   fi
 
   begin "composerの設定をリンク"
     for file in composer.json composer.lock config.json;do
-      working_msg "Link ~/dotfiles/.composer/${file} to ~/.composer/${file}"
-      ln -sf ~/dotfiles/.composer/${file} ~/.composer/${file}
+      working_msg "Link ${HOME}/dotfiles/.composer/${file} to ${HOME}/.composer/${file}"
+      ln -sf ${HOME}/dotfiles/.composer/${file} ${HOME}/.composer/${file}
     done
   finish
 
@@ -178,8 +178,8 @@ begin "composerをセットアップ"
 finish
 
 begin "psyshをセットアップ"
-  working_msg "Create ~/.local/share/psysh directory"
-  mkdir -p ~/.local/share/psysh/
-  working_msg "Link ~/dotfiles/.local/share/psysh/php_manual.sqlite to ~/.local/share/psysh/php_manual.sqlite"
-  ln -sf ~/dotfiles/.local/share/psysh/php_manual.sqlite ~/.local/share/psysh/php_manual.sqlite
+  working_msg "Create ${HOME}/.local/share/psysh directory"
+  mkdir -p ${HOME}/.local/share/psysh/
+  working_msg "Link ${HOME}/dotfiles/.local/share/psysh/php_manual.sqlite to ${HOME}/.local/share/psysh/php_manual.sqlite"
+  ln -sf ${HOME}/dotfiles/.local/share/psysh/php_manual.sqlite ${HOME}/.local/share/psysh/php_manual.sqlite
 finish
