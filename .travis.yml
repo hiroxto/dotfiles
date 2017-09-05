@@ -10,8 +10,7 @@ before_script:
   - ruby -v
 
 script:
-  - bash -n setup.sh
-  - bash -n bin/pull-dotfiles
+  - bash tests/test.sh
 
 notifications:
   on_success: never
