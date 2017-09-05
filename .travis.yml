@@ -10,11 +10,8 @@ before_script:
   - php -v
 
 script:
-  - cd ~/
-  - git clone --depth 1 https://github.com/Hiroto-K/dotfiles.git ~/dotfiles
-  - cd ~/dotfiles
-  - bash setup.sh
-  - bash tests/test.sh
+  - bash -n setup.sh
+  - bash -n bin/pull-dotfiles
 
 notifications:
   on_success: never
