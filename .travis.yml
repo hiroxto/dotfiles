@@ -11,7 +11,7 @@ before_script:
 
 script:
   - cd ~/
-  - git clone --depth 1 git@github.com:Hiroto-K/dotfiles.git ~/dotfiles
+  - git clone --depth 1 https://github.com/Hiroto-K/dotfiles.git ~/dotfiles
   - cd ~/dotfiles
   - bash setup.sh
   - bash tests/test.sh
