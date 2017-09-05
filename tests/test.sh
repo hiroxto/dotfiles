@@ -56,7 +56,7 @@ begin "Check 'bin/pull-dotfiles' syntax."
 finish
 
 begin "Run 'setup.sh'."
-  output=$(bash setup.sh)
+  bash setup.sh
 finish
 
 check_file_exists "${HOME}/.zshrc"

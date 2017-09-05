@@ -10,6 +10,10 @@ before_script:
   - ruby -v
 
 script:
+  - cd ~/
+  - git clone --depth 1 git@github.com:Hiroto-K/dotfiles.git ~/dotfiles
+  - cd ~/dotfiles
+  - bash setup.sh
   - bash tests/test.sh
 
 notifications:
