@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -e ~/.ssh/GitHub/id_rsa ];then
+if [ -f ~/.ssh/GitHub/id_rsa ];then
   GIT_URL=git@github.com:
 else
   GIT_URL=git://github.com/
