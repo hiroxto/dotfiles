@@ -1,3 +1,5 @@
+set backspace=indent,eol,start
+
 " ハイライトをオン
 syntax on
 
