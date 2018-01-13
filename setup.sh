@@ -58,15 +58,6 @@ begin "${HOME}/binのシンボリックリンクを作成"
   fi
 finish
 
-begin "oh-my-zshをインストール"
-  if [ ! -d ${HOME}/.oh-my-zsh ]; then
-    working_msg "Install oh-my-zsh"
-    git clone --depth 1 ${GIT_URL}robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
-  else
-    working_msg "Skip"
-  fi
-finish
-
 begin "preztoをインストール"
   if [ ! -d ${HOME}/.zprezto ]; then
     working_msg "Install zprezto"
