@@ -81,6 +81,17 @@ begin "preztoをインストール"
   else
     working_msg "Skip install zprezto"
   fi
+
+  working_msg "Delete ${HOME}/.zshrc"
+  rm "${HOME}/.zshrc"
+  working_msg "Link ${HOME}/dotfiles/.zshrc to  ${HOME}/.zshrc"
+  ln -sf "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
+
+  working_msg "Delete ${HOME}/.zpreztorc"
+  rm "${HOME}/.zpreztorc"
+  working_msg "Link ${HOME}/dotfiles/.zpreztorc to  ${HOME}/.zpreztorc"
+  ln -sf "${HOME}/dotfiles/.zpreztorc" "${HOME}/.zpreztorc"
+
 finish
 
 begin "anyenvをインストール"
