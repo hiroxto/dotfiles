@@ -1,3 +1,9 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+
 # $PATHを設定
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.anyenv/bin:/usr/local/heroku/bin:$PATH"
 
