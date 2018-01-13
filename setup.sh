@@ -68,6 +68,15 @@ begin "oh-my-zshをインストール"
   fi
 finish
 
+begin "preztoをインストール"
+  if [ ! -d ${HOME}/.zprezto ]; then
+    working_msg "Install zprezto"
+    git clone --depth 1 ${GIT_URL}sorin-ionescu/prezto.git ${HOME}/.zprezto
+  else
+    working_msg "Skip install zprezto"
+  fi
+finish
+
 begin "anyenvをインストール"
   if [ ! -d ${HOME}/.anyenv ]; then
     working_msg "Install anyenv"
