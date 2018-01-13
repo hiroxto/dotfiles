@@ -7,12 +7,12 @@
 Unix/Linux OS用の設定ファイル。
 
 ## Install
-このリポジトリを``git clone``してセットアップ用スクリプトを実行。
+このリポジトリを``git clone``してセットアップ用スクリプトを実行。セットアップ用スクリプトは``zsh``を使用して実行。
 
 ```bash
 git clone --depth 1 git@github.com:Hiroto-K/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-bash setup.sh
+zsh setup.sh
 ```
 
 ## Update
