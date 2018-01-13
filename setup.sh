@@ -72,6 +72,12 @@ begin "preztoをインストール"
   if [ ! -d ${HOME}/.zprezto ]; then
     working_msg "Install zprezto"
     git clone --depth 1 --recursive ${GIT_URL}sorin-ionescu/prezto.git ${HOME}/.zprezto
+
+    working_msg "Link zprezto config files"
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+      ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done
   else
     working_msg "Skip install zprezto"
   fi
