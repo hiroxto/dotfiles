@@ -33,7 +33,6 @@ begin "シンボリックリンクを作成"
     .railsrc
     .tmux.conf
     .vimrc
-    .zshrc
   )
   for file in ${files[@]}; do
     working_msg "Link ${HOME}/dotfiles/${file} to  ${HOME}/${file}"
