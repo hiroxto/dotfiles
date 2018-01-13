@@ -6,6 +6,10 @@ branches:
   only:
     - master
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install zsh
+
 before_script:
   - php -v
 
