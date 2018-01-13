@@ -27,7 +27,7 @@ update "dotfiles"
   message "Pull from GitHub repository (Hiroto-K/dotfiles)"
   git pull
   message "Run setup script"
-  bash ${SETUP_FILE}
+  zsh ${SETUP_FILE}
 success "dotfiles"
 
 update "prezto"
