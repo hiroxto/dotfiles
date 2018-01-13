@@ -78,6 +78,11 @@ begin "preztoをインストール"
     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
       ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
     done
+
+    working_msg "Delete ${HOME}/.zshrc"
+    rm "${HOME}/.zshrc"
+    working_msg "Link ${HOME}/dotfiles/.zshrc to  ${HOME}/.zshrc"
+    ln -sf "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
   else
     working_msg "Skip install zprezto"
   fi
