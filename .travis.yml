@@ -10,8 +10,8 @@ before_script:
   - php -v
 
 script:
-  - bash -n setup.sh
-  - bash -n bin/pull-dotfiles
+  - zsh -n setup.sh
+  - zsh -n bin/pull-dotfiles
 
 notifications:
   on_success: never
