@@ -33,7 +33,6 @@ begin "シンボリックリンクを作成"
     .railsrc
     .tmux.conf
     .vimrc
-    .zshrc
   )
   for file in ${files[@]}; do
     working_msg "Link ${HOME}/dotfiles/${file} to  ${HOME}/${file}"
@@ -59,13 +58,40 @@ begin "${HOME}/binのシンボリックリンクを作成"
   fi
 finish
 
-begin "oh-my-zshをインストール"
-  if [ ! -d ${HOME}/.oh-my-zsh ]; then
-    working_msg "Install oh-my-zsh"
-    git clone --depth 1 ${GIT_URL}robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
+begin "preztoをインストール"
+  if [ ! -d ${HOME}/.zprezto ]; then
+    working_msg "Install zprezto"
+    git clone --depth 1 --recursive ${GIT_URL}sorin-ionescu/prezto.git ${HOME}/.zprezto
+
+    working_msg "Link zprezto config files"
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+      ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done
+
+    working_msg "Delete ${HOME}/.zshrc"
+    rm "${HOME}/.zshrc"
+    working_msg "Link ${HOME}/dotfiles/.zshrc to  ${HOME}/.zshrc"
+    ln -sf "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
+
+    working_msg "Delete ${HOME}/.zpreztorc"
+    rm "${HOME}/.zpreztorc"
+    working_msg "Link ${HOME}/dotfiles/.zpreztorc to  ${HOME}/.zpreztorc"
+    ln -sf "${HOME}/dotfiles/.zpreztorc" "${HOME}/.zpreztorc"
   else
-    working_msg "Skip"
+    working_msg "Skip install zprezto"
   fi
+
+  working_msg "Delete ${HOME}/.zshrc"
+  rm "${HOME}/.zshrc"
+  working_msg "Link ${HOME}/dotfiles/.zshrc to  ${HOME}/.zshrc"
+  ln -sf "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
+
+  working_msg "Delete ${HOME}/.zpreztorc"
+  rm "${HOME}/.zpreztorc"
+  working_msg "Link ${HOME}/dotfiles/.zpreztorc to  ${HOME}/.zpreztorc"
+  ln -sf "${HOME}/dotfiles/.zpreztorc" "${HOME}/.zpreztorc"
+
 finish
 
 begin "anyenvをインストール"

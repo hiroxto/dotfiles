@@ -27,13 +27,15 @@ update "dotfiles"
   message "Pull from GitHub repository (Hiroto-K/dotfiles)"
   git pull
   message "Run setup script"
-  bash ${SETUP_FILE}
+  zsh ${SETUP_FILE}
 success "dotfiles"
 
-update "oh-my-zsh"
-  message "Pull from GitHub repository (robbyrussell/oh-my-zsh)"
-  git -C ~/.oh-my-zsh/ pull
-success "oh-my-zsh"
+update "prezto"
+  message "Pull from GitHub repository (sorin-ionescu/prezto)"
+  cd "${HOME}/.zprezto"
+  git pull
+  git submodule update --init --recursive
+success "prezto"
 
 update "anyenv"
   message "Run 'anyenv update' command"

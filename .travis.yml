@@ -6,12 +6,16 @@ branches:
   only:
     - master
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install zsh
+
 before_script:
   - php -v
 
 script:
-  - bash -n setup.sh
-  - bash -n bin/pull-dotfiles
+  - zsh -n setup.sh
+  - zsh -n bin/pull-dotfiles
 
 notifications:
   on_success: never
