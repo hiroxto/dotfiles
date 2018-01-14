@@ -4,6 +4,8 @@
 export LANG=ja_JP.UTF-8
 # エディター
 export EDITOR="vim"
+export VISUAL="vim"
+
 # ブラウザ
 export BROWSER="firefox"
 # Crystalのキャッシュディレクトリ
