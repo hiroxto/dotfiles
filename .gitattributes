@@ -1,0 +1,2 @@
+* text=auto
+*.sqlite -diff -text
