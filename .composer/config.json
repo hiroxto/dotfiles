@@ -1,7 +1,7 @@
 {
     "config": {
         "prestissimo": {
-            "maxConnections": 10
+            "maxConnections": 20
         }
     },
     "repositories": {
