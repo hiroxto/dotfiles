@@ -2,7 +2,6 @@
 
 [![Build status](https://img.shields.io/travis/hiroto-k/dotfiles/master.svg?style=flat-square)](https://travis-ci.org/hiroto-k/dotfiles)
 [![License](https://img.shields.io/github/license/hiroto-k/dotfiles.svg?style=flat-square)](https://github.com/hiroto-k/dotfiles/blob/master/LICENSE)
-![](https://img.shields.io/badge/platform-OS%20X%20|%20Linux-808080.svg?style=flat-square)
 
 Unix/Linux OS用の設定ファイル。
 
