@@ -24,7 +24,7 @@ fi
 update "dotfiles"
   message "Changed current directory to ${DOTFILES_PATH}"
   cd ${DOTFILES_PATH}
-  message "Pull from GitHub repository (Hiroto-K/dotfiles)"
+  message "Pull from GitHub repository (hiroto-k/dotfiles)"
   git pull
   message "Run setup script"
   zsh ${SETUP_FILE}
