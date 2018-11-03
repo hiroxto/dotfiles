@@ -77,6 +77,7 @@ pip-delete-this-directory.txt
 ## Node.js
 debug.log
 npm-debug.log
+yarn-error.log
 /node_modules/
 /bower_components/
 
