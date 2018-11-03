@@ -1,8 +1,17 @@
-## Global gitignore
+# Global gitignore
 
-## Keep
+# Keep
 !.gitkeep
 !.keep
+
+# local
+.env
+
+# etc
+
+.vagrant/
+
+# OS
 
 ## macOS
 .DS_Store
@@ -23,6 +32,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+## Linux OS
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
 ## Windows OS
 Thumbs.db
 ehthumbs.db
@@ -38,19 +54,82 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 
-## Vim
-*.swp
 
-## Emacs
-*~
-
-## Visual Studio Code
-/.vscode/
+# Editor OR IDEA
 
 ## JetBrains IDE
 /.idea/
 
-## Compiled
+## Visual Studio Code
+/.vscode/
+
+## Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+## Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.org-id-locations
+*_archive
+*_flymake.*
+
+
+# Lang
+
+## Ruby
+*.gem
+*.rbc
+/.bundle/
+/vendor/
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+.ruby-version
+.rvmrc
+
+## PHP
+/vendor/
+composer.phar
+.php-version
+
+## Python
+pip-log.txt
+pip-delete-this-directory.txt
+.python-version
+__pycache__/
+*.py[cod]
+*$py.class
+
+## Node.js
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/node_modules/
+/bower_components/
+
+## Crystal
+/.crystal/
+
+
+# Compiled
 *.obj
 *.com
 *.class
@@ -62,7 +141,8 @@ $RECYCLE.BIN/
 *.lib
 *.a
 
-## Logs & Databases
+
+# Logs & Databases
 *.log
 *.sqlite
 *.sqlite3
@@ -70,7 +150,8 @@ $RECYCLE.BIN/
 *.sqlite3-journal
 *.db
 
-## Packages
+
+# Packages
 *.zip
 *.jar
 *.rar
@@ -79,33 +160,3 @@ $RECYCLE.BIN/
 *.dmg
 *.gz
 *.iso
-
-## Sass
-/.sass-cache/
-
-## Ruby
-*.gem
-*.rbc
-/.bundle/
-/vendor/
-.ruby-version
-
-## PHP
-/vendor/
-composer.phar
-.php-version
-
-## Python
-pip-log.txt
-pip-delete-this-directory.txt
-.python-version
-
-## Node.js
-debug.log
-npm-debug.log
-yarn-error.log
-/node_modules/
-/bower_components/
-
-## Crystal
-/.crystal/
