@@ -6,6 +6,7 @@
 Unix/Linux OSとmacOS用の設定ファイル。
 
 ## Install
+
 このリポジトリを``git clone``してセットアップ用スクリプトを実行。セットアップ用スクリプトは``zsh``を使用して実行。
 
 ```bash
@@ -15,6 +16,7 @@ zsh setup.sh
 ```
 
 ## Update
+
 このリポジトリに入っている``pull-dotfiles``コマンドを使う。dotfiles本体とgit経由でインストールされるツール一式が更新される。
 
 ```bash
@@ -22,4 +24,5 @@ pull-dotfiles
 ```
 
 ## License
+
 [MIT License](https://github.com/hiroto-k/dotfiles/blob/master/LICENSE "MIT License")
