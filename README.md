@@ -1,7 +1,7 @@
 # dotfiles
 
-[![Build status](https://img.shields.io/travis/hiroto-k/dotfiles/master.svg?style=flat-square)](https://travis-ci.org/hiroto-k/dotfiles)
-[![License](https://img.shields.io/github/license/hiroto-k/dotfiles.svg?style=flat-square)](https://github.com/hiroto-k/dotfiles/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/hiroto-k/dotfiles.svg?branch=master)](https://travis-ci.org/hiroto-k/dotfiles)
+[![License](https://img.shields.io/github/license/hiroto-k/dotfiles.svg)](https://github.com/hiroto-k/dotfiles/blob/master/LICENSE)
 
 Unix/Linux OS用の設定ファイル。
 
