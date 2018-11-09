@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/hiroto-k/dotfiles.svg?branch=master)](https://travis-ci.org/hiroto-k/dotfiles)
 [![License](https://img.shields.io/github/license/hiroto-k/dotfiles.svg)](https://github.com/hiroto-k/dotfiles/blob/master/LICENSE)
 
-Unix/Linux OS用の設定ファイル。
+Unix/Linux OSとmacOS用の設定ファイル。
 
 ## Install
 このリポジトリを``git clone``してセットアップ用スクリプトを実行。セットアップ用スクリプトは``zsh``を使用して実行。
