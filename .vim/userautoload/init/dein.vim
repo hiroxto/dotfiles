@@ -22,9 +22,6 @@ call dein#add('Shougo/neocomplete.vim')
 " Editorconfig-Vim
 call dein#add('editorconfig/editorconfig-vim')
 
-" multiple-cursors
-call dein#add('terryma/vim-multiple-cursors')
-
 " syntastic
 call dein#add('scrooloose/syntastic')
 
@@ -39,9 +36,6 @@ call dein#add('tpope/vim-rails')
 
 " CoffeeScript
 call dein#add('kchmck/vim-coffee-script')
-
-" elixir
-call dein#add('elixir-lang/vim-elixir')
 
 " Crystal
 call dein#add('rhysd/vim-crystal')
