@@ -10,7 +10,12 @@ Unix/Linux OSとmacOS用の設定ファイル。
 このリポジトリを``git clone``してセットアップ用スクリプトを実行。セットアップ用スクリプトは``zsh``を使用して実行。
 
 ```bash
+# ssh
 git clone --depth 1 git@github.com:hiroto-k/dotfiles.git ~/dotfiles
+
+# https
+git clone --depth 1 https://github.com/hiroto-k/dotfiles.git ~/dotfiles
+
 cd ~/dotfiles
 zsh setup.sh
 ```
