@@ -22,5 +22,11 @@ for file in ${files[@]}; do
     from="${HOME}/dotfiles/${file}"
     to="${HOME}/${file}"
     echo "Link ${from} to ${to}"
-    ln -sf ${from} ${to}
+
+    if [ -d ${to} ]; then
+        echo "Skip"
+    else
+        echo "Link ${from} to ${to}"
+        ln -sf ${from} ${to}
+    fi
 done
