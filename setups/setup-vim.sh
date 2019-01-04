@@ -31,7 +31,7 @@ echo "Create ${vim_colors_dir} directory"
 mkdir -p ${vim_colors_dir}
 
 echo "Install the molokai color"
-molokai_color_file="${molokai_color_file}"
+molokai_color_file="${HOME}/.vim/colors/molokai.vim"
 if [ -f ${molokai_color_file} ]; then
     echo "Remove the old molokai file"
     rm ${molokai_color_file}
