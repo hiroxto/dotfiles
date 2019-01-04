@@ -5,7 +5,7 @@ fi
 
 
 # $PATHを設定
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$HOME/.anyenv/bin:/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/local/heroku/bin:$PATH"
 
 # 優先的に読み込む設定
 for file in `ls -1 ~/.zsh/init/*.zsh`;do
