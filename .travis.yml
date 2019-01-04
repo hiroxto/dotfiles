@@ -14,7 +14,7 @@ before_script:
   - php -v
 
 script:
-  - zsh -n setup.sh
+  - zsh -n setup.zsh
   - zsh -n bin/pull-dotfiles
 
 notifications :
