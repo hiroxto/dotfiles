@@ -11,11 +11,11 @@ mkdir -p ${vim_dir}
 
 echo "Install the dein.vim"
 dein_vim_dir="${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim"
-if [ ! -d ${dein_vim_dir} ];then
+if [ -d ${dein_vim_dir} ];then
+    echo "Skip"
+else
     mkdir -p ${dein_vim_dir}
     git clone --depth 1 https://github.com/Shougo/dein.vim ${dein_vim_dir}
-else
-    echo "Skip"
 fi
 
 echo "Link userautoload"

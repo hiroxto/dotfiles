@@ -7,7 +7,7 @@ echo "Setup composer configs"
 composer_dir="${HOME}/.composer"
 
 echo "Create the ${composer_dir} directory"
-mkdir ${composer_dir}
+mkdir -p ${composer_dir}
 
 echo "Link the composer files."
 for file in composer.json composer.lock config.json;do

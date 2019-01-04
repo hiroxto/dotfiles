@@ -12,7 +12,9 @@ ln -sf ${link_from} ${zsh_dir}
 
 echo "Install the prezto"
 zprezto_dir="${HOME}/.zprezto"
-if [ ! -d ${zprezto_dir} ]; then
+if [ -d ${zprezto_dir} ]; then
+    echo "Skip install zprezto"
+else
     git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto ${zprezto_dir}
 
     echo "Link zprezto config files"
@@ -20,8 +22,6 @@ if [ ! -d ${zprezto_dir} ]; then
     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
         ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
     done
-else
-    echo "Skip install zprezto"
 fi
 
 zshrc_file="${HOME}/.zshrc"
