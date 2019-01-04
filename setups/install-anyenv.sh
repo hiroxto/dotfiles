@@ -4,6 +4,7 @@ set -eu
 
 echo "Install the anyenv"
 anyenv_dir="${HOME}/.anyenv"
+anyenv_bin="${anyenv_dir}/bin/anyenv"
 if [ ! -d ${anyenv_dir} ]; then
     git clone --depth 1 https://github.com/riywo/anyenv ${anyenv_dir}
     exec $SHELL -l
@@ -16,7 +17,7 @@ for envname in rbenv phpenv pyenv crenv ndenv; do
     echo "Install ${envname}"
     env_dir="${HOME}/.anyenv/envs/${envname}"
     if [ ! -d ${env_dir} ];then
-        anyenv install -f ${envname}
+        ${anyenv_bin} install -f ${envname}
     else
         echo "Skip"
     fi
