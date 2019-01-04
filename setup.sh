@@ -1,12 +1,6 @@
 #!/bin/bash
 
-if [ -f ${HOME}/.ssh/GitHub/id_rsa ];then
-  GIT_URL=git@github.com:
-else
-  GIT_URL=git://github.com/
-fi
-
-echo "GIT_URL=${GIT_URL}"
+GIT_PROTOCOL=https://github.com/
 
 begin() {
   echo -e "\033[0;36m$1\033[0;39m"
@@ -61,7 +55,7 @@ finish
 begin "preztoをインストール"
   if [ ! -d ${HOME}/.zprezto ]; then
     working_msg "Install zprezto"
-    git clone --depth 1 --recursive ${GIT_URL}sorin-ionescu/prezto.git ${HOME}/.zprezto
+    git clone --depth 1 --recursive ${GIT_PROTOCOL}sorin-ionescu/prezto.git ${HOME}/.zprezto
 
     working_msg "Link zprezto config files"
     setopt EXTENDED_GLOB
@@ -97,7 +91,7 @@ finish
 begin "anyenvをインストール"
   if [ ! -d ${HOME}/.anyenv ]; then
     working_msg "Install anyenv"
-    git clone --depth 1 ${GIT_URL}riywo/anyenv ${HOME}/.anyenv
+    git clone --depth 1 ${GIT_PROTOCOL}riywo/anyenv ${HOME}/.anyenv
     exec $SHELL -l
   else
     working_msg "Skip"
@@ -122,7 +116,7 @@ begin "anyenv-updateをインストール"
   mkdir -p ${HOME}/.anyenv/plugins
   if [ ! -e ${HOME}/.anyenv/plugins/anyenv-update ];then
     working_msg "Install anyenv-update"
-    git clone --depth 1 ${GIT_URL}znz/anyenv-update ${HOME}/.anyenv/plugins/anyenv-update
+    git clone --depth 1 ${GIT_PROTOCOL}znz/anyenv-update ${HOME}/.anyenv/plugins/anyenv-update
   else
     working_msg "Skip"
   fi
@@ -131,7 +125,7 @@ finish
 begin ".nanorcをセットアップ"
   if [ ! -e ${HOME}/.nano ]; then
     working_msg "Install nanorc"
-    git clone --depth 1 ${GIT_URL}scopatz/nanorc ${HOME}/.nano
+    git clone --depth 1 ${GIT_PROTOCOL}scopatz/nanorc ${HOME}/.nano
   else
     working_msg "Skip"
   fi
@@ -144,7 +138,7 @@ begin "vimをセットアップ"
   begin "dein.vimをインストール"
     if [ ! -d ${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim ];then
       mkdir -p ${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim
-      git clone --depth 1 ${GIT_URL}Shougo/dein.vim ${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim
+      git clone --depth 1 ${GIT_PROTOCOL}Shougo/dein.vim ${HOME}/.vim/dein/repos/github.com/Shougo/dein.vim
     else
       working_msg "Skip"
     fi
