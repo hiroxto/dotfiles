@@ -1,15 +1,14 @@
 # Global hgignore
 
-# Keep
+# Keep files
 !.gitkeep
 !.keep
 
-# local
+# Local configure
 .env
 
 # etc
-
-.vagrant/
+.vagrant
 
 # OS
 
@@ -55,9 +54,9 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# Editor OR IDEA
+# Editor, IDE
 
-## JetBrains IDE
+## JetBrains
 /.idea/
 
 ## Visual Studio Code
@@ -124,6 +123,7 @@ yarn-debug.log*
 yarn-error.log*
 /node_modules/
 /bower_components/
+.eslintcache
 
 ## Crystal
 /.crystal/
