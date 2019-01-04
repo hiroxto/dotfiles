@@ -16,6 +16,7 @@ before_script:
 script:
   - zsh -n setup.zsh
   - zsh -n bin/pull-dotfiles
+  - "zsh -n ./setups/*.zsh"
 
 notifications :
   email: false
