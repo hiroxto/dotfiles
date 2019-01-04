@@ -18,4 +18,9 @@ for file in composer.json composer.lock config.json;do
 done
 
 echo "Install the composer global package"
-composer g install
+if type "php" > /dev/null 2>&1; then
+    composer g install
+else
+    echo "php command not does not exist!"
+    echo "Skip the composer global install."
+fi
