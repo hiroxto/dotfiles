@@ -41,5 +41,3 @@ rm "${zpreztorc_file}"
 
 echo "Link ${new_zpreztorc_file} to  ${zpreztorc_file}"
 ln -sf "${new_zpreztorc_file}" "${zpreztorc_file}"
-
-source ${zshrc_file}
