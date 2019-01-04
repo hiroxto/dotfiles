@@ -31,7 +31,7 @@ mkdir -p ${anyenv_plugins_dir}
 
 echo "Install anyenv-update"
 if [ ! -e ${anyenv_update_dir} ];then
-    git clone --depth 1 ${GIT_PROTOCOL}znz/anyenv-update ${anyenv_update_dir}
+    git clone --depth 1 https://github.com/znz/anyenv-update ${anyenv_update_dir}
 else
     echo "Skip"
 fi
