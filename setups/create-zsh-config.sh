@@ -7,8 +7,13 @@ echo "Setup zsh"
 zsh_dir="${HOME}/.zsh"
 link_from="${HOME}/dotfiles/.zsh"
 
-echo "Link ${link_from} to ${zsh_dir}"
-ln -sf ${link_from} ${zsh_dir}
+echo "Link .zsh directory"
+if [ -d ${zsh_dir} ]; then
+    echo "Skip"
+else
+    echo "Link ${link_from} to ${zsh_dir}"
+    ln -s ${link_from} ${zsh_dir}
+fi
 
 echo "Install the prezto"
 zprezto_dir="${HOME}/.zprezto"
