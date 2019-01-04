@@ -8,17 +8,20 @@ zsh_dir="${HOME}/.zsh"
 link_from="${HOME}/dotfiles/.zsh"
 
 echo "Link .zsh directory"
+echo "Link ${link_from} to ${zsh_dir}"
 if [ -d ${zsh_dir} ]; then
-    echo "Skip"
+    echo "Directory ${zsh_dir} is already exist."
+    echo "Skip create the symbolic link."
 else
-    echo "Link ${link_from} to ${zsh_dir}"
+    echo "Create the symbolic link to ${zsh_dir}"
     ln -s ${link_from} ${zsh_dir}
 fi
 
 echo "Install the prezto"
 zprezto_dir="${HOME}/.zprezto"
 if [ -d ${zprezto_dir} ]; then
-    echo "Skip install zprezto"
+    echo "zprezto is already installed."
+    echo "Skip install."
 else
     git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto ${zprezto_dir}
 

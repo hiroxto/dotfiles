@@ -22,16 +22,23 @@ for file in ${files[@]}; do
     to="${HOME}/${file}"
     echo "Link ${from} to ${to}"
 
-    echo "Link ${from} to ${to}"
-    ln -sf ${from} ${to}
+    if [ -d ${to} ]; then
+        echo "File ${to} is already exist."
+        echo "Skip create the symbolic link."
+    else
+        echo "Create the symbolic link to ${to}"
+        ln -sf ${from} ${to}
+    fi
 done
 
 echo "Link the bin directory."
 bin_dir="${HOME}/bin"
 dotfiles_bin_dir="${HOME}/dotfiles/bin"
+echo "Link ${dotfiles_bin_dir} to ${bin_dir}"
 if [ -d ${bin_dir} ]; then
-    echo "Skip"
+    echo "Directory ${bin_dir} is already exist."
+    echo "Skip create the symbolic link."
 else
-    echo "Link ${dotfiles_bin_dir} to ${bin_dir}"
+    echo "Create the symbolic link to ${bin_dir}"
     ln -sf ${dotfiles_bin_dir} ${bin_dir}
 fi

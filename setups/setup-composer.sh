@@ -14,7 +14,14 @@ for file in composer.json composer.lock config.json;do
     from="${HOME}/dotfiles/.composer/${file}"
     to="${HOME}/.composer/${file}"
     echo "Link ${from} to ${to}"
-    ln -sf ${from} ${to}
+
+    if [ -d ${to} ]; then
+        echo "File ${to} is already exist."
+        echo "Skip create the symbolic link."
+    else
+        echo "Create the symbolic link to ${to}"
+        ln -sf ${from} ${to}
+    fi
 done
 
 echo "Install the composer global package"

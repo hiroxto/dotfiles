@@ -13,4 +13,10 @@ link_from="${HOME}/dotfiles/.local/share/psysh/php_manual.sqlite"
 link_to="${HOME}/.local/share/psysh/php_manual.sqlite"
 
 echo "Link ${link_from} to ${link_to}"
-ln -sf ${link_from} ${link_to}
+if [ -d ${link_to} ]; then
+    echo "File ${link_to} is already exist."
+    echo "Skip create the symbolic link."
+else
+    echo "Create the symbolic link to ${link_to}"
+    ln -sf ${link_from} ${link_to}
+fi
