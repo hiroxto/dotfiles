@@ -9,3 +9,5 @@ for file in `ls -1 ./setups/*.sh`; do
     source ${file}
     echo "Loaded ${file}"
 done
+
+echo "Loaded setup scripts."
