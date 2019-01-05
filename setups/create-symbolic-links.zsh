@@ -27,7 +27,7 @@ for file in ${files[@]}; do
         echo "Skip create the symbolic link."
     else
         echo "Create the symbolic link to ${to}"
-        ln -sf ${from} ${to}
+        ln -s ${from} ${to}
     fi
 done
 
@@ -40,5 +40,5 @@ if [ -d ${bin_dir} ]; then
     echo "Skip create the symbolic link."
 else
     echo "Create the symbolic link to ${bin_dir}"
-    ln -sf ${dotfiles_bin_dir} ${bin_dir}
+    ln -s ${dotfiles_bin_dir} ${bin_dir}
 fi

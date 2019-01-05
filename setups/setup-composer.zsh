@@ -20,7 +20,7 @@ for file in composer.json composer.lock config.json;do
         echo "Skip create the symbolic link."
     else
         echo "Create the symbolic link to ${to}"
-        ln -sf ${from} ${to}
+        ln -s ${from} ${to}
     fi
 done
 

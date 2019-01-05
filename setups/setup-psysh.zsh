@@ -18,5 +18,5 @@ if [ -d ${link_to} ]; then
     echo "Skip create the symbolic link."
 else
     echo "Create the symbolic link to ${link_to}"
-    ln -sf ${link_from} ${link_to}
+    ln -s ${link_from} ${link_to}
 fi
