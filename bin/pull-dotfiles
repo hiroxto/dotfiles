@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 DOTFILES_PATH=`realpath ~/dotfiles`
 SETUP_FILE=`realpath ${DOTFILES_PATH}/setup.zsh`
 
