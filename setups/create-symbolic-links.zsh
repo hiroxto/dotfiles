@@ -22,7 +22,7 @@ for file in ${files[@]}; do
     to="${HOME}/${file}"
     echo "Link ${from} to ${to}"
 
-    if [ -d ${to} ]; then
+    if [ -e ${to} ]; then
         echo "File ${to} is already exist."
         echo "Skip create the symbolic link."
     else

@@ -15,7 +15,7 @@ for file in composer.json composer.lock config.json;do
     to="${HOME}/.composer/${file}"
     echo "Link ${from} to ${to}"
 
-    if [ -d ${to} ]; then
+    if [ -e ${to} ]; then
         echo "File ${to} is already exist."
         echo "Skip create the symbolic link."
     else
