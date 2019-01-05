@@ -4,45 +4,45 @@ DOTFILES_PATH=`realpath ~/dotfiles`
 SETUP_FILE=`realpath ${DOTFILES_PATH}/setup.zsh`
 
 message () {
-  echo -e "\033[0;32m${1}\033[0m"
+    echo -e "\033[0;32m${1}\033[0m"
 }
 
 update () {
-  message "Update ${1}"
+    message "Update ${1}"
 }
 
 success () {
-  message "Successfully updated the ${1}"
+    message "Successfully updated the ${1}"
 }
 
 if [ ! type git > /dev/null 2>&1 ];then
-  message "[Error] 'git' command not found"
-  message "Please install git in \$PATH"
-  exit 1
+    message "[Error] 'git' command not found"
+    message "Please install git in \$PATH"
+    exit 1
 fi
 
 update "dotfiles"
-  message "Changed current directory to ${DOTFILES_PATH}"
-  cd ${DOTFILES_PATH}
-  message "Pull from GitHub repository (hiroto-k/dotfiles)"
-  git pull
-  message "Run setup script"
-  zsh ${SETUP_FILE}
+message "Changed current directory to ${DOTFILES_PATH}"
+cd ${DOTFILES_PATH}
+message "Pull from GitHub repository (hiroto-k/dotfiles)"
+git pull
+message "Run setup script"
+zsh ${SETUP_FILE}
 success "dotfiles"
 
 update "prezto"
-  message "Pull from GitHub repository (sorin-ionescu/prezto)"
-  cd "${HOME}/.zprezto"
-  git pull
-  git submodule update --init --recursive
+message "Pull from GitHub repository (sorin-ionescu/prezto)"
+cd "${HOME}/.zprezto"
+git pull
+git submodule update --init --recursive
 success "prezto"
 
 update "anyenv"
-  message "Run 'anyenv update' command"
-  anyenv update
+message "Run 'anyenv update' command"
+anyenv update
 success "anyenv"
 
 update "nanorc"
-  message "Pull from GitHub repository (scopatz/nanorc)"
-  git -C ~/.nano/ pull
+message "Pull from GitHub repository (scopatz/nanorc)"
+git -C ~/.nano/ pull
 success "nanorc"
