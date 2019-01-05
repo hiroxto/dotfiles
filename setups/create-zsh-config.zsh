@@ -1,0 +1,51 @@
+#!/usr/bin/env zsh
+
+set -eu
+
+echo "Setup zsh"
+
+zsh_dir="${HOME}/.zsh"
+link_from="${HOME}/dotfiles/.zsh"
+
+echo "Link .zsh directory"
+echo "Link ${link_from} to ${zsh_dir}"
+if [ -d ${zsh_dir} ]; then
+    echo "Directory ${zsh_dir} is already exist."
+    echo "Skip create the symbolic link."
+else
+    echo "Create the symbolic link to ${zsh_dir}"
+    ln -s ${link_from} ${zsh_dir}
+fi
+
+echo "Install the prezto"
+zprezto_dir="${HOME}/.zprezto"
+if [ -d ${zprezto_dir} ]; then
+    echo "zprezto is already installed."
+    echo "Skip install."
+else
+    git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto ${zprezto_dir}
+
+    echo "Link zprezto config files"
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done
+fi
+
+zshrc_file="${HOME}/.zshrc"
+new_zshrc_file="${HOME}/dotfiles/.zshrc"
+
+echo "Delete ${zshrc_file}"
+rm "${zshrc_file}"
+
+echo "Link ${new_zshrc_file} to  ${zshrc_file}"
+ln -sf "${new_zshrc_file}" "${zshrc_file}"
+
+zpreztorc_file="${HOME}/.zpreztorc"
+new_zpreztorc_file="${HOME}/dotfiles/.zpreztorc"
+
+echo "Delete ${zpreztorc_file}"
+rm "${zpreztorc_file}"
+
+echo "Link ${new_zpreztorc_file} to  ${zpreztorc_file}"
+ln -sf "${new_zpreztorc_file}" "${zpreztorc_file}"

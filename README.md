@@ -17,7 +17,7 @@ git clone --depth 1 git@github.com:hiroto-k/dotfiles.git ~/dotfiles
 git clone --depth 1 https://github.com/hiroto-k/dotfiles.git ~/dotfiles
 
 cd ~/dotfiles
-zsh setup.sh
+zsh setup.zsh
 ```
 
 ## Update
