@@ -23,7 +23,13 @@ echo "Link userautoload"
 userautoload_link_from="${HOME}/dotfiles/.vim/userautoload"
 userautoload_link_to="${HOME}/.vim/userautoload"
 echo "Link ${userautoload_link_from} to ${userautoload_link_to}"
-ln -sf ${userautoload_link_from} ${userautoload_link_to}
+if [ -d ${userautoload_link_to} ]; then
+    echo "File ${userautoload_link_to} is already exist."
+    echo "Skip create the symbolic link."
+else
+    echo "Create the symbolic link to ${userautoload_link_to}"
+    ln -s ${userautoload_link_from} ${userautoload_link_to}
+fi
 
 echo "Setup vim colors"
 
