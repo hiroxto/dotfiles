@@ -4,19 +4,29 @@ set -eu
 
 echo "Setup psysh"
 
-psysh_dir="${HOME}/.local/share/psysh"
+DOWNLOAD_URL="https://psysh.org/manual/ja/php_manual.sqlite"
+DOWNLOAD_TO_DIR="${HOME}/.local/share/psysh"
+MANUAL_FILE_NAME="php_manual.sqlite"
+DOWNLOAD_TO_FILE="${DOWNLOAD_TO_DIR}/${MANUAL_FILE_NAME}"
 
-echo "Create ${psysh_dir} directory"
-mkdir -p ${psysh_dir}
+echo "Create ${DOWNLOAD_TO_DIR} directory"
+mkdir -p ${DOWNLOAD_TO_DIR}
 
-link_from="${HOME}/dotfiles/.local/share/psysh/php_manual.sqlite"
-link_to="${HOME}/.local/share/psysh/php_manual.sqlite"
+if [ -e ${DOWNLOAD_TO_FILE} ]; then
+    echo "File ${DOWNLOAD_TO_FILE} is already exist."
+    echo "Delete the old file."
+    rm ${DOWNLOAD_TO_FILE}
+fi
 
-echo "Link ${link_from} to ${link_to}"
-if [ -e ${link_to} ]; then
-    echo "File ${link_to} is already exist."
-    echo "Skip create the symbolic link."
+echo "Gets manual file from ${DOWNLOAD_URL}."
+echo "Save to ${DOWNLOAD_TO_FILE}"
+if type "wget" > /dev/null 2>&1; then
+    echo "Use the wget command."
+    wget -O ${DOWNLOAD_TO_FILE} ${DOWNLOAD_URL}
+elif type "curl" > /dev/null 2>&1; then
+    echo "Use the curl command."
+    curl -o ${DOWNLOAD_TO_FILE} ${DOWNLOAD_URL}
 else
-    echo "Create the symbolic link to ${link_to}"
-    ln -s ${link_from} ${link_to}
+    echo "\"wget\" or \"curl\" command is missing."
+    echo "Skip the manual download."
 fi
