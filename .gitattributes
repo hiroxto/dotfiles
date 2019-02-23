@@ -1,5 +1,2 @@
 * text=auto
-*.sqlite -diff -text
 bin/composer -diff -text
-bin/symfony -diff -text
-bin/wp -diff -text
