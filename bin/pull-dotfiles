@@ -43,8 +43,3 @@ update "anyenv"
 message "Run 'anyenv update' command"
 anyenv update
 success "anyenv"
-
-update "nanorc"
-message "Pull from GitHub repository (scopatz/nanorc)"
-git -C ~/.nano/ pull
-success "nanorc"
