@@ -11,7 +11,6 @@ files=(
     .gitignore_global
     .hgignore_global
     .hgrc
-    .nanorc
     .npmrc
     .railsrc
     .tmux.conf
