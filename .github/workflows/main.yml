@@ -1,0 +1,48 @@
+name: Ubuntu CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use the Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Update list of packages (apt update)
+        run: sudo apt update -y
+
+      - name: Install zsh
+        run: sudo apt install -y zsh
+
+      - name: Check syntax of setup.zsh file
+        run: zsh -n setup.zsh
+        env:
+          CI: true
+
+      - name: Check syntax of bin/pull-dotfiles file
+        run: zsh -n bin/pull-dotfiles
+        env:
+          CI: true
+
+      - name: Check syntax of setup script files
+        run: "zsh -n ./setups/*.zsh"
+        env:
+          CI: true
+
+      - name: Slack Notification
+        uses: homoluctus/slatify@v1.5
+        if: always()
+        with:
+          job_name: '*Ubuntu CI*'
+          type: ${{ job.status }}
+          icon_emoji: ":octocat:"
+          url: ${{ secrets.SLACK_WEBHOOK }}
