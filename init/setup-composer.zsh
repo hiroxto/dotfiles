@@ -12,7 +12,7 @@ mkdir -p ${composer_dir}
 echo "Link the composer files."
 for file in composer.json composer.lock config.json;do
     link_from="${HOME}/dotfiles/.composer/${file}"
-    link_to="${HOME}/.composer/${file}"
+    link_to="${composer_dir}/${file}"
     echo "Link ${link_from} to ${link_to}"
 
     if [ -e ${link_to} ]; then
