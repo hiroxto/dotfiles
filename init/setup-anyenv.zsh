@@ -34,7 +34,7 @@ eval "$(${anyenv_bin} init zsh --no-rehash)"
 eval "$(${anyenv_bin} install --init)"
 
 echo "Install envs"
-for envname in rbenv phpenv pyenv ndenv; do
+for envname in rbenv phpenv pyenv nodenv; do
     echo "Install ${envname}"
     envname_dir="${anyenv_dir}/envs/${envname}"
     if [ -d ${envname_dir} ];then
