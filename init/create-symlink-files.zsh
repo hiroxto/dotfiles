@@ -4,8 +4,8 @@ set -eu
 
 echo "Create the symbolic link files."
 
-for file in `ls -A1 ${HOME}/dotfiles/symbolic-link-files/` do
-    link_from="${HOME}/dotfiles/symbolic-link-files/${file}"
+for file in `ls -A1 ${HOME}/dotfiles/symlink-files/` do
+    link_from="${HOME}/dotfiles/symlink-files/${file}"
     link_to="${HOME}/${file}"
     echo "Link ${link_from} to ${link_to}"
 
