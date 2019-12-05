@@ -17,7 +17,7 @@ else
 fi
 
 echo "Install envs"
-for envname in rbenv phpenv pyenv crenv ndenv; do
+for envname in rbenv phpenv pyenv ndenv; do
     echo "Install ${envname}"
     envname_dir="${anyenv_dir}/envs/${envname}"
     if [ -d ${envname_dir} ];then
