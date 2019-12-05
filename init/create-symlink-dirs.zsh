@@ -6,7 +6,7 @@ echo "Create symbolic link dirs."
 
 dirs=(
     bin
-    .vim
+    .vim/userautoload
     .zsh
 )
 
