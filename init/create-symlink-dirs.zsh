@@ -14,7 +14,7 @@ for dir in ${dirs[@]}; do
     link_from="${HOME}/dotfiles/${dir}"
     link_to="${HOME}/${dir}"
 
-    link_to_dir="dirname ${link_to}"
+    link_to_dir=`dirname ${link_to}`
 
     echo "Create directory : ${link_to_dir}"
     mkdir -p ${link_to_dir}
