@@ -4,6 +4,7 @@ set -eu
 
 echo "Create symbolic link files."
 
+# dotfiles の symlink-files 以下に入っているファイルを自動でリンク
 for file in `ls -A1 ${HOME}/dotfiles/symlink-files/` do
     link_from="${HOME}/dotfiles/symlink-files/${file}"
     link_to="${HOME}/${file}"
