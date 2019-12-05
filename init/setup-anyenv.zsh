@@ -14,7 +14,7 @@ if [ -d ${anyenv_dir} ]; then
     echo "Directory ${anyenv_dir} is already exist."
     echo "Skip install the anyenv."
 else
-    git clone --depth 1 https://github.com/riywo/anyenv ${anyenv_dir}
+    git clone --depth 1 https://github.com/anyenv/anyenv ${anyenv_dir}
 fi
 
 echo "Install anyenv-update"
