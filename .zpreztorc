@@ -41,6 +41,7 @@ zstyle ':prezto:load' pmodule \
   'pacman' \
   'ruby' \
   'osx' \
+  'docker' \
 
 #
 # Autosuggestions
