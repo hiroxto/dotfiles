@@ -9,6 +9,7 @@ anyenv_bin="${anyenv_dir}/bin/anyenv"
 anyenv_plugins_dir="${anyenv_dir}/plugins"
 anyenv_update_dir="${anyenv_dir}/plugins/anyenv-update"
 export ANYENV_ROOT="${anyenv_dir}"
+export SHELL="zsh"
 
 if [ -d ${anyenv_dir} ]; then
     echo "Directory ${anyenv_dir} is already exist."
@@ -27,6 +28,10 @@ if [ -e ${anyenv_update_dir} ];then
 else
     git clone --depth 1 https://github.com/znz/anyenv-update ${anyenv_update_dir}
 fi
+
+echo "Initialize anyenv"
+eval "$(${anyenv_bin} init zsh --no-rehash)"
+eval "$(${anyenv_bin} install --init)"
 
 echo "Install envs"
 for envname in rbenv phpenv pyenv ndenv; do
