@@ -2,7 +2,7 @@
 
 set -eu
 
-echo "Create the symbolic link files."
+echo "Create symbolic link files."
 
 for file in `ls -A1 ${HOME}/dotfiles/symlink-files/` do
     link_from="${HOME}/dotfiles/symlink-files/${file}"
@@ -10,10 +10,10 @@ for file in `ls -A1 ${HOME}/dotfiles/symlink-files/` do
     echo "Link ${link_from} to ${link_to}"
 
     if [ -e ${link_to} ]; then
-        echo "File '${link_to}'' is already exist."
-        echo "Skip create the symbolic link."
+        echo "File '${link_to}' is already exist."
+        echo "Skip create symbolic link."
     else
-        echo "Create the symbolic link to ${link_to}"
+        echo "Create symbolic link to ${link_to}"
         ln -s ${link_from} ${link_to}
     fi
 done

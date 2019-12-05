@@ -16,7 +16,7 @@ for dir in ${dirs[@]}; do
     echo "Link ${link_from} to ${link_to}"
 
     if [ -e ${link_to} ]; then
-        echo "File ${link_to} is already exist."
+        echo "File '${link_to}' is already exist."
         echo "Skip create symbolic link."
     else
         echo "Create symbolic link to ${link_to}"
