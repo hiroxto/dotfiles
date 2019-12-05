@@ -23,18 +23,18 @@ jobs:
       - name: Install zsh
         run: sudo apt install -y zsh
 
-      - name: Check syntax of setup.zsh file
-        run: zsh -n setup.zsh
+      - name: Check syntax of initialize.zsh file
+        run: zsh -n initialize.zsh
+        env:
+          CI: true
+
+      - name: Check syntax of initialize script files
+        run: "zsh -n ./init/*.zsh"
         env:
           CI: true
 
       - name: Check syntax of bin/pull-dotfiles file
         run: zsh -n bin/pull-dotfiles
-        env:
-          CI: true
-
-      - name: Check syntax of setup script files
-        run: "zsh -n ./setups/*.zsh"
         env:
           CI: true
 
