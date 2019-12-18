@@ -19,13 +19,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Update packages list and install zsh on Ubuntu
-        if: runner.os == "Linux"
+        if: runner.os == 'Linux'
         run: |
             sudo apt update -y
             sudo apt install -y zsh
 
       - name: Update packages list and install zsh on macOS
-        if: runner.os == "macOS"
+        if: runner.os == 'macOS'
         run: |
             brew update
             brew install zsh
