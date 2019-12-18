@@ -9,7 +9,7 @@ Unix/Linux OSとmacOS用の設定ファイル。
 ```bash
 git clone --depth 1 https://github.com/hiroxto/dotfiles ~/dotfiles
 cd ~/dotfiles
-zsh setup.zsh
+zsh initialize.zsh
 ```
 
 ## Update

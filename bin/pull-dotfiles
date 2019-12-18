@@ -3,7 +3,7 @@
 set -eu
 
 DOTFILES_PATH=`realpath ~/dotfiles`
-SETUP_FILE=`realpath ${DOTFILES_PATH}/setup.zsh`
+INIT_FILE=`realpath ${DOTFILES_PATH}/initialize.zsh`
 
 message () {
     echo -e "\033[0;32m${1}\033[0m"
@@ -26,10 +26,10 @@ fi
 update "dotfiles"
 message "Changed current directory to ${DOTFILES_PATH}"
 cd ${DOTFILES_PATH}
-message "Pull from GitHub repository (hiroto-k/dotfiles)"
+message "Pull from GitHub repository (hiroxto/dotfiles)"
 git pull
 message "Run setup script"
-zsh ${SETUP_FILE}
+zsh ${INIT_FILE}
 success "dotfiles"
 
 update "prezto"
