@@ -4,7 +4,8 @@ Unix/Linux OSとmacOS用の設定ファイル。
 
 ## Install
 
-`utils/auto-install.sh` を使ってインストールする.
+`utils/auto-install.sh` を使ってインストールする。
+`dot.hiroto-k.net` へアクセスすると自動で `utils/auto-install.sh` へ転送されます。
 
 ```bash
 bash -c "$(curl -L dot.hiroto-k.net)"
