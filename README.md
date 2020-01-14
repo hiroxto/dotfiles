@@ -31,6 +31,26 @@ cd ~/dotfiles
 zsh initialize.zsh
 ```
 
+### インストール後
+
+#### ログインシェルを zsh へ切り替え
+
+`chsh` を使い, ログインシェルを `zsh` へ切り替える。
+切り替え後は一旦ログアウトする。
+
+```bash
+$ which zsh
+$ chsh
+```
+
+#### anyenv のセットアップ
+
+anyenv のマニフェストのインストールと, 各 env のインストールを行う。
+
+```bash
+$ zsh ~/dotfiles/utils/install-anyenv.sh
+```
+
 ## Update
 
 このリポジトリに入っている ``pull-dotfiles`` コマンドを使う。
