@@ -9,3 +9,6 @@ fi
 if [ -f ~/.zshrc.local ];then
   source ~/.zshrc.local
 fi
+
+# Localのみのbinを設定
+export PATH="${HOME}/bin-local:$PATH"
