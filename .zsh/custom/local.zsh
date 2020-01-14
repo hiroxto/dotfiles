@@ -12,3 +12,6 @@ fi
 
 # Localのみのbinを設定
 export PATH="${HOME}/bin-local:$PATH"
+
+# Localの補完を設定
+fpath=(~/.zsh/local/completions $fpath)
