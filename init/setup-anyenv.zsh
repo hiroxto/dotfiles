@@ -9,7 +9,6 @@ anyenv_bin="${anyenv_dir}/bin/anyenv"
 anyenv_plugins_dir="${anyenv_dir}/plugins"
 anyenv_update_dir="${anyenv_dir}/plugins/anyenv-update"
 export ANYENV_ROOT="${anyenv_dir}"
-export SHELL="zsh"
 
 if [ -d ${anyenv_dir} ]; then
     echo "Directory ${anyenv_dir} is already exist."
