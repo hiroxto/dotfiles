@@ -6,12 +6,12 @@ DOTFILES_REPO="https://github.com/hiroxto/dotfiles"
 DOTFILES_PATH="${HOME}/dotfiles"
 INITIALIZE_SCRIPT="initialize.zsh"
 
-if [ ! type git > /dev/null 2>&1 ];then
+if [ ! `which git` ];then
     echo "[Error] 'git' command not found"
     exit 1
 fi
 
-if [ ! type zsh > /dev/null 2>&1 ];then
+if [ ! `which zsh` ];then
     echo "[Error] 'zsh' command not found"
     exit 1
 fi
