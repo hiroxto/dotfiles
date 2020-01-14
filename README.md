@@ -48,7 +48,7 @@ $ chsh
 anyenv のマニフェストのインストールと, 各 env のインストールを行う。
 
 ```bash
-zsh ~/dotfiles/utils/install-anyenv.sh
+$ zsh ~/dotfiles/utils/install-anyenv.sh
 ```
 
 ## Update
