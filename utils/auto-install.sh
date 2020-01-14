@@ -31,3 +31,4 @@ cd "${DOTFILES_PATH}"
 
 echo "Execute initialize script ${INITIALIZE_SCRIPT}"
 zsh "${INITIALIZE_SCRIPT}"
+echo "Successfully executed initialize script"
