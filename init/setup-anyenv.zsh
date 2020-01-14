@@ -29,18 +29,5 @@ else
     git clone --depth 1 https://github.com/znz/anyenv-update ${anyenv_update_dir}
 fi
 
-echo "Initialize anyenv"
-eval "$(${anyenv_bin} init zsh --no-rehash)"
-eval "$(${anyenv_bin} install --init)"
-
-echo "Install envs"
-for envname in rbenv phpenv pyenv nodenv; do
-    echo "Install ${envname}"
-    envname_dir="${anyenv_dir}/envs/${envname}"
-    if [ -d ${envname_dir} ];then
-        echo "Directory ${envname_dir} is already exist."
-        echo "Skip install ${envname}."
-    else
-        ${anyenv_bin} install -f ${envname}
-    fi
-done
+echo "Successfully installed anyenv and anyenv-update"
+echo "Please execute 'bash utils/install-anyenv.sh'"
