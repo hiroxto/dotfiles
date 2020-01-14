@@ -51,6 +51,15 @@ anyenv のマニフェストのインストールと, 各 env のインストー
 $ zsh ~/dotfiles/utils/install-anyenv.sh
 ```
 
+### Docker と Docker Compose の補完を追加
+
+`utils/download-docker-completions.sh` を使い, Docker と Docker Compose の補完をローカルの補完(`~/.zsh/local/completions/`)へ追加する。
+補完を更新する際も, `utils/download-docker-completions.sh` を使う。
+
+```bash
+$ zsh utils/download-docker-completions.sh
+```
+
 ## Update
 
 このリポジトリに入っている ``pull-dotfiles`` コマンドを使う。
