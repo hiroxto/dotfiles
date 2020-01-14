@@ -6,6 +6,8 @@ DOTFILES_REPO="https://github.com/hiroxto/dotfiles"
 DOTFILES_PATH="${HOME}/dotfiles"
 INITIALIZE_SCRIPT="initialize.zsh"
 
+echo "hiroxto/dotfiles auto install script"
+
 if [ ! `which git` ];then
     echo "[Error] 'git' command not found"
     exit 1
