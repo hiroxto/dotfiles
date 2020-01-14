@@ -4,7 +4,14 @@ Unix/Linux OSとmacOS用の設定ファイル。
 
 ## Install
 
-このリポジトリを``git clone``してセットアップ用スクリプトを実行。セットアップ用スクリプトは``zsh``を使用して実行。
+`utils/auto-install.sh` を使ってインストールする。
+`dot.hiroto-k.net` へアクセスすると自動で `utils/auto-install.sh` へ転送されます。
+
+```bash
+bash -c "$(curl -L dot.hiroto-k.net)"
+```
+
+手動でインストールする場合, このリポジトリを``git clone``してセットアップ用スクリプトを実行。セットアップ用スクリプトは``zsh``を使用して実行。
 
 ```bash
 git clone --depth 1 https://github.com/hiroxto/dotfiles ~/dotfiles
