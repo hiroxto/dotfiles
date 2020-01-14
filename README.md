@@ -16,7 +16,7 @@ UNIX / Linux / macOS 用の設定ファイル。
 `dot.hiroto-k.net` へアクセスすると自動で `utils/auto-install.sh` へ転送される。
 
 ```bash
-bash -c "$(curl -L dot.hiroto-k.net)"
+$ bash -c "$(curl -L dot.hiroto-k.net)"
 ```
 
 ### 手動インストール
@@ -26,9 +26,9 @@ bash -c "$(curl -L dot.hiroto-k.net)"
 実行内容は上記の自動インストールと同じ。
 
 ```bash
-git clone --depth 1 https://github.com/hiroxto/dotfiles ~/dotfiles
-cd ~/dotfiles
-zsh initialize.zsh
+$ git clone --depth 1 https://github.com/hiroxto/dotfiles ~/dotfiles
+$ cd ~/dotfiles
+$ zsh initialize.zsh
 ```
 
 ### インストール後
@@ -66,6 +66,6 @@ $ zsh utils/download-docker-completions.sh
 dotfiles 本体と git 経由でインストールされるツール一式が更新される。
 
 ```bash
-pull-dotfiles
+$ pull-dotfiles
 ```
 
