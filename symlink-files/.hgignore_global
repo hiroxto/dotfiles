@@ -57,6 +57,7 @@ $RECYCLE.BIN/
 
 ## Visual Studio Code
 .vscode
+.devcontainer
 
 ## Vim
 [._]*.s[a-v][a-z]
