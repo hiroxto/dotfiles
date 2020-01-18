@@ -1,7 +1,9 @@
 /.zsh/local/*
 
 .vscode
-.devcontainer
+.devcontainer/*
+!.devcontainer/recommended-devcontainer.json
+!.devcontainer/recommended-Dockerfile
 
 .DS_Store
 .DS_Store?
