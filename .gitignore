@@ -1,5 +1,8 @@
 /.zsh/local/*
 
+.vscode
+.devcontainer
+
 .DS_Store
 .DS_Store?
 ._*
@@ -11,5 +14,6 @@ ehthumbs.db
 Thumbs.db
 *.swp
 *~
+
 !.local/**
 !.gitkeep
