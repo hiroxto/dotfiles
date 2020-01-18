@@ -1,5 +1,7 @@
 # dotfiles
 
+![GitHub Actions dotfiles CI Status](https://github.com/hiroxto/dotfiles/workflows/dotfiles%20CI/badge.svg)
+
 UNIX / Linux / macOS 用の設定ファイル。
 
 ## Requirements
