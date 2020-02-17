@@ -4,7 +4,7 @@ set -eu
 
 echo "Setup composer configs"
 
-COMPOSER_BIN_INSTALL_DIR=`realpath ~/bin-local`
+COMPOSER_BIN_INSTALL_DIR=`realpath ${HOME}/bin-local`
 COMPOSER_BIN=`realpath ${COMPOSER_BIN_INSTALL_DIR}/composer`
 COMPOSER_BIN_FILENAME=`basename ${COMPOSER_BIN}`
 
