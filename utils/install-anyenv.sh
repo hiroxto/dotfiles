@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# anyenv の初期化と, 各 env をインストールするスクリプト
+#
+# dotfiles をインストールした PC で anyenv を使う場合のみ実行する.
+# initialize.zsh を実行した後に, このスクリプトを実行する必要がある.
 
 set -eu
 
