@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # anyenv の初期化と, 各 env をインストールするスクリプト
 #
 # dotfiles をインストールした PC で anyenv を使う場合のみ実行する.
