@@ -1,8 +1,10 @@
-# viキーバインド
+# zsh のオプションを設定するファイル
+
+# vi キーバインド
 bindkey -e
 
-# rm *で確認しない
+# rm * で確認しない
 setopt rm_star_silent
 
-# 拡張グロブ
+# 拡張グロブを有効化
 setopt extended_glob
