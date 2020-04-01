@@ -1,17 +1,19 @@
-# ローカルのみの設定
+# ローカルのみの設定を行うファイル
+#
+# ~/.zshrc.local などのローカルだけで設定される物はここで設定する
 
-# Travi CIのgemで入る補完ファイルがあったら読み込む
+# Travi CI の gem で入る補完ファイルがあったら読み込む
 if [ -f ~/.travis/travis.sh ];then
   source ~/.travis/travis.sh
 fi
 
-# Localのみの設定があったら読み込む
+# Local のみの zsh の設定があったら読み込む
 if [ -f ~/.zshrc.local ];then
   source ~/.zshrc.local
 fi
 
-# Localのみのbinを設定
+# Local のみの bin を設定
 export PATH="${HOME}/bin-local:$PATH"
 
-# Localの補完を設定
+# Local のみの補完を設定
 fpath=(~/.zsh/local/completions $fpath)
