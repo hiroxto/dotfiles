@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Docker の補完をダウンロードするスクリプト
+#
+# PC で Docker を扱う場合はこのスクリプトを実行して補完を設定する.
 
 set -eu
 
