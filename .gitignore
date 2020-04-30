@@ -1,6 +1,10 @@
 /.zsh/local/*
 
-.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .devcontainer/*
 !.devcontainer/recommended-devcontainer.json
 !.devcontainer/recommended-Dockerfile
