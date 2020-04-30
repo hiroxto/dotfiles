@@ -38,7 +38,7 @@ Temporary Items
 Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
-# Dump file
+### Dump file
 *.stackdump
 [Dd]esktop.ini
 $RECYCLE.BIN/
