@@ -38,7 +38,7 @@ Temporary Items
 Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
-# Dump file
+### Dump file
 *.stackdump
 [Dd]esktop.ini
 $RECYCLE.BIN/
@@ -56,7 +56,11 @@ $RECYCLE.BIN/
 .idea
 
 ## Visual Studio Code
-.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 ## Vim
 [._]*.s[a-v][a-z]
