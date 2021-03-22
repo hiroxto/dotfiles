@@ -1,6 +1,6 @@
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 
@@ -9,12 +9,12 @@ export PATH="$HOME/bin:/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.anyen
 
 # 優先的に読み込む設定
 for file in `ls -1 ~/.zsh/init/*.zsh`;do
-  source $file
+    source $file
 done
 
 # 後から読み込む設定
 for file in `ls -1 ~/.zsh/custom/*.zsh`;do
-  source $file
+    source $file
 done
 
 unset file
