@@ -21,3 +21,6 @@ unset file
 
 # $PATHから重複したpathを削除する
 typeset -U path PATH
+
+# 補完を読み込む
+autoload -Uz compinit && compinit
