@@ -1,23 +1,26 @@
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 
 # $PATHを設定
-export PATH="$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/local/heroku/bin:$PATH"
 
 # 優先的に読み込む設定
 for file in `ls -1 ~/.zsh/init/*.zsh`;do
-  source $file
+    source $file
 done
 
 # 後から読み込む設定
 for file in `ls -1 ~/.zsh/custom/*.zsh`;do
-  source $file
+    source $file
 done
 
 unset file
 
 # $PATHから重複したpathを削除する
 typeset -U path PATH
+
+# 補完を読み込む
+autoload -Uz compinit && compinit

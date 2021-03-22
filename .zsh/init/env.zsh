@@ -9,9 +9,6 @@ export LANG=ja_JP.UTF-8
 export EDITOR="vim"
 export VISUAL="vim"
 
-# ブラウザ
-export BROWSER="firefox"
-
 # Crystalのキャッシュディレクトリ
 export CRYSTAL_CACHE_DIR=$HOME/.crystal
 
