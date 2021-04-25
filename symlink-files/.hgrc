@@ -1,5 +1,5 @@
 [ui]
-username = Hiroto Kitazawa <hiroxto@gmail.com>
+username = hiroxto <hiroxto@gmail.com>
 ignore = ~/.hgignore_global
 editor = vim
 
