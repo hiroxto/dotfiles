@@ -26,3 +26,5 @@
   tags = tag
 [http]
 	sslVerify = false
+[init]
+	defaultBranch = main
