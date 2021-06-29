@@ -40,8 +40,8 @@ jobs:
         env:
           CI: true
 
-      - name: Check syntax of bin/pull-dotfiles file
-        run: zsh -n bin/pull-dotfiles
+      - name: Check syntax of symlinks/dirs/bin/pull-dotfiles file
+        run: zsh -n symlinks/dirs/bin/pull-dotfiles
         env:
           CI: true
 
