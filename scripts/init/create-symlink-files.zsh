@@ -21,12 +21,10 @@ done
 
 # 手動でリンクするファイルを設定
 manually_files=(
-    .composer/composer.json
-    .composer/composer.lock
     .composer/config.json
 )
 for manually_file in ${manually_files[@]}; do
-    link_from="${HOME}/dotfiles/${manually_file}"
+    link_from="${HOME}/dotfiles/symlinks/files/manual-link/${manually_file}"
     link_to="${HOME}/${manually_file}"
 
     link_to_dirname=`dirname ${link_to}`
