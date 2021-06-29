@@ -10,8 +10,7 @@ COMPOSER_BIN_FILENAME=`basename ${COMPOSER_BIN}`
 
 if type "php" > /dev/null 2>&1; then
     if [ -e ${COMPOSER_BIN} ]; then
-        echo "Run composer self update"
-        ${COMPOSER_BIN} self-update
+        echo "Composer binary is already exists."
     else
         echo "Download composer binary"
         mkdir -p ${COMPOSER_BIN_INSTALL_DIR}
