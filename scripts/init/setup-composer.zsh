@@ -17,9 +17,6 @@ if type "php" > /dev/null 2>&1; then
         mkdir -p ${COMPOSER_BIN_INSTALL_DIR}
         curl -sS https://getcomposer.org/installer | php -- --install-dir=${COMPOSER_BIN_INSTALL_DIR} --filename=${COMPOSER_BIN_FILENAME}
     fi
-
-    echo "Install composer global packages"
-    ${COMPOSER_BIN} g install
 else
     echo "php command does not exist."
     echo "Skip setup composer configs."
