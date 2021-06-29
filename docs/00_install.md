@@ -8,9 +8,9 @@
 
 ## 自動インストール
 
-`utils/auto-install.bash` を使ってインストールする．
+`scripts/utils/auto-install.bash` を使ってインストールする．
 
-`dot.hiroto-k.net` へアクセスすると自動で GitHub 上の `utils/auto-install.bash` へ転送され，その Bash コードを実行するとインストールされる．
+`dot.hiroto-k.net` へアクセスすると自動で GitHub 上の `scripts/utils/auto-install.bash` へ転送され，その Bash コードを実行するとインストールされる．
 
 ```bash
 $ bash -c "$(curl -L dot.hiroto-k.net)"
@@ -41,17 +41,17 @@ $ chsh
 
 #### anyenv のセットアップ (必要なら)
 
-anyenv が必要な場合，`utils/install-anyenv.zsh` を使って anyenv のマニフェストのインストールと，各 env のインストールを行う．
+anyenv が必要な場合，`scripts/utils/install-anyenv.zsh` を使って anyenv のマニフェストのインストールと，各 env のインストールを行う．
 
 ```bash
-$ zsh ~/dotfiles/utils/install-anyenv.zsh
+$ zsh ~/dotfiles/scripts/utils/install-anyenv.zsh
 ```
 
 ### Docker と Docker Compose の補完を追加
 
-Docker と Docker Compose の補完が必要な場合，`utils/download-docker-completions.zsh` を使って補完をローカルの補完( `~/.zsh/local/completions/`) へ追加する．
-補完を更新する際も，`utils/download-docker-completions.zsh` を使う．
+Docker と Docker Compose の補完が必要な場合，`scripts/utils/download-docker-completions.zsh` を使って補完をローカルの補完( `~/.zsh/local/completions/`) へ追加する．
+補完を更新する際も，`scripts/utils/download-docker-completions.zsh` を使う．
 
 ```bash
-$ zsh utils/download-docker-completions.zsh
+$ zsh scripts/utils/download-docker-completions.zsh
 ```

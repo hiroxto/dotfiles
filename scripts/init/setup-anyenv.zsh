@@ -29,4 +29,4 @@ else
 fi
 
 echo "Successfully installed anyenv and anyenv-update"
-echo "Please execute 'bash utils/install-anyenv.sh'"
+echo "Please execute 'bash scripts/utils/install-anyenv.sh'"
