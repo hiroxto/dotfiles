@@ -1,4 +1,4 @@
-/.zsh/local/*
+/symlinks/dirs/.zsh/local/*
 
 .vscode/*
 !.vscode/settings.json
