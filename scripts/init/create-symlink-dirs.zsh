@@ -11,7 +11,7 @@ dirs=(
 )
 
 for dir in ${dirs[@]}; do
-    link_from="${HOME}/dotfiles/${dir}"
+    link_from="${HOME}/dotfiles/symlinks/dirs/${dir}"
     link_to="${HOME}/${dir}"
 
     link_to_dir=`dirname ${link_to}`
