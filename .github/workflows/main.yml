@@ -36,7 +36,7 @@ jobs:
           CI: true
 
       - name: Check syntax of initialize script files
-        run: "zsh -n ./init/*.zsh"
+        run: "zsh -n ./scripts/init/*.zsh"
         env:
           CI: true
 
