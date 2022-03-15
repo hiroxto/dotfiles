@@ -15,3 +15,16 @@ export CRYSTAL_CACHE_DIR=$HOME/.crystal
 # Golang
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
+
+# Rust
+export PATH="$(brew --prefix bison)/bin:$PATH"
+export PATH="$(brew --prefix libxml2)/bin:$PATH"
+export PATH="$(brew --prefix bzip2)/bin:$PATH"
+export PATH="$(brew --prefix curl)/bin:$PATH"
+export PATH="$(brew --prefix libiconv)/bin:$PATH"
+export PATH="$(brew --prefix krb5)/bin:$PATH"
+export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
+export PATH="$(brew --prefix icu4c)/bin:$PATH"
+export PKG_CONFIG_PATH="$(brew --prefix krb5)/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$(brew --prefix openssl@1.1)/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$(brew --prefix icu4c)/lib/pkgconfig:$PKG_CONFIG_PATH"
