@@ -1,8 +1,5 @@
 # zsh のオプションを設定するファイル
 
-# vi キーバインド
-bindkey -e
-
 # rm * で確認しない
 setopt rm_star_silent
 
