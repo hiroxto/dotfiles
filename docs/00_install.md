@@ -10,10 +10,10 @@
 
 `scripts/utils/auto-install.bash` を使ってインストールする．
 
-`dot.hiroto-k.net` へアクセスすると自動で GitHub 上の `scripts/utils/auto-install.bash` へ転送され，その Bash コードを実行するとインストールされる．
+`dot.hiroxto.net` へアクセスすると自動で GitHub 上の `scripts/utils/auto-install.bash` へ転送され，その Bash コードを実行するとインストールされる．
 
 ```bash
-$ bash -c "$(curl -L dot.hiroto-k.net)"
+$ bash -c "$(curl -L dot.hiroxto.net)"
 ```
 
 ## 手動インストール
