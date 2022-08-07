@@ -15,10 +15,10 @@ UNIX / Linux / macOS 用の設定ファイル。
 ### 自動インストール
 
 `scripts/utils/auto-install.bash` を使ってインストールする。
-`dot.hiroto-k.net` へアクセスすると自動で `scripts/utils/auto-install.bash` へ転送される。
+`dot.hiroxto.net` へアクセスすると自動で `scripts/utils/auto-install.bash` へ転送される。
 
 ```bash
-$ bash -c "$(curl -L dot.hiroto-k.net)"
+$ bash -c "$(curl -L dot.hiroxto.net)"
 ```
 
 ### 手動インストール
