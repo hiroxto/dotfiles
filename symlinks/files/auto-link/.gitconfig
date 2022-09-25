@@ -24,6 +24,7 @@
   diffs = diff --cached
   remotes = remote -v
   tags = tag
+  graph = log --all --graph --oneline --decorate
 [http]
 	sslVerify = false
 [init]
