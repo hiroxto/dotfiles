@@ -30,4 +30,6 @@
 [init]
 	defaultBranch = main
 [pager]
-	branch = cat
+    branch = cat
+[include]
+    path = ~/.gitconfig.local
