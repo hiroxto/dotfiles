@@ -1,55 +1,53 @@
 name: dotfiles CI
 
-on: [push]
+on:
+    push:
+        branches:
+            - main
+    pull_request:
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        node-version: [12.x]
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos-latest]
+                node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v1
+        steps:
+            - uses: actions/checkout@v1
 
-      - name: Use the Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use the Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                node-version: ${{ matrix.node-version }}
 
-      - name: Update packages list and install zsh on Ubuntu
-        if: runner.os == 'Linux'
-        run: |
-            sudo apt update -y
-            sudo apt install -y zsh
+            - name: Update packages list and install zsh on Ubuntu
+              if: runner.os == 'Linux'
+              run: |
+                sudo apt update -y
+                sudo apt install -y zsh
 
-      - name: Update packages list and install zsh on macOS
-        if: runner.os == 'macOS'
-        run: |
-            brew update
-            brew install zsh
+            - name: Update packages list and install zsh on macOS
+              if: runner.os == 'macOS'
+              run: |
+                brew update
+                brew install zsh
 
-      - name: Check syntax of initialize.zsh file
-        run: zsh -n initialize.zsh
-        env:
-          CI: true
+            - name: Check syntax of initialize.zsh file
+              run: zsh -n initialize.zsh
 
-      - name: Check syntax of initialize script files
-        run: "zsh -n ./scripts/init/*.zsh"
-        env:
-          CI: true
+            - name: Check syntax of initialize script files
+              run: "zsh -n ./scripts/init/*.zsh"
 
-      - name: Check syntax of symlinks/dirs/bin/pull-dotfiles file
-        run: zsh -n symlinks/dirs/bin/pull-dotfiles
-        env:
-          CI: true
+            - name: Check syntax of symlinks/dirs/bin/pull-dotfiles file
+              run: zsh -n symlinks/dirs/bin/pull-dotfiles
 
-      - name: Slack Notification
-        uses: homoluctus/slatify@v1.5
-        if: failure()
-        with:
-          job_name: '*${{ github.workflow }}*'
-          type: ${{ job.status }}
-          icon_emoji: ":octocat:"
-          url: ${{ secrets.SLACK_WEBHOOK }}
+            - name: Slack Notification
+              uses: homoluctus/slatify@v1.5
+              if: failure()
+              with:
+                job_name: '*${{ github.workflow }}*'
+                type: ${{ job.status }}
+                icon_emoji: ":octocat:"
+                url: ${{ secrets.SLACK_WEBHOOK }}
