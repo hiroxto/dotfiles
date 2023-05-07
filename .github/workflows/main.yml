@@ -32,18 +32,12 @@ jobs:
 
             - name: Check syntax of initialize.zsh file
               run: zsh -n initialize.zsh
-              env:
-                CI: true
 
             - name: Check syntax of initialize script files
               run: "zsh -n ./scripts/init/*.zsh"
-              env:
-                CI: true
 
             - name: Check syntax of symlinks/dirs/bin/pull-dotfiles file
               run: zsh -n symlinks/dirs/bin/pull-dotfiles
-              env:
-                CI: true
 
             - name: Slack Notification
               uses: homoluctus/slatify@v1.5
