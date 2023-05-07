@@ -8,6 +8,7 @@
 .devcontainer/*
 !.devcontainer/recommended-devcontainer.json
 !.devcontainer/recommended-Dockerfile
+!.devcontainer/copy-devcontainer-files.sh
 
 .DS_Store
 .DS_Store?
