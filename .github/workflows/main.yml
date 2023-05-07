@@ -16,7 +16,7 @@ jobs:
             - name: Use the Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
-              node-version: ${{ matrix.node-version }}
+                node-version: ${{ matrix.node-version }}
 
             - name: Update packages list and install zsh on Ubuntu
               if: runner.os == 'Linux'
