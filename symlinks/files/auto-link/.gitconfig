@@ -23,6 +23,7 @@
     difff = diff --name-only
     diffs = diff --cached
     remotes = remote -v
+    st = status
     tags = tag
     graph = log --all --graph --oneline --decorate
     pushf = push --force-with-lease --force-if-includes
