@@ -39,7 +39,7 @@
     # 安全にforce pushする
     pushf = push --force-with-lease --force-if-includes
     # addしたファイルをaddしていない状態にする
-    unstage = reset -q HEAD
+    unstage = reset HEAD
 [http]
     sslVerify = false
 [init]
