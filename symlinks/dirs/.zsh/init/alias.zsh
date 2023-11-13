@@ -2,3 +2,4 @@
 
 alias rmdir="rm -rf"
 alias artisan="php artisan"
+alias tf="terraform"

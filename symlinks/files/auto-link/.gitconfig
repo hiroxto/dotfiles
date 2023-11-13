@@ -1,34 +1,53 @@
 [user]
-	name = Hiroto Kitazawa
-	email = hiroxto@gmail.com
+    name = Hiroto Kitazawa
+    email = hiroxto@gmail.com
 [color]
-	ui = auto
-	status = auto
-	diff = auto
-	branch = auto
-	interactive = auto
-	grep = auto
+    ui = auto
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
 [core]
-	excludesfile = ~/.gitignore_global
-	quotepath = false
-	editor = vim
-	autocrlf = false
+    excludesfile = ~/.gitignore_global
+    quotepath = false
+    editor = vim
+    autocrlf = false
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-  required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
 [alias]
-  amend = commit --amend
-  branches = branch -a
-  difff = diff --name-only
-  diffs = diff --cached
-  remotes = remote -v
-  tags = tag
-  graph = log --all --graph --oneline --decorate
+    # 直前のcommitのコミットメッセージを変更する
+    amend = commit --amend
+    # ブランチ一覧を表示する
+    branches = branch -a
+    # HEADのブランチ名を取得する (*b*ranch *n*ameでbn)
+    bn = rev-parse --abbrev-ref HEAD
+    # diffのファイル名のみ表示する
+    difff = diff --name-only
+    # git addした後でdiffで差分を表示する
+    diffs = diff --cached
+    # リモートリポジトリの詳細を表示する
+    remotes = remote -v
+    # statusの省略
+    st = status
+    # tag一覧を表示したい時にtagsと打っても動くようにする
+    tags = tag
+    # ログをグラフでいい感じに表示する
+    graph = log --all --graph --oneline --decorate
+    # 安全にforce pushする
+    pushf = push --force-with-lease --force-if-includes
+    # addしたファイルをaddしていない状態にする
+    unstage = reset HEAD
+    # stash一覧を表示したい時にstashesと打っても動くようにする
+	stashes = stash list
+    # wip commit
+    wip = !"git add . && git commit -m 'wip'"
 [http]
-	sslVerify = false
+    sslVerify = false
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [pager]
     branch = cat
 [include]
