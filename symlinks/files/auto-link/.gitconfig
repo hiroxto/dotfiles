@@ -20,6 +20,7 @@
 [alias]
     amend = commit --amend
     branches = branch -a
+    bn = rev-parse --abbrev-ref HEAD
     difff = diff --name-only
     diffs = diff --cached
     remotes = remote -v
