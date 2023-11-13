@@ -18,15 +18,25 @@
     smudge = git-lfs smudge %f
     required = true
 [alias]
+    # 直前のcommitのコミットメッセージを変更する
     amend = commit --amend
+    # ブランチ一覧を表示する
     branches = branch -a
+    # HEADのブランチ名を取得する (*b*ranch *n*ameでbn)
     bn = rev-parse --abbrev-ref HEAD
+    # diffのファイル名のみ表示する
     difff = diff --name-only
+    # git addした後でdiffで差分を表示する
     diffs = diff --cached
+    # リモートリポジトリの詳細を表示する
     remotes = remote -v
+    # statusの省略
     st = status
+    # tag一覧を表示したい時にtagsと打っても動くようにする
     tags = tag
+    # ログをグラフでいい感じに表示する
     graph = log --all --graph --oneline --decorate
+    # 安全にforce pushする
     pushf = push --force-with-lease --force-if-includes
 [http]
     sslVerify = false
