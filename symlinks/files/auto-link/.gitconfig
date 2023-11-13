@@ -38,6 +38,8 @@
     graph = log --all --graph --oneline --decorate
     # 安全にforce pushする
     pushf = push --force-with-lease --force-if-includes
+    # addしたファイルをaddしていない状態にする
+    unstage = reset -q HEAD
 [http]
     sslVerify = false
 [init]
