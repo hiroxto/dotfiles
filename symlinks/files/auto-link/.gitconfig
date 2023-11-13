@@ -25,6 +25,7 @@
     remotes = remote -v
     tags = tag
     graph = log --all --graph --oneline --decorate
+    pushf = push --force-with-lease --force-if-includes
 [http]
     sslVerify = false
 [init]
