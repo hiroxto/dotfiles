@@ -42,6 +42,8 @@
     unstage = reset HEAD
     # stash一覧を表示したい時にstashesと打っても動くようにする
 	stashes = stash list
+    # wip commit
+    wip = !"git add . && git commit -m 'wip'"
 [http]
     sslVerify = false
 [init]
