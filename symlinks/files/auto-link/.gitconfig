@@ -40,6 +40,8 @@
     pushf = push --force-with-lease --force-if-includes
     # addしたファイルをaddしていない状態にする
     unstage = reset HEAD
+    # stash一覧を表示したい時にstashesと打っても動くようにする
+	stashes = stash list
 [http]
     sslVerify = false
 [init]
