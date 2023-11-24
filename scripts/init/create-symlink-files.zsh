@@ -18,26 +18,3 @@ for file in `ls -A1 ${HOME}/dotfiles/symlinks/files/auto-link/`; do
         ln -s ${link_from} ${link_to}
     fi
 done
-
-# 手動でリンクするファイルを設定
-manually_files=(
-    .composer/config.json
-)
-for manually_file in ${manually_files[@]}; do
-    link_from="${HOME}/dotfiles/symlinks/files/manual-link/${manually_file}"
-    link_to="${HOME}/${manually_file}"
-
-    link_to_dirname=`dirname ${link_to}`
-    echo "Create directory : ${link_to_dirname}"
-    mkdir -p ${link_to_dirname}
-
-    echo "Link ${link_from} to ${link_to}"
-
-    if [ -e ${link_to} ]; then
-        echo "File '${link_to}' is already exist."
-        echo "Skip create symbolic link."
-    else
-        echo "Create symbolic link to ${link_to}"
-        ln -s ${link_from} ${link_to}
-    fi
-done
