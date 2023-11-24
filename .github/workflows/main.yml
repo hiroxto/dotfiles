@@ -42,12 +42,3 @@ jobs:
 
             - name: Check syntax of symlinks/dirs/bin/pull-dotfiles file
               run: zsh -n symlinks/dirs/bin/pull-dotfiles
-
-            - name: Slack Notification
-              uses: homoluctus/slatify@v1.5
-              if: failure()
-              with:
-                job_name: '*${{ github.workflow }}*'
-                type: ${{ job.status }}
-                icon_emoji: ":octocat:"
-                url: ${{ secrets.SLACK_WEBHOOK }}
