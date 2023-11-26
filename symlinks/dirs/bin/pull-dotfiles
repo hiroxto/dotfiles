@@ -5,41 +5,29 @@ set -eu
 DOTFILES_PATH=`realpath ~/dotfiles`
 INIT_FILE=`realpath ${DOTFILES_PATH}/initialize.zsh`
 
-message () {
-    echo -e "\033[0;32m${1}\033[0m"
-}
-
-update () {
-    message "Update ${1}"
-}
-
-success () {
-    message "Successfully updated the ${1}"
-}
-
 if [ ! type git > /dev/null 2>&1 ];then
-    message "[Error] 'git' command not found"
-    message "Please install git in \$PATH"
+    echo "[Error] 'git' command not found"
     exit 1
 fi
 
-update "dotfiles"
-message "Changed current directory to ${DOTFILES_PATH}"
+echo "Update: dotfiles"
+echo "Changed current directory to ${DOTFILES_PATH}"
 cd ${DOTFILES_PATH}
-message "Pull from GitHub repository (hiroxto/dotfiles)"
+echo "Run: git pull"
 git pull
-message "Run setup script"
+echo "Run: setup script"
 zsh ${INIT_FILE}
-success "dotfiles"
+echo "Successfully updated: dotfiles"
 
-update "prezto"
-message "Pull from GitHub repository (sorin-ionescu/prezto)"
+echo "Update: prezto"
+echo "Changed current directory to ${HOME}/.zprezto"
 cd "${HOME}/.zprezto"
+echo "Run: git pull and git submodule update"
 git pull
 git submodule update --init --recursive
-success "prezto"
+echo "Successfully updated: prezto"
 
-update "anyenv"
-message "Run 'anyenv update' command"
+echo "Update: anyenv"
+echo "Run: anyenv update"
 anyenv update
-success "anyenv"
+echo "Successfully updated: anyenv"
