@@ -36,8 +36,8 @@
     tags = tag
     # ログをグラフでいい感じに表示する
     graph = log --all --graph --oneline --decorate
-    # 安全にforce pushする
-    pushf = push --force-with-lease --force-if-includes
+    # 安全にforce pushする(*p*ush *f*orceでpf)
+    pf = push --force-with-lease --force-if-includes
     # addしたファイルをaddしていない状態にする
     unstage = reset HEAD
     # stash一覧を表示したい時にstashesと打っても動くようにする
