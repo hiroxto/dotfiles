@@ -5,7 +5,7 @@ set -eu
 echo "Create symbolic link dirs."
 
 dirs=(
-    bin
+    bin-dotfiles
     .vim/userautoload
     .zsh
 )
