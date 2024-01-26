@@ -3,7 +3,7 @@
 # このファイルでは全環境で共通の環境変数を設定し, ローカルのみの設定は .zshrc.local で行う.
 
 # zsh
-export PATH="~/bin-dotfiles:$PATH"
+export PATH="${HOME}/bin-dotfiles:${PATH}"
 
 # 言語
 export LANG=ja_JP.UTF-8
