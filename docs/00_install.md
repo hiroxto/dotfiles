@@ -39,7 +39,7 @@ $ which zsh
 $ chsh
 ```
 
-### anyenv のセットアップ (必要なら)
+## anyenv のセットアップ (必要なら)
 
 anyenv が必要な場合，`scripts/utils/install-anyenv.zsh` を使って anyenv のマニフェストのインストールと，各 env のインストールを行う．
 
