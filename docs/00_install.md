@@ -39,7 +39,7 @@ $ which zsh
 $ chsh
 ```
 
-#### anyenv のセットアップ (必要なら)
+### anyenv のセットアップ (必要なら)
 
 anyenv が必要な場合，`scripts/utils/install-anyenv.zsh` を使って anyenv のマニフェストのインストールと，各 env のインストールを行う．
 
@@ -47,7 +47,7 @@ anyenv が必要な場合，`scripts/utils/install-anyenv.zsh` を使って anye
 $ zsh ~/dotfiles/scripts/utils/install-anyenv.zsh
 ```
 
-### Docker と Docker Compose の補完を追加
+## Docker と Docker Compose の補完を追加 (必要なら)
 
 Docker と Docker Compose の補完が必要な場合，`scripts/utils/download-docker-completions.zsh` を使って補完をローカルの補完( `~/.zsh/local/completions/`) へ追加する．
 補完を更新する際も，`scripts/utils/download-docker-completions.zsh` を使う．
