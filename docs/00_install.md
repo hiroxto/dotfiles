@@ -39,7 +39,46 @@ $ which zsh
 $ chsh
 ```
 
-#### anyenv のセットアップ (必要なら)
+## .gitconfig の追加設定
+
+### PGP 署名の設定 (コミットを作成する環境の場合は必須)
+
+dotfiles で設定される `.gitconfig` では PGP 署名の設定をしていない。
+コミットを作成する場合は PGP 署名をしたいので，コミットを作成する環境では必ず設定する。
+
+`.gitconfig.local` に設定を書く事で dotfiles で同期をせずにローカルのみの設定をする事が可能な仕組みにしている。
+
+`.gitconfig.local` に `user.signingkey`，`gpg.program`，`commit.gpgsign`，`tag.gpgsign`を設定することで PGP 署名が出来るようになる。
+```
+[user]
+    signingkey = <signingkey>
+[gpg]
+    program = /opt/homebrew/bin/gpg
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
+```
+
+### Organization 毎の user 設定 (Organization のリポジトリでコミットする場合は必須)
+
+仕事でコミットを作成する場合は仕事で使っているメールアドレスを使いたいので，別途設定する。
+
+`.gitconfig.local` で特定のディレクトリ以下では別の設定を読み込むようにする。
+ghq でリポジトリを管理する場合は以下のようになる。
+```
+[includeIf "gitdir:~/ghq/github.com/your-organization"]
+    path = ~/.gitconfig.organization
+```
+
+`.gitconfig.organization` を作成し， Organization での設定項目を書く。
+```
+[user]
+    name = Foo Bar
+    email = foo@example.com
+```
+
+## anyenv のセットアップ (必要なら)
 
 anyenv が必要な場合，`scripts/utils/install-anyenv.zsh` を使って anyenv のマニフェストのインストールと，各 env のインストールを行う．
 
@@ -47,7 +86,7 @@ anyenv が必要な場合，`scripts/utils/install-anyenv.zsh` を使って anye
 $ zsh ~/dotfiles/scripts/utils/install-anyenv.zsh
 ```
 
-### Docker と Docker Compose の補完を追加
+## Docker と Docker Compose の補完を追加 (必要なら)
 
 Docker と Docker Compose の補完が必要な場合，`scripts/utils/download-docker-completions.zsh` を使って補完をローカルの補完( `~/.zsh/local/completions/`) へ追加する．
 補完を更新する際も，`scripts/utils/download-docker-completions.zsh` を使う．
