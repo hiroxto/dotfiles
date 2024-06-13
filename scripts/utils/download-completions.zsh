@@ -8,7 +8,7 @@ mkdir -p $COMPLETIONS_DIR
 
 # docker
 if type "docker" > /dev/null 2>&1; then
-    echo "Download docker completion"
+    echo "Setup docker completion"
     curl -sSL https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker >| ${COMPLETIONS_DIR}/_docker
 fi
 
