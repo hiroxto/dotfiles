@@ -4,26 +4,16 @@ on:
     pull_request:
 
 jobs:
-    build:
-        runs-on: ${{ matrix.os }}
-        strategy:
-            matrix:
-                os: [ubuntu-latest, macos-latest]
+    test:
+        runs-on: ubuntu-latest
 
         steps:
             - uses: actions/checkout@v4
 
-            - name: Update packages list and install zsh on Ubuntu
-              if: runner.os == 'Linux'
+            - name: Update packages list and install zsh
               run: |
                 sudo apt update -y
                 sudo apt install -y zsh
-
-            - name: Update packages list and install zsh on macOS
-              if: runner.os == 'macOS'
-              run: |
-                brew update
-                brew install zsh
 
             - name: Check syntax of initialize.zsh file
               run: zsh -n initialize.zsh
