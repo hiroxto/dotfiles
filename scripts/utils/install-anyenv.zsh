@@ -16,7 +16,7 @@ if [ ! -e ${ANYENV_DEFINITION_ROOT} ];then
 fi
 
 echo "Install envs"
-for envname in rbenv phpenv pyenv nodenv tfenv goenv; do
+for envname in goenv nodenv phpenv pyenv rbenv tfenv; do
     echo "Install ${envname}"
     envname_dir="${ANYENV_DIR}/envs/${envname}"
 
