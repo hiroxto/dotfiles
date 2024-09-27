@@ -12,9 +12,6 @@ export LANG=ja_JP.UTF-8
 export EDITOR="vim"
 export VISUAL="vim"
 
-# Crystalのキャッシュディレクトリ
-export CRYSTAL_CACHE_DIR=$HOME/.crystal
-
 # Golang
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
