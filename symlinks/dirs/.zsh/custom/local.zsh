@@ -12,3 +12,8 @@ export PATH="${HOME}/bin-local:$PATH"
 
 # Local のみの補完を設定
 fpath=(~/.zsh/local/completions $fpath)
+
+# Cargo の設定
+if [ -f "$HOME/.cargo/env" ];then
+  source "$HOME/.cargo/env"
+fi
