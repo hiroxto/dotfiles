@@ -62,3 +62,7 @@
     prune = true
     pruneTags = true
     all = true
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
