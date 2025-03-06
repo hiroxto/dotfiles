@@ -58,3 +58,21 @@
     autoSquash = true
     autoStash = true
     updateRefs = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[diff]
+    algorithm = histogram
+[push]
+    autoSetupRemote = true
+    followTags = true
+[commit]
+    verbose = true
+[rerere]
+    enabled = true
+    autoupdate = true
