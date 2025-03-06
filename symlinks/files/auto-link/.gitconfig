@@ -66,3 +66,5 @@
     sort = -committerdate
 [tag]
     sort = version:refname
+[diff]
+    algorithm = histogram
