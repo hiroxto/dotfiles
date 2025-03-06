@@ -58,3 +58,7 @@
     autoSquash = true
     autoStash = true
     updateRefs = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
