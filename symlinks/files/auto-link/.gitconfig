@@ -52,3 +52,9 @@
     branch = cat
 [include]
     path = ~/.gitconfig.local
+[pull]
+    autoStash = true
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
