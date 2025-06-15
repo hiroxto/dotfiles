@@ -1,5 +1,10 @@
-" 最初に読み込む設定
-runtime! userautoload/init/*.vim
-
-" 後から読み込む設定
-runtime! userautoload/plugins/*.vim
+syntax on
+set backspace=indent,eol,start
+set notitle
+set number
+set hidden
+set nobackup
+set noswapfile
+set expandtab
+set tabstop=2
+set shiftwidth=2
