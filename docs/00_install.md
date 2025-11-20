@@ -77,12 +77,3 @@ ghq でリポジトリを管理する場合は以下のようになる。
     name = Foo Bar
     email = foo@example.com
 ```
-
-## 補完を追加 (必要なら)
-
-補完が必要な場合，`scripts/utils/download-completions.zsh` を使って補完をローカルの補完( `~/.zsh/local/completions/`) へ追加する。
-更新する時も同じスクリプトを使う。
-
-```bash
-$ zsh scripts/utils/download-completions.zsh
-```
