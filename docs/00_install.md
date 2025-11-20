@@ -78,14 +78,6 @@ ghq でリポジトリを管理する場合は以下のようになる。
     email = foo@example.com
 ```
 
-## anyenv のセットアップ (必要なら)
-
-anyenv が必要な場合，`scripts/utils/install-anyenv.zsh` を使って anyenv のマニフェストのインストールと，各 env のインストールを行う．
-
-```bash
-$ zsh ~/dotfiles/scripts/utils/install-anyenv.zsh
-```
-
 ## 補完を追加 (必要なら)
 
 補完が必要な場合，`scripts/utils/download-completions.zsh` を使って補完をローカルの補完( `~/.zsh/local/completions/`) へ追加する。

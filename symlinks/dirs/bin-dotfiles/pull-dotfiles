@@ -26,8 +26,3 @@ echo "Run: git pull and git submodule update"
 git pull
 git submodule update --init --recursive
 echo "Successfully updated: prezto"
-
-echo "Update: anyenv"
-echo "Run: anyenv update"
-anyenv update
-echo "Successfully updated: anyenv"
