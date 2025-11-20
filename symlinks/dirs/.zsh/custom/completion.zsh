@@ -31,3 +31,8 @@ fi
 if type "task" > /dev/null 2>&1; then
     eval "$(task --completion zsh)"
 fi
+
+# mise
+if type "mise" > /dev/null 2>&1; then
+    eval "$(mise completion zsh)"
+fi
