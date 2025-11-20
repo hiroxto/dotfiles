@@ -3,9 +3,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-
 # $PATHを設定
-export PATH="$HOME/bin:/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:$PATH"
 
 # 優先的に読み込む設定
 for file in `ls -1 ~/.zsh/init/*.zsh`;do
