@@ -56,5 +56,8 @@ if [ -f ~/.zprofile.local ];then
   source ~/.zprofile.local
 fi
 
-# $PATHから重複したpathを削除する
+#
+# 最後に実行する設定
+#
+# 重複したpathを削除する
 typeset -gU cdpath fpath mailpath path

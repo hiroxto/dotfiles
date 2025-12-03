@@ -106,7 +106,7 @@ fi
 #
 # 最後に実行する設定
 #
-# $PATHから重複したpathを削除する
+# 重複したpathを削除する
 typeset -gU cdpath fpath mailpath path
 
 # 補完を読み込む
