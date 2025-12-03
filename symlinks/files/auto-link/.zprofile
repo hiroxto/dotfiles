@@ -30,12 +30,11 @@ fi
 #
 # Path
 #
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:$PATH"
 
 # brew
 if type "brew" > /dev/null 2>&1; then
   eval "$(brew shellenv)"
-  export PATH="$(brew --prefix)/bin"
 fi
 
 #
