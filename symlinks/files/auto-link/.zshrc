@@ -4,19 +4,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 #
-# 環境変数関連
-#
-# PATH の設定
-export PATH="${HOME}/bin-local:$HOME/bin:${HOME}/bin-dotfiles:/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:$PATH"
-export LANG=ja_JP.UTF-8
-export EDITOR="vim"
-export VISUAL="vim"
-
-# Golang
-export GOPATH=~/go
-export PATH=$PATH:~/go/bin
-
-#
 # エイリアス関連
 #
 alias rmdir="rm -rf"
@@ -109,7 +96,7 @@ export FPATH="$HOME/.zsh/local/completions:$FPATH"
 
 #
 # dotfiles で共有しないローカルのみの設定
-# PATH への ~/bin-local の追加と，FPATH への ~/.zsh/local/completions の追加は別セクションで行っている
+# FPATH への ~/.zsh/local/completions の追加は別セクションで行っている
 #
 # Local のみの zsh の設定があったら読み込む
 if [ -f ~/.zshrc.local ];then
@@ -119,8 +106,8 @@ fi
 #
 # 最後に実行する設定
 #
-# $PATHから重複したpathを削除する
-typeset -U path PATH
+# 重複したpathを削除する
+typeset -gU cdpath fpath mailpath path
 
 # 補完を読み込む
 autoload -Uz compinit && compinit
