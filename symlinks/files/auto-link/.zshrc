@@ -72,7 +72,7 @@ if type "docker" > /dev/null 2>&1; then
 fi
 
 # Kubernetes
-if type "docker" > /dev/null 2>&1; then
+if type "kubectl" > /dev/null 2>&1; then
     eval "$(kubectl completion zsh)"
 fi
 
