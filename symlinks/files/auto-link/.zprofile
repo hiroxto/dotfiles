@@ -46,7 +46,6 @@ export PATH="${PATH}:${GOPATH}/bin"
 
 #
 # dotfiles で共有しないローカルのみの設定
-# PATH への ~/bin-local の追加は別セクションで行っている
 #
 # Local bin
 export PATH="${HOME}/bin-local:$HOME/bin:${HOME}/bin-dotfiles:$PATH"
