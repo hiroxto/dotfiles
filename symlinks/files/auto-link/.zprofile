@@ -33,7 +33,7 @@ fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/bin:$PATH"
 
 # brew
-if [ -x brew ]; then
+if type "brew" > /dev/null 2>&1; then
   eval "$(brew shellenv)"
   export PATH="$(brew --prefix)/bin"
 fi
