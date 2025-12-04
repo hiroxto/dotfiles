@@ -18,6 +18,8 @@
     smudge = git-lfs smudge %f
     required = true
 [alias]
+	# エイリアス一覧を表示する
+	aliases = config --get-regexp alias
     # 直前のcommitのコミットメッセージを変更する
     amend = commit --amend
     # ブランチ一覧を表示する
@@ -44,6 +46,8 @@
     stashes = stash list
     # wip commit
     wip = !"git add . && git commit -m 'wip'"
+    # コミットする際のメールアドレスを表示する
+    whoami = config user.email
 [http]
     sslVerify = false
 [init]
