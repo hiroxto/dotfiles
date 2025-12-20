@@ -44,6 +44,13 @@ export GOPATH=~/go
 export PATH="${PATH}:${GOPATH}/bin"
 
 #
+# mise
+#
+if type "mise" > /dev/null 2>&1; then
+    eval "$(mise activate zsh)"
+fi
+
+#
 # dotfiles で共有しないローカルのみの設定
 #
 # Local bin
