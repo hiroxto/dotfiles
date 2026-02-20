@@ -90,6 +90,11 @@ if type "mise" > /dev/null 2>&1; then
     eval "$(mise completion zsh)"
 fi
 
+# codex
+if type "codex" > /dev/null 2>&1; then
+    eval "$(codex completion zsh)"
+fi
+
 # local fpath
 export FPATH="$HOME/.zsh/local/completions:$FPATH"
 
