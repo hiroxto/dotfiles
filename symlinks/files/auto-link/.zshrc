@@ -8,15 +8,35 @@ fi
 #
 alias rmdir="rm -rf"
 alias repo="gh repo view -w"
+alias g="git"
+alias gb="git branch"
+alias gba="git branch --all --verbose"
+alias gbd="git branch --delete"
+alias gco='git checkout'
 
 #
 # setopt 関連
 #
-# rm * で確認しない
-setopt rm_star_silent
-
+# cdを入力しなくてもディレクトリを自動的に移動する
+setopt AUTO_CD
+# 古いディレクトリをスタックにプッシュする
+setopt AUTO_PUSHD
+# スタックを重複して保存しない
+setopt PUSHD_IGNORE_DUPS
+# pushdとpopd後にディレクトリスタックを出力しない
+setopt PUSHD_SILENT
+# 引数が指定されていない場合はホームディレクトリへ
+setopt PUSHD_TO_HOME
+# 引数として変数を使用できるようにする
+setopt CDABLE_VARS
+# 複数のファイルに対してリダイレクトできるようにする
+setopt MULTIOS
 # 拡張グロブを有効化
-setopt extended_glob
+setopt EXTENDED_GLOB
+# 既存ファイルを > と >> で上書きしない。上書きする場合は >! か >>! を使う。
+unsetopt CLOBBER
+# rm * で確認しない
+setopt RM_STAR_SILENT
 
 #
 # bindkey関連
