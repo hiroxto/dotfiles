@@ -31,16 +31,11 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'editor' \
   'history' \
-  'directory' \
   'spectrum' \
   'utility' \
   'completion' \
   'history-substring-search' \
-  'prompt' \
-  'git' \
-  'homebrew' \
-  'osx' \
-  'docker'
+  'prompt'
 
 #
 # Autosuggestions
