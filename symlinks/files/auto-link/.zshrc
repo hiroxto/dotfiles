@@ -11,8 +11,12 @@ alias repo="gh repo view -w"
 alias g="git"
 alias gb="git branch"
 alias gba="git branch --all --verbose"
-alias gbd="git branch --delete"
-alias gco='git checkout'
+alias gbd="git branch -d"
+alias gbD="git branch -D"
+alias gbm="git branch -m"
+alias gco="git checkout"
+alias gp="git push"
+alias gpf="git gpf"
 
 #
 # setopt 関連
