@@ -1,0 +1,40 @@
+#
+# general
+#
+theme = Tomorrow Night
+font-family = "HackGen Console"
+font-size = 14
+# リガチャを無効化する
+font-feature = -dlig
+# 代替文字を無効化する
+font-feature = -calt
+
+# Shift+Enterで改行を入力する
+keybind = shift+enter=text:\n
+
+# カーソルスタイルをバー型にする
+cursor-style = bar
+
+# タイピング中はマウスカーソルを非表示にする
+mouse-hide-while-typing = true
+
+# 起動時にウィンドウを開かない
+initial-window = false
+
+# 画面分割したときにcwdを引き継ぐ
+window-inherit-working-directory = true
+
+# ウィンドウの状態を常に保存する
+window-save-state = always
+
+# フォーカスの当たっていない分割画面を薄くする
+unfocused-split-opacity = 0.7
+
+# 最後のウィンドウを閉じてもアプリを終了しないようにする
+quit-after-last-window-closed = false
+
+#
+# macOS
+#
+# タイトルバーをタブスタイルにする
+macos-titlebar-style = tabs
