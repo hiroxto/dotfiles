@@ -15,9 +15,6 @@ keybind = shift+enter=text:\n
 # カーソルスタイルをバー型にする
 cursor-style = bar
 
-# タイピング中はマウスカーソルを非表示にする
-mouse-hide-while-typing = true
-
 # 起動時にウィンドウを開かない
 initial-window = false
 
