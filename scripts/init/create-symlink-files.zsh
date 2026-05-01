@@ -10,7 +10,7 @@ for file in `ls -A1 ${HOME}/dotfiles/symlinks/files/auto-link/`; do
     link_to="${HOME}/${file}"
     echo "Link ${link_from} to ${link_to}"
 
-    if [ -e ${link_to} ]; then
+    if [ -e ${link_to} ] || [ -L ${link_to} ]; then
         echo "File '${link_to}' is already exist."
         echo "Skip create symbolic link."
     else
@@ -34,7 +34,7 @@ for file in ${manual_link_files[@]}; do
 
     echo "Link ${link_from} to ${link_to}"
 
-    if [ -e ${link_to} ]; then
+    if [ -e ${link_to} ] || [ -L ${link_to} ]; then
         echo "File '${link_to}' is already exist."
         echo "Skip create symbolic link."
     else
