@@ -23,3 +23,18 @@ jobs:
 
             - name: Check syntax of symlinks/dirs/bin-dotfiles/pull-dotfiles file
               run: zsh -n symlinks/dirs/bin-dotfiles/pull-dotfiles
+
+            - name: Run initialize.zsh in isolated HOME
+              run: |
+                test_home="$(mktemp -d "${RUNNER_TEMP}/dotfiles-home.XXXXXX")"
+                ln -s "${GITHUB_WORKSPACE}" "${test_home}/dotfiles"
+
+                HOME="${test_home}" zsh -c 'cd "${HOME}/dotfiles" && ./initialize.zsh'
+
+                test -d "${test_home}/bin-local"
+                test -L "${test_home}/bin-dotfiles"
+                test -L "${test_home}/.zsh"
+                test -L "${test_home}/.zpreztorc"
+                test -L "${test_home}/.zprofile"
+                test -L "${test_home}/.zshrc"
+                test -d "${test_home}/.zprezto"
