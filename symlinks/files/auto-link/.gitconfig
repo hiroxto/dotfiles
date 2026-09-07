@@ -44,6 +44,8 @@
     unstage = reset HEAD
     # stash一覧を表示したい時にstashesと打っても動くようにする
     stashes = stash list
+    # worktree一覧を表示したい時にworktreesと打っても動くようにする
+    worktrees = worktree list
     # wip commit
     wip = !"git add . && git commit -m 'wip'"
     # コミットする際のメールアドレスを表示する

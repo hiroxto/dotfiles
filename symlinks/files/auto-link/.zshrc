@@ -16,6 +16,7 @@ alias gbD="git branch -D"
 alias gbm="git branch -m"
 alias gco="git checkout"
 alias gp="git push"
+alias gw="git worktree"
 alias gpf="git gpf"
 
 #
