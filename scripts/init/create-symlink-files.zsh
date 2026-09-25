@@ -22,6 +22,7 @@ done
 # dotfiles の symlinks/files/manual-link 以下に入っているファイルを指定したパスへリンク
 manual_link_files=(
     ghostty/config:.config/ghostty/config
+    mise/config.toml:.config/mise/config.toml
 )
 
 for file in ${manual_link_files[@]}; do
