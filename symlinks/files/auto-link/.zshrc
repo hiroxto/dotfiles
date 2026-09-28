@@ -55,7 +55,7 @@ bindkey "^n" history-beginning-search-forward-end
 
 # ghqでのリポジトリ検索
 # Ctrl + ] でghq管理下にあるリポジトリを一覧表示
-if type "peco" > /dev/null 2>&1; then
+if type "peco" > /dev/null 2>&1 && type "ghq" > /dev/null 2>&1; then
     function peco-src () {
         local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
             if [ -n "$selected_dir" ]; then
