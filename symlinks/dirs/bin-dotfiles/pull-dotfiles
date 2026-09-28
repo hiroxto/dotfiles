@@ -26,3 +26,12 @@ echo "Run: git pull and git submodule update"
 git pull
 git submodule update --init --recursive
 echo "Successfully updated: prezto"
+
+if type mise > /dev/null 2>&1; then
+    echo "Update: mise tools"
+    echo "Run: mise upgrade"
+    mise upgrade
+    echo "Successfully updated: mise tools"
+else
+    echo "[Warning] 'mise' command not found. Skipped: mise tools"
+fi
