@@ -38,3 +38,15 @@ jobs:
                 test -L "${test_home}/.zprofile"
                 test -L "${test_home}/.zshrc"
                 test -d "${test_home}/.zprezto"
+
+            - uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
+              with:
+                  install: false
+                  cache: false
+
+            - name: Verify mise tools installation
+              run: |
+                mise install
+                mise ls
+              env:
+                  MISE_GLOBAL_CONFIG_FILE: ${{ github.workspace }}/symlinks/files/manual-link/mise/config.toml
