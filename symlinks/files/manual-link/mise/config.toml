@@ -1,7 +1,7 @@
 [tools]
 apm = "latest"
 ghq = "latest"
-node = "24.22.1"
+node = "24.22.2"
 npm = "11.21.1"
 "npm:@playwright/cli" = "latest"
 python = "3.15.2"
