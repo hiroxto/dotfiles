@@ -21,6 +21,7 @@ done
 
 # dotfiles の symlinks/files/manual-link 以下に入っているファイルを指定したパスへリンク
 manual_link_files=(
+    claude/statusline-command.sh:.claude/statusline-command.sh
     ghostty/config:.config/ghostty/config
     mise/config.toml:.config/mise/config.toml
 )
