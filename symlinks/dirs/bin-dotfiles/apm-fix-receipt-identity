@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+# apmの展開記録（~/.apm/deployment-receipts/*.json）に保存されたroot_identityを、
+# 展開先ディレクトリの現在のデバイス番号・inode番号と照合する。
+# inode番号が一致し、デバイス番号だけが異なる記録に限り、デバイス番号を現在の値に書き換える。
+#
+# apm v0.35.0では、再起動などでデバイス番号が変わると
+# "installation binding does not match" で更新に失敗する。
+# https://github.com/microsoft/apm/issues/3421
+# 上流で修正されるまでの暫定対応。
+
+set -euo pipefail
+
+RECEIPTS_DIR="${HOME}/.apm/deployment-receipts"
+
+command -v jq >/dev/null 2>&1 || {
+    echo "Error: 'jq' is required but not found in PATH." >&2
+    exit 1
+}
+
+if [[ ! -d "${RECEIPTS_DIR}" ]]; then
+    echo "Error: ${RECEIPTS_DIR} が存在しません。" >&2
+    exit 1
+fi
+
+shopt -s nullglob
+receipts=("${RECEIPTS_DIR}"/*.json)
+if [[ ${#receipts[@]} -eq 0 ]]; then
+    echo "展開記録がありません。"
+    exit 0
+fi
+
+has_error=0
+
+for receipt in "${receipts[@]}"; do
+    name="$(basename "${receipt}")"
+    root="$(jq -r '.root' "${receipt}")"
+    read -r recorded_dev recorded_ino < <(jq -r '.root_identity | "\(.[0]) \(.[1])"' "${receipt}")
+
+    if [[ ! -d "${root}" ]]; then
+        echo "[skip] ${name}: 展開先 ${root} が存在しません。"
+        continue
+    fi
+
+    read -r current_dev current_ino < <(stat -f '%d %i' "${root}")
+
+    if [[ "${recorded_ino}" != "${current_ino}" ]]; then
+        echo "[NG]   ${name}: ${root} のinode番号が一致しません（記録: ${recorded_ino}, 現在: ${current_ino}）。ディレクトリが作り直された可能性があるため、書き換えません。" >&2
+        has_error=1
+        continue
+    fi
+
+    if [[ "${recorded_dev}" == "${current_dev}" ]]; then
+        echo "[ok]   ${name}: ${root} は一致しています。"
+        continue
+    fi
+
+    # apmと同じく、キーを並べ替えてインデント2で書き出す。権限はapmが作成する0600に合わせる。
+    tmp="$(mktemp "${RECEIPTS_DIR}/.${name}.XXXXXX")"
+    if jq -S --indent 2 --argjson dev "${current_dev}" '.root_identity[0] = $dev' "${receipt}" >"${tmp}"; then
+        chmod 600 "${tmp}"
+        mv "${tmp}" "${receipt}"
+        echo "[fix]  ${name}: ${root} のデバイス番号を ${recorded_dev} から ${current_dev} に書き換えました。"
+    else
+        rm -f "${tmp}"
+        echo "[NG]   ${name}: 書き換えに失敗しました。" >&2
+        has_error=1
+    fi
+done
+
+exit "${has_error}"
