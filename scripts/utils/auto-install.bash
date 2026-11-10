@@ -28,7 +28,7 @@ if [ -e ${DOTFILES_PATH} ]; then
 fi
 
 echo "Clone from ${DOTFILES_REPO} to ${DOTFILES_PATH}"
-git clone --depth 1 "${DOTFILES_REPO}" "${DOTFILES_PATH}"
+git clone "${DOTFILES_REPO}" "${DOTFILES_PATH}"
 
 echo "Change current directory to ${DOTFILES_PATH}"
 cd "${DOTFILES_PATH}"
