@@ -33,6 +33,22 @@ if [ -n "$five_hour_pct" ]; then
   fi
 fi
 
+# 週次（7日）制限の情報を取得
+weekly_pct=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+weekly_resets_at=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
+
+# 週次制限の表示を組み立てる
+weekly_str=""
+if [ -n "$weekly_pct" ]; then
+  weekly_pct_fmt=$(printf "%.0f" "$weekly_pct")
+  if [ -n "$weekly_resets_at" ]; then
+    weekly_reset_time=$(date -r "$weekly_resets_at" +"%m/%d %H:%M" 2>/dev/null || date -d "@$weekly_resets_at" +"%m/%d %H:%M" 2>/dev/null)
+    weekly_str=" | weekly ${weekly_pct_fmt}% (reset ${weekly_reset_time})"
+  else
+    weekly_str=" | weekly ${weekly_pct_fmt}%"
+  fi
+fi
+
 # ステータスライン表示
-echo "${model_str} | in: ${input_tokens} / out: ${output_tokens} tokens | Context: ${used}% used${five_hour_str}"
+echo "${model_str} | in: ${input_tokens} / out: ${output_tokens} tokens | Context: ${used}% used${five_hour_str}${weekly_str}"
 
