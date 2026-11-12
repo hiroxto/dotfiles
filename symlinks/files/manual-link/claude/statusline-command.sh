@@ -11,6 +11,10 @@ used_raw=$(echo "$input" | jq -r '.context_window.used_percentage // "0"')
 used=$(printf "%.0f" "$used_raw")
 current_dir=$(echo "$input" | jq -r '.workspace.current_dir // empty')
 
+# トークン数を3桁ごとにカンマで区切る
+input_tokens=$(echo "$input_tokens" | sed -E -e ':a' -e 's/^([0-9]+)([0-9]{3})/\1,\2/' -e 'ta')
+output_tokens=$(echo "$output_tokens" | sed -E -e ':a' -e 's/^([0-9]+)([0-9]{3})/\1,\2/' -e 'ta')
+
 # モデル表示（effort.level がある場合は括弧付きで表示）
 if [ -n "$effort" ]; then
   model_str="${model} (${effort})"
