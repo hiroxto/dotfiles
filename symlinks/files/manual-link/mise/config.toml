@@ -1,6 +1,7 @@
 [tools]
 apm = "latest"
 ghq = "latest"
+jactionlint = "latest"
 node = "26.13.1"
 npm = "12.2.2"
 "npm:@playwright/cli" = "latest"
