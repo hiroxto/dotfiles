@@ -1,5 +1,6 @@
 [tools]
 apm = "latest"
+"github:jdx/jactionlint" = "2.6.0"
 ghq = "latest"
 node = "26.13.1"
 npm = "12.2.2"
