@@ -19,7 +19,12 @@ jobs:
               run: zsh -n initialize.zsh
 
             - name: Check syntax of initialize script files
-              run: "zsh -n ./scripts/init/*.zsh"
+              # zsh -n に複数のファイルを渡すと先頭のファイルしか検査しないため、1ファイルずつ渡す
+              run: |
+                for file in ./scripts/init/*.zsh; do
+                    echo "Check syntax: ${file}"
+                    zsh -n "${file}"
+                done
 
             - name: Check syntax of symlinks/dirs/bin-dotfiles/pull-dotfiles file
               run: zsh -n symlinks/dirs/bin-dotfiles/pull-dotfiles
