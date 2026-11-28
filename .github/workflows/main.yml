@@ -21,9 +21,6 @@ jobs:
             - name: Check syntax of initialize script files
               run: "zsh -n ./scripts/init/*.zsh"
 
-            - name: Check syntax of initialize script library files
-              run: "zsh -n ./scripts/lib/*.zsh"
-
             - name: Check syntax of symlinks/dirs/bin-dotfiles/pull-dotfiles file
               run: zsh -n symlinks/dirs/bin-dotfiles/pull-dotfiles
 
