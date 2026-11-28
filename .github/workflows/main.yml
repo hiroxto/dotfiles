@@ -29,6 +29,9 @@ jobs:
             - name: Check syntax of symlinks/dirs/bin-dotfiles/pull-dotfiles file
               run: bash -n symlinks/dirs/bin-dotfiles/pull-dotfiles
 
+            - name: Check syntax of scripts/utils/auto-install.bash file
+              run: bash -n scripts/utils/auto-install.bash
+
             - name: Run initialize.zsh in isolated HOME
               run: |
                 test_home="$(mktemp -d "${RUNNER_TEMP}/dotfiles-home.XXXXXX")"
