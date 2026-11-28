@@ -7,15 +7,12 @@ create_symlink() {
     local link_from="$1"
     local link_to="$2"
 
-    echo "Link ${link_from} to ${link_to}"
-
     # リンク切れのシンボリックリンクは -e が偽になるため、-L でも判定する
     if [ -e "${link_to}" ] || [ -L "${link_to}" ]; then
-        echo "File '${link_to}' is already exist."
-        echo "Skip create symbolic link."
+        echo "'${link_to}' already exists. Skipped creating a symbolic link."
     else
-        echo "Create symbolic link to ${link_to}"
         ln -s "${link_from}" "${link_to}"
+        echo "Created a symbolic link: ${link_to} -> ${link_from}"
     fi
 }
 
@@ -23,7 +20,7 @@ create_symlink() {
 # dotfiles の symlinks/dirs 以下のディレクトリをリンク
 # ============================================================
 
-echo "Create symbolic link dirs."
+echo "Creating symbolic links to directories."
 
 dirs=(
     bin-dotfiles
@@ -36,7 +33,7 @@ for dir in ${dirs[@]}; do
 
     link_to_dir=`dirname ${link_to}`
 
-    echo "Create directory : ${link_to_dir}"
+    echo "Creating directory: ${link_to_dir}"
     mkdir -p ${link_to_dir}
 
     create_symlink ${link_from} ${link_to}
@@ -46,7 +43,7 @@ done
 # dotfiles の symlinks/files 以下のファイルをリンク
 # ============================================================
 
-echo "Create symbolic link files."
+echo "Creating symbolic links to files."
 
 # dotfiles の symlinks/files/auto-link 以下に入っているファイルを自動でリンク
 for link_from in ${HOME}/dotfiles/symlinks/files/auto-link/*(DN); do
@@ -67,7 +64,7 @@ for file in ${manual_link_files[@]}; do
     link_to="${HOME}/${file#*:}"
     link_to_dir=`dirname ${link_to}`
 
-    echo "Create directory : ${link_to_dir}"
+    echo "Creating directory: ${link_to_dir}"
     mkdir -p ${link_to_dir}
 
     create_symlink ${link_from} ${link_to}
@@ -77,18 +74,17 @@ done
 # prezto をインストールし、設定ファイルをリンク
 # ============================================================
 
-echo "Install prezto."
+echo "Installing Prezto."
 
 zprezto_dir="${HOME}/.zprezto"
 
 if [ -d ${zprezto_dir} ]; then
-    echo "zprezto is already installed."
-    echo "Skip install."
+    echo "Prezto is already installed. Skipped installation."
 else
     git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto ${zprezto_dir}
 fi
 
-echo "Link zprezto config files"
+echo "Creating symbolic links to Prezto config files."
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     link_to="${ZDOTDIR:-$HOME}/.${rcfile:t}"
