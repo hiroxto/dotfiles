@@ -81,7 +81,7 @@ zprezto_dir="${HOME}/.zprezto"
 if [ -d ${zprezto_dir} ]; then
     echo "Prezto is already installed. Skipped installation."
 else
-    git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto ${zprezto_dir}
+    git clone --recursive https://github.com/sorin-ionescu/prezto ${zprezto_dir}
 fi
 
 echo "Creating symbolic links to Prezto config files."
