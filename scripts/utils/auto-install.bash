@@ -10,29 +10,28 @@ DOTFILES_REPO="https://github.com/hiroxto/dotfiles"
 DOTFILES_PATH="${HOME}/dotfiles"
 INITIALIZE_SCRIPT="initialize.zsh"
 
-echo "hiroxto/dotfiles auto install script"
+echo "Running hiroxto/dotfiles auto install script."
 
-if [ ! `which git` ];then
-    echo "[Error] 'git' command not found"
+if ! type git > /dev/null 2>&1; then
+    echo "[Error] 'git' command not found."
     exit 1
 fi
 
-if [ ! `which zsh` ];then
-    echo "[Error] 'zsh' command not found"
+if ! type zsh > /dev/null 2>&1; then
+    echo "[Error] 'zsh' command not found."
     exit 1
 fi
 
-if [ -e ${DOTFILES_PATH} ]; then
-    echo "[Error] '${DOTFILES_PATH}' is already exist."
+if [ -e "${DOTFILES_PATH}" ]; then
+    echo "[Error] '${DOTFILES_PATH}' already exists."
     exit 1
 fi
 
-echo "Clone from ${DOTFILES_REPO} to ${DOTFILES_PATH}"
+echo "Cloning ${DOTFILES_REPO} into ${DOTFILES_PATH}."
 git clone "${DOTFILES_REPO}" "${DOTFILES_PATH}"
 
-echo "Change current directory to ${DOTFILES_PATH}"
 cd "${DOTFILES_PATH}"
 
-echo "Execute initialize script ${INITIALIZE_SCRIPT}"
+echo "Running: ${DOTFILES_PATH}/${INITIALIZE_SCRIPT}"
 zsh "${INITIALIZE_SCRIPT}"
-echo "Successfully executed initialize script"
+echo "Installed dotfiles."

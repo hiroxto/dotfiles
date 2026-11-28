@@ -2,36 +2,35 @@
 
 set -eu
 
-DOTFILES_PATH=`realpath ~/dotfiles`
-INIT_FILE=`realpath ${DOTFILES_PATH}/initialize.zsh`
-
-if [ ! type git > /dev/null 2>&1 ];then
-    echo "[Error] 'git' command not found"
+if ! type git > /dev/null 2>&1; then
+    echo "[Error] 'git' command not found."
     exit 1
 fi
 
-echo "Update: dotfiles"
-echo "Changed current directory to ${DOTFILES_PATH}"
-cd ${DOTFILES_PATH}
-echo "Run: git pull"
-git pull
-echo "Run: setup script"
-zsh ${INIT_FILE}
-echo "Successfully updated: dotfiles"
+DOTFILES_PATH="$(realpath ~/dotfiles)"
+INIT_FILE="${DOTFILES_PATH}/initialize.zsh"
 
-echo "Update: prezto"
-echo "Changed current directory to ${HOME}/.zprezto"
-cd "${HOME}/.zprezto"
-echo "Run: git pull and git submodule update"
+echo "Updating dotfiles in ${DOTFILES_PATH}."
+cd "${DOTFILES_PATH}"
+echo "Running: git pull"
 git pull
+echo "Running: ${INIT_FILE}"
+zsh "${INIT_FILE}"
+echo "Updated dotfiles."
+
+echo "Updating Prezto in ${HOME}/.zprezto."
+cd "${HOME}/.zprezto"
+echo "Running: git pull"
+git pull
+echo "Running: git submodule update --init --recursive"
 git submodule update --init --recursive
-echo "Successfully updated: prezto"
+echo "Updated Prezto."
 
 if type mise > /dev/null 2>&1; then
-    echo "Update: mise tools"
-    echo "Run: mise upgrade"
+    echo "Updating mise tools."
+    echo "Running: mise upgrade"
     mise upgrade
-    echo "Successfully updated: mise tools"
+    echo "Updated mise tools."
 else
-    echo "[Warning] 'mise' command not found. Skipped: mise tools"
+    echo "[Warning] 'mise' command not found. Skipped updating mise tools."
 fi

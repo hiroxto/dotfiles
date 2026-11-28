@@ -2,12 +2,15 @@
 
 set -eu
 
-echo "Run dotfiles init scripts.\n"
+script_dir="${0:A:h}"
 
-for file in `ls -1 ./scripts/init/*.zsh`; do
-    echo "Load : ${file}"
-    source ${file}
-    echo "Loaded : ${file}\n"
+print "Running dotfiles init scripts.\n"
+
+for file in "${script_dir}"/scripts/init/*.zsh; do
+    print "Running: ${file}"
+    # 変数やシェルオプションがほかのスクリプトに影響しないよう、別プロセスで実行する
+    zsh "${file}"
+    print "Done: ${file}\n"
 done
 
-echo "Loaded init scripts."
+print "All init scripts have finished."
