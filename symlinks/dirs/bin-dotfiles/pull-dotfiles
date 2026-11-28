@@ -2,21 +2,21 @@
 
 set -eu
 
-DOTFILES_PATH=`realpath ~/dotfiles`
-INIT_FILE=`realpath ${DOTFILES_PATH}/initialize.zsh`
-
 if ! type git > /dev/null 2>&1; then
     echo "[Error] 'git' command not found"
     exit 1
 fi
 
+DOTFILES_PATH="$(realpath ~/dotfiles)"
+INIT_FILE="${DOTFILES_PATH}/initialize.zsh"
+
 echo "Update: dotfiles"
 echo "Changed current directory to ${DOTFILES_PATH}"
-cd ${DOTFILES_PATH}
+cd "${DOTFILES_PATH}"
 echo "Run: git pull"
 git pull
 echo "Run: setup script"
-zsh ${INIT_FILE}
+zsh "${INIT_FILE}"
 echo "Successfully updated: dotfiles"
 
 echo "Update: prezto"
