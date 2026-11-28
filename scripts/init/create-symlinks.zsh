@@ -31,7 +31,7 @@ for dir in ${dirs[@]}; do
     link_from="${HOME}/dotfiles/symlinks/dirs/${dir}"
     link_to="${HOME}/${dir}"
 
-    link_to_dir=`dirname ${link_to}`
+    link_to_dir="${link_to:h}"
 
     echo "Creating directory: ${link_to_dir}"
     mkdir -p ${link_to_dir}
@@ -62,7 +62,7 @@ manual_link_files=(
 for file in ${manual_link_files[@]}; do
     link_from="${HOME}/dotfiles/symlinks/files/manual-link/${file%%:*}"
     link_to="${HOME}/${file#*:}"
-    link_to_dir=`dirname ${link_to}`
+    link_to_dir="${link_to:h}"
 
     echo "Creating directory: ${link_to_dir}"
     mkdir -p ${link_to_dir}
