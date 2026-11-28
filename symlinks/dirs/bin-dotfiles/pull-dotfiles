@@ -5,7 +5,7 @@ set -eu
 DOTFILES_PATH=`realpath ~/dotfiles`
 INIT_FILE=`realpath ${DOTFILES_PATH}/initialize.zsh`
 
-if [ ! type git > /dev/null 2>&1 ];then
+if ! type git > /dev/null 2>&1; then
     echo "[Error] 'git' command not found"
     exit 1
 fi
