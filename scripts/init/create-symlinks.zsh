@@ -49,9 +49,8 @@ done
 echo "Create symbolic link files."
 
 # dotfiles の symlinks/files/auto-link 以下に入っているファイルを自動でリンク
-for file in `ls -A1 ${HOME}/dotfiles/symlinks/files/auto-link/`; do
-    link_from="${HOME}/dotfiles/symlinks/files/auto-link/${file}"
-    link_to="${HOME}/${file}"
+for link_from in ${HOME}/dotfiles/symlinks/files/auto-link/*(DN); do
+    link_to="${HOME}/${link_from:t}"
 
     create_symlink ${link_from} ${link_to}
 done
