@@ -27,7 +27,7 @@ jobs:
                 done
 
             - name: Check syntax of symlinks/dirs/bin-dotfiles/pull-dotfiles file
-              run: zsh -n symlinks/dirs/bin-dotfiles/pull-dotfiles
+              run: bash -n symlinks/dirs/bin-dotfiles/pull-dotfiles
 
             - name: Run initialize.zsh in isolated HOME
               run: |
