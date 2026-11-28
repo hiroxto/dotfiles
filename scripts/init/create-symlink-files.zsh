@@ -2,21 +2,16 @@
 
 set -eu
 
+source "${0:A:h}/../lib/link.zsh"
+
 echo "Create symbolic link files."
 
 # dotfiles の symlinks/files/auto-link 以下に入っているファイルを自動でリンク
 for file in `ls -A1 ${HOME}/dotfiles/symlinks/files/auto-link/`; do
     link_from="${HOME}/dotfiles/symlinks/files/auto-link/${file}"
     link_to="${HOME}/${file}"
-    echo "Link ${link_from} to ${link_to}"
 
-    if [ -e ${link_to} ] || [ -L ${link_to} ]; then
-        echo "File '${link_to}' is already exist."
-        echo "Skip create symbolic link."
-    else
-        echo "Create symbolic link to ${link_to}"
-        ln -s ${link_from} ${link_to}
-    fi
+    create_symlink ${link_from} ${link_to}
 done
 
 # dotfiles の symlinks/files/manual-link 以下に入っているファイルを指定したパスへリンク
@@ -34,13 +29,5 @@ for file in ${manual_link_files[@]}; do
     echo "Create directory : ${link_to_dir}"
     mkdir -p ${link_to_dir}
 
-    echo "Link ${link_from} to ${link_to}"
-
-    if [ -e ${link_to} ] || [ -L ${link_to} ]; then
-        echo "File '${link_to}' is already exist."
-        echo "Skip create symbolic link."
-    else
-        echo "Create symbolic link to ${link_to}"
-        ln -s ${link_from} ${link_to}
-    fi
+    create_symlink ${link_from} ${link_to}
 done

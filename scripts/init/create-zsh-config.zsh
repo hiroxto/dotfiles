@@ -2,6 +2,8 @@
 
 set -eu
 
+source "${0:A:h}/../lib/link.zsh"
+
 echo "Install prezto."
 
 zprezto_dir="${HOME}/.zprezto"
@@ -18,13 +20,5 @@ setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     link_to="${ZDOTDIR:-$HOME}/.${rcfile:t}"
 
-    echo "Link ${rcfile} to ${link_to}"
-
-    if [ -e ${link_to} ]; then
-        echo "File '${link_to}' is already exist."
-        echo "Skip create symbolic link."
-    else
-        echo "Create symbolic link to ${link_to}"
-        ln -s "$rcfile" "${link_to}"
-    fi
+    create_symlink "$rcfile" "${link_to}"
 done
