@@ -12,17 +12,17 @@ INITIALIZE_SCRIPT="initialize.zsh"
 
 echo "hiroxto/dotfiles auto install script"
 
-if [ ! `which git` ];then
+if ! type git > /dev/null 2>&1; then
     echo "[Error] 'git' command not found"
     exit 1
 fi
 
-if [ ! `which zsh` ];then
+if ! type zsh > /dev/null 2>&1; then
     echo "[Error] 'zsh' command not found"
     exit 1
 fi
 
-if [ -e ${DOTFILES_PATH} ]; then
+if [ -e "${DOTFILES_PATH}" ]; then
     echo "[Error] '${DOTFILES_PATH}' is already exist."
     exit 1
 fi
